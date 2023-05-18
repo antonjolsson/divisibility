@@ -12,6 +12,7 @@ html, body, #root {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 .App img {
   position: fixed;
@@ -21,6 +22,32 @@ html, body, #root {
 }
 .App h1 {
   font-size: 2.5em;
+  margin-bottom: 0;
+  line-height: 1em;
+}
+.App h2 {
+  font-size: 1.3em;
+  flex: 2;
+}
+.App h2.number, .App h2.divisible {
+  flex: 1;
+}
+.App h3 {
+  font-size: 0.9em;
+  font-weight: 300;
+  margin-top: 0;
+}
+.App main {
+  height: 70%;
+  width: 45em;
+}
+.App main .table-row {
+  display: flex;
+  flex-direction: row;
+  height: 2.3em;
+}
+.App main .table-row:not(:first-of-type) h2 {
+  font-weight: 500;
 }
 
 /*# sourceMappingURL=App.css.map */
