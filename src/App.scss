@@ -19,38 +19,67 @@ html, body, #root {
         position: fixed;
         z-index: -10;
         height: 100%;
-        opacity: 0.4;
+        opacity: 0.3;
     }
 
     h1 {
-        font-size: 2.5em;
+        font-size: 3em;
         margin-bottom: 0;
         line-height: 1em;
     }
 
     h2 {
-        font-size: 1.3em;
+        font-size: 1.1em;
         flex: 2;
 
-        &.number, &.divisible {
+        &.divisor, &.divisible {
             flex: 1;
         }
     }
 
-    h3 {
+    h2 {
+        font-size: 1.1em;
+        font-weight: 700;
+    }
+
+    h3, label {
         font-size: 0.9em;
         font-weight: 300;
         margin-top: 0;
     }
 
-    main {
+    #number-input {
+        display: flex;
+        flex-direction: column;
+        width: 15em;
+        justify-content: center;
+        align-items: center;
+
+        label {
+            margin-bottom: 0;
+            line-height: 0.5em;
+            margin-top: 0.8em;
+        }
+
+        & input {
+            font-family: 'Kalam', Verdana, sans-serif;
+            font-size: 2.5em;
+            font-weight: 700;
+            width: 4em;
+            background-color: rgba(0, 0, 0, 0);
+            border: none;
+            text-align: center;
+        }
+    }
+
+    #table {
         height: 70%;
         width: 45em;
 
         .table-row {
             display: flex;
             flex-direction: row;
-            height: 2.3em;
+            height: 2.1em;
 
             &:not(:first-of-type) h2 {
                 font-weight: 500;
