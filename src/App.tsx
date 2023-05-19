@@ -28,9 +28,40 @@ function getNLastDigits(number: number, numOfDigits: number): number {
         .join(''))
 }
 
+function getNumberAsDigits(number: number): number[] {
+    const str = String(number)
+    return str.split('').map(s => parseInt(s));
+}
+
+function divisibleBy11(number: number): boolean {
+    let tries = 0
+    while (number > 11 && tries++ < 100) {
+        number = getNumberAsDigits(number)
+            .reduce((acc, curr, i) => {
+                if (i === 0) return acc
+                if (i % 2 === 0) return acc + curr
+                return acc - curr
+            }) // Alternating sum!
+    }
+    return [0, 11].includes(number);
+}
+
+function divisibleBy4(number: number): boolean {
+    return isEvenLongVersion(getNLastDigits(number, 2) / 2);
+}
+
+function divisibleBy7(number: number): boolean {
+    do {
+        const last = getNLastDigits(number, 1)
+        const rest = Math.trunc(number / 10)
+        number = 5 * last + rest;
+    } while (number > 98)
+    return number % 7 === 0
+}
+
 function Table(props: {number: number}): ReactElement {
     useEffect(() => {
-        console.log(props.number)
+        // console.log(props.number)
     }, [props.number])
 
     const entries = [
@@ -38,15 +69,15 @@ function Table(props: {number: number}): ReactElement {
         ['Everything', true],
         ['Even', isEvenLongVersion(props.number)],
         ['Digit sum', getDigitSum(props.number) % 3 === 0],
-        ['Last two digits', getNLastDigits(props.number, 2) % 4 === 0],
-        ['End in 0 or 5', false],
-        ['Divisible by 2 and 3', false],
-        ['5 x last + rest', false],
-        ['Last 3 digits', false],
+        ['Last two digits', divisibleBy4(props.number)],
+        ['End in 0 or 5', [0, 5].includes(getNLastDigits(props.number, 1))],
+        ['Divisible by 2 and 3', isEvenLongVersion(props.number) && getDigitSum(props.number) % 3 === 0],
+        ['5 x last + rest', divisibleBy7(props.number)],
+        ['Last 3 digits', isEvenLongVersion(getNLastDigits(props.number, 3) / 2 / 2)],
         ['Digit sum', getDigitSum(props.number) % 9 === 0],
-        ['End in 0', false],
-        ['Alternating sum', false],
-        ['Divisible by 3 and 4', false]
+        ['End in 0', getNLastDigits(props.number, 1) === 0],
+        ['Alternating sum', divisibleBy11(props.number)],
+        ['Divisible by 3 and 4', getDigitSum(props.number) % 3 === 0 && divisibleBy4(props.number)]
     ]
 
     return <div id={'table'}>
@@ -65,7 +96,7 @@ function Input(props: {onChange: (n: number) => void}): ReactElement {
     }, [])
     return <div id={'number-input'}>
         <label>Number to test</label>
-        <input ref={inputRef} type={'number'} defaultValue={27853}
+        <input ref={inputRef} type={'number'} defaultValue={10}
                onChange={(e): void => props.onChange(parseInt(e.target.value))}/>
     </div>;
 }
