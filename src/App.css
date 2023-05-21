@@ -449,19 +449,22 @@ html, body, #root {
   font-size: 1.1em;
   font-weight: 400;
 }
-.App #expl-window-container #expl-window #demonstration2 {
+.App #expl-window-container #expl-window h1 {
   font-size: 3em;
 }
-.App #expl-window-container #expl-window #demonstration2 span {
-  color: black;
-}
 .App #expl-window-container #expl-window #demonstration2.divisor span {
-  animation: 0.5s color-change-lightgreen forwards 1s;
+  animation: 0.5s color-change-lightgreen-translate forwards 1s;
 }
 .App #expl-window-container #expl-window #demonstration2.not-divisor span {
+  animation: 0.5s color-change-red-translate forwards 1s;
+}
+.App #expl-window-container #expl-window #demonstration1.divisor span {
+  animation: 0.5s color-change-lightgreen forwards 1s;
+}
+.App #expl-window-container #expl-window #demonstration1.not-divisor span {
   animation: 0.5s color-change-red forwards 1s;
 }
-@keyframes color-change-lightgreen {
+@keyframes color-change-lightgreen-translate {
   from {
     color: black;
   }
@@ -470,13 +473,31 @@ html, body, #root {
     margin-left: 0.5em;
   }
 }
-@keyframes color-change-red {
+@keyframes color-change-red-translate {
   from {
     color: black;
   }
   to {
     color: red;
     margin-left: 0.5em;
+  }
+}
+@keyframes color-change-lightgreen {
+  from {
+    color: black;
+  }
+  to {
+    color: lightgreen;
+    margin-left: 0em;
+  }
+}
+@keyframes color-change-red {
+  from {
+    color: black;
+  }
+  to {
+    color: red;
+    margin-left: 0em;
   }
 }
 @keyframes grow {

@@ -216,21 +216,21 @@ html, body, #root {
                 font-weight: 400;
             }
 
-            #demonstration2.divisor {
-                $last-digit-color: lightgreen;
-            }
-
-            #demonstration2.not-divisor {
-                $last-digit-color: red;
+            h1 {
+                font-size: 3em;
             }
 
             #demonstration2 {
-                font-size: 3em;
-
-                span {
-                    color: black;
+                &.divisor span {
+                    animation: 0.5s color-change-lightgreen-translate forwards 1s;
                 }
 
+                &.not-divisor span {
+                    animation: 0.5s color-change-red-translate forwards 1s;
+                }
+            }
+
+            #demonstration1 {
                 &.divisor span {
                     animation: 0.5s color-change-lightgreen forwards 1s;
                 }
@@ -238,24 +238,32 @@ html, body, #root {
                 &.not-divisor span {
                     animation: 0.5s color-change-red forwards 1s;
                 }
+            }
 
-                @mixin color-change($color) {
-                    from {
-                        color: black;
-                    }
-                    to {
-                        color: $color;
-                        margin-left: 0.5em;
-                    }
+            @mixin color-change($color, $margin-left) {
+                from {
+                    color: black;
                 }
+                to {
+                    color: $color;
+                    margin-left: #{$margin-left}em;
+                }
+            }
 
-                @keyframes color-change-lightgreen {
-                    @include color-change(lightgreen);
-                }
+            @keyframes color-change-lightgreen-translate {
+                @include color-change(lightgreen, 0.5);
+            }
 
-                @keyframes color-change-red {
-                    @include color-change(red);
-                }
+            @keyframes color-change-red-translate {
+                @include color-change(red, 0.5);
+            }
+
+            @keyframes color-change-lightgreen {
+                @include color-change(lightgreen, 0);
+            }
+
+            @keyframes color-change-red {
+                @include color-change(red, 0);
             }
         }
     }

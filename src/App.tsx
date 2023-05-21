@@ -111,8 +111,14 @@ function Table(props: {number: number}): ReactElement {
     }, [props.number])
 
     const rules: IRule[] = [
-        {divisor: 1, name: 'Everything', explanation: '', divides: isDivisibleByOne},
-        {divisor: 2,
+        {
+            divisor: 1,
+            name: 'Everything',
+            explanation: 'Any integer is divisible by 1',
+            divides: isDivisibleByOne
+        },
+        {
+            divisor: 2,
             name: 'Even last digit',
             explanation: `A non-negative integer is even if it ends in <b>0, 2, 4, 6</b> or <b>8</b>`,
             divides: isEvenLongVersion(props.number)},

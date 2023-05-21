@@ -9,9 +9,18 @@ function Demonstration2(props: {dividend: number, divides: boolean}): ReactEleme
         <span>{lastDigit}</span></h1>;
 }
 
+function Demonstration1(props: { divides: boolean, dividend: number }): ReactElement {
+    return <h1 id={'demonstration1'} className={props.divides ? 'divisor' : 'not-divisor'}>
+        <span>{props.dividend}</span>
+    </h1>;
+}
+
 function getDemonstration(ruleNumber: number, dividend: number, divides: boolean): ReactElement {
     console.log(divides)
-    return <Demonstration2 dividend={dividend} divides={divides}/>
+    switch (ruleNumber) {
+        case 1: return <Demonstration1 dividend={dividend} divides={divides}/>
+        default: return <Demonstration2 dividend={dividend} divides={divides}/>
+    }
 }
 
 export function ExplanationWindow(props: { coords: { x: number; y: number }, rule: IRule, dividend: number }): ReactElement {
