@@ -202,6 +202,7 @@ html, body, #root {
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            $color-change-dur: 0.5s;
 
             .headline {
                 font-size: 2.5em;
@@ -214,29 +215,149 @@ html, body, #root {
             #explanation {
                 font-size: 1.1em;
                 font-weight: 400;
+                margin-bottom: 0.5em;
             }
 
             h1 {
                 font-size: 3em;
             }
 
-            #demonstration2 {
-                &.divisor span {
-                    animation: 0.5s color-change-lightgreen-translate forwards 1s;
-                }
-
-                &.not-divisor span {
-                    animation: 0.5s color-change-red-translate forwards 1s;
-                }
+            .divisor, .not-divisor {
+                line-height: 0.4em;
             }
 
             #demonstration1 {
                 &.divisor span {
-                    animation: 0.5s color-change-lightgreen forwards 1s;
+                    animation: $color-change-dur color-change-lightgreen forwards 1s;
                 }
 
                 &.not-divisor span {
-                    animation: 0.5s color-change-red forwards 1s;
+                    animation: $color-change-dur color-change-red forwards 1s;
+                }
+            }
+
+            #demonstration2 {
+                &.divisor span {
+                    animation: $color-change-dur color-change-lightgreen-translate forwards 1s;
+                }
+
+                &.not-divisor span {
+                    animation: $color-change-dur color-change-red-translate forwards 1s;
+                }
+            }
+
+            #demonstration3 {
+                overflow: auto;
+                width: 80%;
+                display: flex;
+                align-items: center;
+                flex-direction: column-reverse;
+                justify-content: flex-end;
+                $anim-dur: 3s;
+                $margin-condensed: -2%;
+                $margin-extended: 3%;
+                @for $i from 0 to 20 {
+
+                    #row#{$i} {
+                        margin: 0;
+                        opacity: 0;
+                        animation: $anim-dur * 0.67 fade-in-slide-down forwards $i * $anim-dur;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+
+                        .operator {
+                            opacity: 0;
+                            animation: $anim-dur * 0.17 reveal-operators forwards ($i + 0.83) * $anim-dur;
+                        }
+
+                        // Left-most digit (not single-digit number)
+                        .digit:first-child:not(:last-child) {
+                            margin-right: $margin-condensed;
+                            animation: $anim-dur * 0.17 translate-left forwards ($i + 0.67) * $anim-dur;
+                        }
+
+                        // Mid-digit
+                        .digit:not(:last-child):not(:first-child) {
+                            margin-left: $margin-condensed;
+                            margin-right: $margin-condensed;
+                            animation: $anim-dur * 0.17 translate-left-right forwards ($i + 0.67) * $anim-dur;
+                        }
+
+                        // Right-most digit (not single-digit)
+                        .digit:last-child:not(:first-child) {
+                            margin-left: $margin-condensed;
+                            animation: $anim-dur * 0.17 translate-right forwards ($i + 0.67) * $anim-dur;
+                        }
+
+                        // Single-digit numbers
+                        &.divisor .digit:only-child {
+                            animation: $color-change-dur color-change-lightgreen forwards ($i + 0.84) * $anim-dur;
+                        }
+                        &.not-divisor .digit:only-child {
+                            animation: $color-change-dur color-change-red forwards ($i + 0.84) * $anim-dur;
+                        }
+
+                    }
+                }
+
+                @keyframes translate-left {
+                    from {
+                        margin-right: $margin-condensed;
+                    }
+                    to {
+                        margin-right: $margin-extended;
+                    }
+                }
+
+                @keyframes translate-left-right {
+                    from {
+                        margin-right: $margin-condensed;
+                        margin-left: $margin-condensed;
+                    }
+                    to {
+                        margin-left: $margin-extended;
+                        margin-right: $margin-extended;
+                    }
+                    }
+                }
+
+                @keyframes translate-right {
+                    from {
+                        margin-left: -15%;
+                    }
+                    to {
+                        margin-left: 10%;
+                    }
+                }
+
+                @keyframes reveal-operators {
+                    0% {
+                        opacity: 0;
+                    }
+                    50% {
+                        opacity: 0;
+                    }
+                    100% {
+                        opacity: 1;
+                    }
+                }
+
+                @keyframes fade-in-slide-down {
+                    0% {
+                        margin: 0;
+                        opacity: 0;
+                    }
+                    50% {
+                        margin-top: 0.7em;
+                        margin-bottom: 0.1em;
+                        opacity: 0;
+                    }
+                    100% {
+                        margin-top: 0.7em;
+                        margin-bottom: 0.1em;
+                        opacity: 1;
+                    }
                 }
             }
 
@@ -265,7 +386,6 @@ html, body, #root {
             @keyframes color-change-red {
                 @include color-change(red, 0);
             }
-        }
     }
 
     @keyframes grow {
@@ -275,13 +395,15 @@ html, body, #root {
         }
         to {
             width: 40em;
-            height: 20em;
+            height: 25em;
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
         }
     }
 }
+
+
 
 
 

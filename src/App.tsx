@@ -2,6 +2,8 @@ import React, {createContext, ReactElement, SetStateAction, useContext, useEffec
 import './App.css';
 import {ExplanationWindow} from "./ExplanationWindow";
 
+const DEFAULT_DIVIDEND = 999
+
 const BackgroundClickedContext = createContext({bgClicked: false, setBgClicked: (v: SetStateAction<boolean>) => {}})
 const ShowExplanationContext = createContext({showExplanation: false, setShowExplanation: (v: SetStateAction<boolean>) => {}})
 const InfoButtonCoordsContext = createContext({infoButtonCoords: {x: -1, y: -1},
@@ -120,9 +122,14 @@ function Table(props: {number: number}): ReactElement {
         {
             divisor: 2,
             name: 'Even last digit',
-            explanation: `A non-negative integer is even if it ends in <b>0, 2, 4, 6</b> or <b>8</b>`,
+            explanation: `An integer is even if it ends in <b>0, 2, 4, 6</b> or <b>8</b>`,
             divides: isEvenLongVersion(props.number)},
-        {divisor: 3, name: 'Digit sum', explanation: '', divides: getDigitSum(props.number) % 3 === 0},
+        {
+            divisor: 3,
+            name: 'Digit sum',
+            explanation: 'An integer is divisible by 3 if the sum of its digits is',
+            divides: getDigitSum(props.number) % 3 === 0
+        },
         {divisor: 4, name: 'Last two digits', explanation: '', divides: divisibleBy4(props.number)},
         {divisor: 5, name: 'End in 0 or 5', explanation: '', divides: [0, 5].includes(getNLastDigits(props.number, 1))},
         {divisor: 6, name: 'Divisible by 2 and 3', explanation: '', divides: isEvenLongVersion(props.number) && getDigitSum(props.number) % 3 === 0},
@@ -147,16 +154,26 @@ function Table(props: {number: number}): ReactElement {
 }
 
 function Input(props: {onChange: (n: number) => void}): ReactElement {
+    const maxChars = 6
+    const maxValue = Math.pow(10, maxChars) - 1
     const inputRef = useRef<HTMLInputElement>(null)
     useEffect(() => {
         if (inputRef.current) {
             props.onChange(parseInt(inputRef.current.value))
         }
     }, [])
+
+    function onChange(e: React.ChangeEvent<HTMLInputElement>): void {
+        props.onChange(parseInt(e.target.value));
+        if (e.target.value.length > maxChars) {
+            e.target.value = String(maxValue)
+        }
+    }
+
     return <div id={'number-input'}>
         <label>Number to test</label>
-        <input ref={inputRef} type={'number'} defaultValue={10}
-               onChange={(e): void => props.onChange(parseInt(e.target.value))}/>
+        <input ref={inputRef} type={'number'} defaultValue={DEFAULT_DIVIDEND} maxLength={maxChars} max={maxValue}
+               onChange={(e): void => onChange(e)}/>
     </div>;
 }
 
