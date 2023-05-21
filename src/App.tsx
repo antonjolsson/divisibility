@@ -1,8 +1,9 @@
 import React, {ReactElement, useEffect, useRef, useState} from 'react';
 import './App.css';
 
-function TableRow(props: { entries: string[] }): ReactElement {
+function TableRow(props: { entries: string[], marked: boolean }): ReactElement {
     return <div className={'table-row'}>
+        <img className={`stroke ${props.marked ? '' : 'reverse-anim'}`} src={'stroke.svg'} alt={'stroke'}></img>
         <h2 className={'divisor'}>{props.entries[0]}</h2>
         <h2>{props.entries[1]}</h2>
         <h2 className={'divisible'}>{props.entries[2]}</h2>
@@ -61,7 +62,6 @@ function divisibleBy7(number: number): boolean {
 
 function Table(props: {number: number}): ReactElement {
     useEffect(() => {
-        // console.log(props.number)
     }, [props.number])
 
     const entries = [
@@ -82,7 +82,8 @@ function Table(props: {number: number}): ReactElement {
 
     return <div id={'table'}>
         {Array(entries.length).fill(null).map((_, i) => {
-            return <TableRow key={i} entries={[i === 0 ? 'divisor' : String(i), String(entries[i][0]), String(entries[i][1])]}/>
+            return <TableRow key={i} marked={i > 0 && Boolean(entries[i][1])}
+                             entries={[i === 0 ? 'divisor' : String(i), String(entries[i][0]), String(entries[i][1])]}/>
         })}
     </div>;
 }
@@ -105,7 +106,7 @@ function App(): ReactElement {
     const [number, setNumber] = useState(-1)
   return (
     <div className="App">
-        <img src={'bg.jpg'} alt={'bg'}/>
+        <img id={'bg'} src={'bg.jpg'} alt={'bg'}/>
         <h1>Divisibility</h1>
         <h3>Memorable shortcuts for testing divisibility by 1 to 12</h3>
         <Input onChange={(n: number): void => setNumber(n)}/>

@@ -15,7 +15,7 @@ html, body, #root {
     align-items: center;
     flex-direction: column;
 
-    img {
+    #bg {
         position: fixed;
         z-index: -10;
         height: 100%;
@@ -32,8 +32,11 @@ html, body, #root {
         font-size: 1.1em;
         flex: 2;
 
-        &.divisor, &.divisible {
-            flex: 1;
+        &.divisor {
+            flex: 1.2;
+        }
+        &.divisible {
+            flex: 0.7 0.7
         }
     }
 
@@ -69,6 +72,7 @@ html, body, #root {
             background-color: rgba(0, 0, 0, 0);
             border: none;
             text-align: center;
+            outline: none;
         }
     }
 
@@ -80,9 +84,47 @@ html, body, #root {
             display: flex;
             flex-direction: row;
             height: 2.1em;
+            align-items: center;
 
             &:not(:first-of-type) h2 {
                 font-weight: 500;
+            }
+
+            .stroke {
+                position: absolute;
+                z-index: -1;
+                transform: scale(1.3,0.9) translateX(10%);
+                opacity: 0.4;
+                $anim-duration: 0.3s;
+                animation: $anim-duration draw-stroke forwards;
+                $viewport-width: 0;
+                clip-path: polygon(0 0, $viewport-width 0, $viewport-width 100%, 0 100%);
+
+                &.reverse-anim {
+                    animation: $anim-duration draw-stroke-reversed forwards;
+                }
+            }
+
+            @keyframes draw-stroke {
+                from {
+                    $viewport-width: 0;
+                    clip-path: polygon(0 0, $viewport-width 0, $viewport-width 100%, 0 100%);
+                }
+                to {
+                    $viewport-width: 100%;
+                    clip-path: polygon(0 0, $viewport-width 0, $viewport-width 100%, 0 100%);
+                }
+            }
+
+            @keyframes draw-stroke-reversed {
+                from {
+                    $viewport-width: 100%;
+                    clip-path: polygon(0 0, $viewport-width 0, $viewport-width 100%, 0 100%);
+                }
+                to {
+                    $viewport-width: 0;
+                    clip-path: polygon(0 0, $viewport-width 0, $viewport-width 100%, 0 100%);
+                }
             }
         }
     }
