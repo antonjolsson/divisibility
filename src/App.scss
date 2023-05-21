@@ -41,8 +41,6 @@ html, body, #root {
                 height: 0.8em;
                 transition: height 0.3s;
                 cursor: pointer;
-                animation: 0.5s fade-in forwards #{0.2 * $i}s;
-                opacity: 0;
 
                 &:hover {
                     height: 1.0em;

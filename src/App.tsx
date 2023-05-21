@@ -16,8 +16,7 @@ function TableRow(props: { entries: string[], marked: boolean, markedRank: numbe
     const {setRule} = useContext(ExplainedRuleContext)
 
     useEffect(() => {
-        console.log(showExplanationContext.showExplanation)
-        if (bgClickedContext.bgClicked/* && showExplanationContext.showExplanation*/) {
+        if (bgClickedContext.bgClicked) {
             showExplanationContext.setShowExplanation(false)
             bgClickedContext.setBgClicked(false)
         }
@@ -37,9 +36,8 @@ function TableRow(props: { entries: string[], marked: boolean, markedRank: numbe
         <h2 className={'divisor'}>{props.entries[0]}</h2>
         <div className={'rule'}>
             <h2>{props.entries[1]}</h2>
-            {props.markedRank > -1 &&
-                <img ref={infoButtonRef} id={`info-button${props.markedRank}`} src={'info.svg'} alt={'info'}
-                     onClick={(e): void => onInfoButtonClick(e)}></img>}
+            {parseInt(props.entries[0]) > 0 && <img ref={infoButtonRef} id={`info-button${props.entries[0]}`} src={'info.svg'} alt={'info'}
+                  onClick={(e): void => onInfoButtonClick(e)}></img>}
         </div>
         <h2 className={'divisible'}>{props.entries[3]}</h2>
     </div>;
@@ -103,14 +101,13 @@ export interface IRule {
 }
 
 function Table(props: {number: number}): ReactElement {
-    const [isDivisibleByOne, setIsDivisibleByOne] =  useState(false)
+    const [isDivisibleByOne, setIsDivisibleByOne] =  useState(true)
     const [markedEntries, setMarkedEntries] = useState<IRule[]>([])
 
     useEffect(() => {
         setIsDivisibleByOne(false)
         setTimeout(() => setIsDivisibleByOne(true), 5)
-        setMarkedEntries(rules.filter(e => e.divides))
-        console.log(rules.filter(e => e.divides))
+        setMarkedEntries(rules.filter(e => e.number === 1 || e.divides))
     }, [props.number])
 
     const rules: IRule[] = [
@@ -172,7 +169,6 @@ function App(): ReactElement {
                       setInfoButtonCoords: setInfoButtonCoordsForRule}}>
                       <ExplainedRuleContext.Provider value={{rule: ruleExplained, setRule: setRuleExplained}}>
                           <div className="App" onClick={(): void => {
-                              console.log('bg clicked')
                               setBgClicked(true)
                           }}>
                               <img id={'bg'} src={'bg.jpg'} alt={'bg'}/>

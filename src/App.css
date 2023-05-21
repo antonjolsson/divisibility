@@ -37,8 +37,6 @@ html, body, #root {
   height: 0.8em;
   transition: height 0.3s;
   cursor: pointer;
-  animation: 0.5s fade-in forwards 0s;
-  opacity: 0;
 }
 .App .rule #info-button0:hover {
   height: 1em;
@@ -48,8 +46,6 @@ html, body, #root {
   height: 0.8em;
   transition: height 0.3s;
   cursor: pointer;
-  animation: 0.5s fade-in forwards 0.2s;
-  opacity: 0;
 }
 .App .rule #info-button1:hover {
   height: 1em;
@@ -59,8 +55,6 @@ html, body, #root {
   height: 0.8em;
   transition: height 0.3s;
   cursor: pointer;
-  animation: 0.5s fade-in forwards 0.4s;
-  opacity: 0;
 }
 .App .rule #info-button2:hover {
   height: 1em;
@@ -70,8 +64,6 @@ html, body, #root {
   height: 0.8em;
   transition: height 0.3s;
   cursor: pointer;
-  animation: 0.5s fade-in forwards 0.6s;
-  opacity: 0;
 }
 .App .rule #info-button3:hover {
   height: 1em;
@@ -81,8 +73,6 @@ html, body, #root {
   height: 0.8em;
   transition: height 0.3s;
   cursor: pointer;
-  animation: 0.5s fade-in forwards 0.8s;
-  opacity: 0;
 }
 .App .rule #info-button4:hover {
   height: 1em;
@@ -92,8 +82,6 @@ html, body, #root {
   height: 0.8em;
   transition: height 0.3s;
   cursor: pointer;
-  animation: 0.5s fade-in forwards 1s;
-  opacity: 0;
 }
 .App .rule #info-button5:hover {
   height: 1em;
@@ -103,8 +91,6 @@ html, body, #root {
   height: 0.8em;
   transition: height 0.3s;
   cursor: pointer;
-  animation: 0.5s fade-in forwards 1.2s;
-  opacity: 0;
 }
 .App .rule #info-button6:hover {
   height: 1em;
@@ -114,8 +100,6 @@ html, body, #root {
   height: 0.8em;
   transition: height 0.3s;
   cursor: pointer;
-  animation: 0.5s fade-in forwards 1.4s;
-  opacity: 0;
 }
 .App .rule #info-button7:hover {
   height: 1em;
@@ -125,8 +109,6 @@ html, body, #root {
   height: 0.8em;
   transition: height 0.3s;
   cursor: pointer;
-  animation: 0.5s fade-in forwards 1.6s;
-  opacity: 0;
 }
 .App .rule #info-button8:hover {
   height: 1em;
@@ -136,8 +118,6 @@ html, body, #root {
   height: 0.8em;
   transition: height 0.3s;
   cursor: pointer;
-  animation: 0.5s fade-in forwards 1.8s;
-  opacity: 0;
 }
 .App .rule #info-button9:hover {
   height: 1em;
@@ -147,8 +127,6 @@ html, body, #root {
   height: 0.8em;
   transition: height 0.3s;
   cursor: pointer;
-  animation: 0.5s fade-in forwards 2s;
-  opacity: 0;
 }
 .App .rule #info-button10:hover {
   height: 1em;
@@ -158,8 +136,6 @@ html, body, #root {
   height: 0.8em;
   transition: height 0.3s;
   cursor: pointer;
-  animation: 0.5s fade-in forwards 2.2s;
-  opacity: 0;
 }
 .App .rule #info-button11:hover {
   height: 1em;
@@ -169,8 +145,6 @@ html, body, #root {
   height: 0.8em;
   transition: height 0.3s;
   cursor: pointer;
-  animation: 0.5s fade-in forwards 2.4s;
-  opacity: 0;
 }
 .App .rule #info-button12:hover {
   height: 1em;
