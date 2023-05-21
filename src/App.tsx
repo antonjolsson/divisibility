@@ -16,7 +16,8 @@ function TableRow(props: { entries: string[], marked: boolean, markedRank: numbe
     const {setRule} = useContext(ExplainedRuleContext)
 
     useEffect(() => {
-        if (bgClickedContext.bgClicked && showExplanationContext.showExplanation) {
+        console.log(showExplanationContext.showExplanation)
+        if (bgClickedContext.bgClicked/* && showExplanationContext.showExplanation*/) {
             showExplanationContext.setShowExplanation(false)
             bgClickedContext.setBgClicked(false)
         }
@@ -114,7 +115,9 @@ function Table(props: {number: number}): ReactElement {
 
     const rules: IRule[] = [
         {number: 1, name: 'Everything', explanation: '', divides: isDivisibleByOne},
-        {number: 2, name: 'Even', explanation: `A non-negative integer is even if it ends in <b>0, 2, 4, 6,</b> or <b>8</b>`,
+        {number: 2,
+            name: 'Even',
+            explanation: `A non-negative integer is even if it ends in <b>0, 2, 4, 6</b> or <b>8</b>`,
             divides: isEvenLongVersion(props.number)},
         {number: 3, name: 'Digit sum', explanation: '', divides: getDigitSum(props.number) % 3 === 0},
         {number: 4, name: 'Last two digits', explanation: '', divides: divisibleBy4(props.number)},
@@ -155,7 +158,7 @@ function Input(props: {onChange: (n: number) => void}): ReactElement {
 }
 
 function App(): ReactElement {
-    const [number, setNumber] = useState(-1)
+    const [dividend, setDividend] = useState(-1)
     const [bgClicked, setBgClicked] = useState(false)
     const [showExplanation, setShowExplanation] = useState(false)
     const [infoButtonCoordsForRule, setInfoButtonCoordsForRule] = useState({x: -1, y: -1})
@@ -175,9 +178,10 @@ function App(): ReactElement {
                               <img id={'bg'} src={'bg.jpg'} alt={'bg'}/>
                               <h1>Divisibility</h1>
                               <h3>Memorable shortcuts for testing divisibility by natural numbers up to 12</h3>
-                              <Input onChange={(n: number): void => setNumber(n)}/>
-                              <Table number={number}/>
-                              {showExplanation && <ExplanationWindow coords={infoButtonCoordsForRule} rule={ruleExplained}/>}
+                              <Input onChange={(n: number): void => setDividend(n)}/>
+                              <Table number={dividend}/>
+                              {showExplanation && <ExplanationWindow coords={infoButtonCoordsForRule} rule={ruleExplained}
+                                                                     dividend={dividend}/>}
                           </div>
                       </ExplainedRuleContext.Provider>
                   </InfoButtonCoordsContext.Provider>

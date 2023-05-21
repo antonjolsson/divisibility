@@ -206,13 +206,36 @@ html, body, #root {
             flex-direction: column;
 
             #headline {
-                font-size: 2.5em;
+                font-size: 3em;
                 font-weight: 700;
+                line-height: 0;
+                margin-bottom: 1.1em;
+                margin-top: 0.7em;
             }
 
             #explanation {
                 font-size: 1.1em;
                 font-weight: 400;
+            }
+
+            #demonstration2 {
+                font-size: 3em;
+
+                span {
+                    color: black;
+                    animation: 0.5s color-change forwards 1s;
+                }
+
+                @keyframes color-change {
+                    from {
+                        color: black;
+                    }
+                    to {
+                        color: lightgreen;
+                        /*opacity: 0.4;*/
+                        margin-left: 0.5em;
+                    }
+                }
             }
         }
     }
