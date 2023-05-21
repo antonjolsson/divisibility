@@ -1,7 +1,35 @@
-import React, {ReactElement, useEffect, useRef, useState} from 'react';
+import React, {createContext, ReactElement, SetStateAction, useContext, useEffect, useRef, useState} from 'react';
 import './App.css';
+import {ExplanationWindow} from "./ExplanationWindow";
+
+const BackgroundClickedContext = createContext({bgClicked: false, setBgClicked: (v: SetStateAction<boolean>) => {}})
+const ShowExplanationContext = createContext({showExplanation: false, setShowExplanation: (v: SetStateAction<boolean>) => {}})
+const InfoButtonCoordsContext = createContext({infoButtonCoords: {x: -1, y: -1},
+        setInfoButtonCoords: (v: SetStateAction<{x: number, y: number}>) => {}})
+const ExplainedRuleContext = createContext({rule: {number: -1, name: '', divides: false}, setRule: (v: SetStateAction<IRule>) => {}})
 
 function TableRow(props: { entries: string[], marked: boolean, markedRank: number }): ReactElement {
+    const infoButtonRef = useRef<HTMLImageElement>(null)
+    const bgClickedContext = useContext(BackgroundClickedContext)
+    const showExplanationContext = useContext(ShowExplanationContext)
+    const explanationCoordsContext = useContext(InfoButtonCoordsContext)
+    const {setRule} = useContext(ExplainedRuleContext)
+
+    useEffect(() => {
+        if (bgClickedContext.bgClicked && showExplanationContext.showExplanation) {
+            showExplanationContext.setShowExplanation(false)
+            bgClickedContext.setBgClicked(false)
+        }
+    }, [bgClickedContext])
+
+    function onInfoButtonClick(e: React.MouseEvent<HTMLImageElement>): void {
+        showExplanationContext.setShowExplanation(true)
+        const rect = infoButtonRef.current?.getBoundingClientRect() ?? {x: -1, y: -1}
+        explanationCoordsContext.setInfoButtonCoords({x: rect.x, y: rect.y})
+        setRule({number: parseInt(props.entries[0]), name: props.entries[1], explanation: props.entries[2], divides: true})
+        e.stopPropagation()
+    }
+
     return <div className={'table-row'}>
         {props.marked && <img className={`stroke ${props.marked ? '' : 'reverse-anim'}`} src={'stroke.svg'} alt={'stroke'}
               id={`stroke${props.markedRank}`}></img>}
@@ -9,9 +37,10 @@ function TableRow(props: { entries: string[], marked: boolean, markedRank: numbe
         <div className={'rule'}>
             <h2>{props.entries[1]}</h2>
             {props.markedRank > -1 &&
-                <img id={`info-button${props.markedRank}`} src={'info.svg'} alt={'info'}></img>}
+                <img ref={infoButtonRef} id={`info-button${props.markedRank}`} src={'info.svg'} alt={'info'}
+                     onClick={(e): void => onInfoButtonClick(e)}></img>}
         </div>
-        <h2 className={'divisible'}>{props.entries[2]}</h2>
+        <h2 className={'divisible'}>{props.entries[3]}</h2>
     </div>;
 }
 
@@ -65,9 +94,10 @@ function divisibleBy7(number: number): boolean {
     return number % 7 === 0
 }
 
-interface IRule {
+export interface IRule {
     number: number,
-    name: string
+    name: string,
+    explanation: string
     divides: boolean
 }
 
@@ -83,18 +113,19 @@ function Table(props: {number: number}): ReactElement {
     }, [props.number])
 
     const rules: IRule[] = [
-        {number: 1, name: 'Everything', divides: isDivisibleByOne},
-        {number: 2, name: 'Even', divides: isEvenLongVersion(props.number)},
-        {number: 3, name: 'Digit sum', divides: getDigitSum(props.number) % 3 === 0},
-        {number: 4, name: 'Last two digits', divides: divisibleBy4(props.number)},
-        {number: 5, name: 'End in 0 or 5', divides: [0, 5].includes(getNLastDigits(props.number, 1))},
-        {number: 6, name: 'Divisible by 2 and 3', divides: isEvenLongVersion(props.number) && getDigitSum(props.number) % 3 === 0},
-        {number: 7, name: '5 x last + rest', divides: divisibleBy7(props.number)},
-        {number: 8, name: 'Last 3 digits', divides: isEvenLongVersion(getNLastDigits(props.number, 3) / 2 / 2)},
-        {number: 9, name: 'Digit sum', divides: getDigitSum(props.number) % 9 === 0},
-        {number: 10, name: 'End in 0', divides: getNLastDigits(props.number, 1) === 0},
-        {number: 11, name: 'Alternating sum', divides: divisibleBy11(props.number)},
-        {number: 12, name: 'Divisible by 3 and 4', divides: getDigitSum(props.number) % 3 === 0 && divisibleBy4(props.number)}
+        {number: 1, name: 'Everything', explanation: '', divides: isDivisibleByOne},
+        {number: 2, name: 'Even', explanation: `A non-negative integer is even if it ends in <b>0, 2, 4, 6,</b> or <b>8</b>`,
+            divides: isEvenLongVersion(props.number)},
+        {number: 3, name: 'Digit sum', explanation: '', divides: getDigitSum(props.number) % 3 === 0},
+        {number: 4, name: 'Last two digits', explanation: '', divides: divisibleBy4(props.number)},
+        {number: 5, name: 'End in 0 or 5', explanation: '', divides: [0, 5].includes(getNLastDigits(props.number, 1))},
+        {number: 6, name: 'Divisible by 2 and 3', explanation: '', divides: isEvenLongVersion(props.number) && getDigitSum(props.number) % 3 === 0},
+        {number: 7, name: '5 x last + rest', explanation: '', divides: divisibleBy7(props.number)},
+        {number: 8, name: 'Last 3 digits', explanation: '', divides: isEvenLongVersion(getNLastDigits(props.number, 3) / 2 / 2)},
+        {number: 9, name: 'Digit sum', explanation: '', divides: getDigitSum(props.number) % 9 === 0},
+        {number: 10, name: 'End in 0', explanation: '', divides: getNLastDigits(props.number, 1) === 0},
+        {number: 11, name: 'Alternating sum', explanation: '', divides: divisibleBy11(props.number)},
+        {number: 12, name: 'Divisible by 3 and 4', explanation: '', divides: getDigitSum(props.number) % 3 === 0 && divisibleBy4(props.number)}
     ]
 
     return <div id={'table'}>
@@ -102,8 +133,9 @@ function Table(props: {number: number}): ReactElement {
             const ruleIndex = i - 1
             return <TableRow key={i} marked={i > 0 && rules[ruleIndex].divides}
                              markedRank={ruleIndex >= 0 ? markedEntries.findIndex(e => e.number === rules[ruleIndex].number) : -1}
-                             entries={i === 0 ? ['divisor', 'rule', 'divisible'] :
-                                 [rules[ruleIndex].number, rules[ruleIndex].name, rules[ruleIndex].divides].map(v => String(v))}/>
+                             entries={i === 0 ? ['divisor', 'rule', '', 'divisible'] :
+                                 [rules[ruleIndex].number, rules[ruleIndex].name, rules[ruleIndex].explanation,
+                                     rules[ruleIndex].divides].map(v => String(v))}/>
         })}
     </div>;
 }
@@ -124,14 +156,34 @@ function Input(props: {onChange: (n: number) => void}): ReactElement {
 
 function App(): ReactElement {
     const [number, setNumber] = useState(-1)
+    const [bgClicked, setBgClicked] = useState(false)
+    const [showExplanation, setShowExplanation] = useState(false)
+    const [infoButtonCoordsForRule, setInfoButtonCoordsForRule] = useState({x: -1, y: -1})
+    const [ruleExplained, setRuleExplained] = useState({number: -1, name: '', explanation: '', divides: false})
+
   return (
-    <div className="App">
-        <img id={'bg'} src={'bg.jpg'} alt={'bg'}/>
-        <h1>Divisibility</h1>
-        <h3>Memorable shortcuts for testing divisibility by natural numbers up to 12</h3>
-        <Input onChange={(n: number): void => setNumber(n)}/>
-        <Table number={number}/>
-    </div>
+      <>
+          <BackgroundClickedContext.Provider value={{bgClicked, setBgClicked}}>
+              <ShowExplanationContext.Provider value={{showExplanation, setShowExplanation}}>
+                  <InfoButtonCoordsContext.Provider value={{infoButtonCoords: infoButtonCoordsForRule,
+                      setInfoButtonCoords: setInfoButtonCoordsForRule}}>
+                      <ExplainedRuleContext.Provider value={{rule: ruleExplained, setRule: setRuleExplained}}>
+                          <div className="App" onClick={(): void => {
+                              console.log('bg clicked')
+                              setBgClicked(true)
+                          }}>
+                              <img id={'bg'} src={'bg.jpg'} alt={'bg'}/>
+                              <h1>Divisibility</h1>
+                              <h3>Memorable shortcuts for testing divisibility by natural numbers up to 12</h3>
+                              <Input onChange={(n: number): void => setNumber(n)}/>
+                              <Table number={number}/>
+                              {showExplanation && <ExplanationWindow coords={infoButtonCoordsForRule} rule={ruleExplained}/>}
+                          </div>
+                      </ExplainedRuleContext.Provider>
+                  </InfoButtonCoordsContext.Provider>
+              </ShowExplanationContext.Provider>
+          </BackgroundClickedContext.Provider>
+      </>
   );
 }
 
