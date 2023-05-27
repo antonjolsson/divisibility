@@ -27,9 +27,7 @@ function DigitSum(props: { divides: boolean, dividend: number, alternating: bool
             : getDigitSum(dividend)
         sums.push(sum)
         dividend = sum
-        console.log(sums)
     }
-    console.log(sums)
 
     function getOperator(i: number, digits: string[]): string {
         if (i < digits.length - 1) {
@@ -59,7 +57,6 @@ function DigitSum(props: { divides: boolean, dividend: number, alternating: bool
 }
 
 function getDemonstration(ruleNumber: number, dividend: number, divides: boolean): ReactElement {
-    console.log(divides)
     switch (ruleNumber) {
         case 1: return <Demonstration1 dividend={dividend} divides={divides}/>
         case 3: return <DigitSum dividend={dividend} divides={divides} alternating={false} divisor={3}/>

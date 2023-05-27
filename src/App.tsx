@@ -79,7 +79,6 @@ export function getAlternatingSum(dividend: number,
                 if (i % 2 === 0) return acc + curr
                 return acc - curr
             }) // Alternating sum!
-        console.log(dividend)
     }
     return dividend;
 }
@@ -181,8 +180,8 @@ function Table(props: {number: number}): ReactElement {
 }
 
 function Input(props: {onChange: (n: number) => void}): ReactElement {
-    const maxChars = 6
-    const maxValue = Math.pow(10, maxChars) - 1
+    const maxValue = 999999
+    const minValue = 0
     const inputRef = useRef<HTMLInputElement>(null)
     useEffect(() => {
         if (inputRef.current) {
@@ -191,15 +190,18 @@ function Input(props: {onChange: (n: number) => void}): ReactElement {
     }, [])
 
     function onChange(e: React.ChangeEvent<HTMLInputElement>): void {
-        props.onChange(parseInt(e.target.value));
-        if (e.target.value.length > maxChars) {
+        const value = parseInt(e.target.value)
+        if (value > maxValue) {
             e.target.value = String(maxValue)
+        } else if (value < minValue) {
+            e.target.value = String(minValue)
         }
+        props.onChange(value);
     }
 
     return <div id={'number-input'}>
         <label>Number to test</label>
-        <input ref={inputRef} type={'number'} defaultValue={DEFAULT_DIVIDEND} maxLength={maxChars} max={maxValue}
+        <input ref={inputRef} type={'number'} defaultValue={DEFAULT_DIVIDEND} maxLength={6} max={maxValue} min={minValue}
                onChange={(e): void => onChange(e)}/>
     </div>;
 }
