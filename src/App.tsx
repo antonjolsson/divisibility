@@ -131,7 +131,12 @@ function Table(props: {number: number}): ReactElement {
             divides: getDigitSum(props.number) % 3 === 0
         },
         {divisor: 4, name: 'Last two digits', explanation: '', divides: divisibleBy4(props.number)},
-        {divisor: 5, name: 'End in 0 or 5', explanation: '', divides: [0, 5].includes(getNLastDigits(props.number, 1))},
+        {
+            divisor: 5,
+            name: 'End in 0 or 5',
+            explanation: 'An integer is divisible by 5 if it ends in 0 or 5',
+            divides: [0, 5].includes(getNLastDigits(props.number, 1))
+        },
         {divisor: 6, name: 'Divisible by 2 and 3', explanation: '', divides: isEvenLongVersion(props.number) && getDigitSum(props.number) % 3 === 0},
         {divisor: 7, name: '5 x last + rest', explanation: '', divides: divisibleBy7(props.number)},
         {divisor: 8, name: 'Last 3 digits', explanation: '', divides: isEvenLongVersion(getNLastDigits(props.number, 3) / 2 / 2)},
@@ -141,7 +146,12 @@ function Table(props: {number: number}): ReactElement {
             explanation: 'An integer is divisible by 9 if the sum of its digits is',
             divides: getDigitSum(props.number) % 9 === 0
         },
-        {divisor: 10, name: 'End in 0', explanation: '', divides: getNLastDigits(props.number, 1) === 0},
+        {
+            divisor: 10,
+            name: 'End in 0',
+            explanation: 'An integer is divisible by 10 if ends with 0',
+            divides: getNLastDigits(props.number, 1) === 0
+        },
         {divisor: 11, name: 'Alternating sum', explanation: '', divides: divisibleBy11(props.number)},
         {divisor: 12, name: 'Divisible by 3 and 4', explanation: '', divides: getDigitSum(props.number) % 3 === 0 && divisibleBy4(props.number)}
     ]

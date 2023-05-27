@@ -1,0 +1,793 @@
+#expl-window-container {
+  width: 0;
+  height: 0;
+  position: fixed;
+  background-color: white;
+  box-shadow: 7px 8px 20px 0 rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  animation: 0.5s grow forwards;
+}
+#expl-window-container #expl-window-bg {
+  position: absolute;
+  background-image: url("../public/bg.jpg");
+  background-size: 79em;
+  opacity: 0.3;
+  background-color: red;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#expl-window-container #expl-window {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#expl-window-container #expl-window .headline {
+  font-size: 2.5em;
+  font-weight: 700;
+  line-height: 0;
+  margin-bottom: 1.1em;
+  margin-top: 0.7em;
+}
+#expl-window-container #expl-window #explanation {
+  font-size: 1.1em;
+  font-weight: 400;
+  margin-bottom: 0.5em;
+}
+#expl-window-container #expl-window h1 {
+  font-size: 3em;
+}
+#expl-window-container #expl-window .divisor, #expl-window-container #expl-window .not-divisor {
+  line-height: 0.4em;
+}
+#expl-window-container #expl-window #demonstration1.divisor span {
+  animation: 0.5s color-change-lightgreen forwards 1s;
+}
+#expl-window-container #expl-window #demonstration1.not-divisor span {
+  animation: 0.5s color-change-red forwards 1s;
+}
+#expl-window-container #expl-window #demonstration2.divisor span {
+  animation: 0.5s color-change-lightgreen-translate forwards 1s;
+}
+#expl-window-container #expl-window #demonstration2.not-divisor span {
+  animation: 0.5s color-change-red-translate forwards 1s;
+}
+#expl-window-container #expl-window #demonstration3 {
+  overflow: auto;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+}
+#expl-window-container #expl-window #demonstration3 #row0 {
+  margin: 0;
+  opacity: 0;
+  animation: 2.01s fade-in-slide-down forwards 0s;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#expl-window-container #expl-window #demonstration3 #row0 .operator {
+  opacity: 0;
+  animation: 0.51s reveal-operators forwards 2.49s;
+}
+#expl-window-container #expl-window #demonstration3 #row0 .digit:first-child:not(:last-child) {
+  margin-right: -2%;
+  animation: 0.51s translate-left forwards 2.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row0 .digit:not(:last-child):not(:first-child) {
+  margin-left: -2%;
+  margin-right: -2%;
+  animation: 0.51s translate-left-right forwards 2.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row0 .digit:last-child:not(:first-child) {
+  margin-left: -2%;
+  animation: 0.51s translate-right forwards 2.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row0.divisor .digit:only-child {
+  animation: 0.5s color-change-lightgreen forwards 2.52s;
+}
+#expl-window-container #expl-window #demonstration3 #row0.not-divisor .digit:only-child {
+  animation: 0.5s color-change-red forwards 2.52s;
+}
+#expl-window-container #expl-window #demonstration3 #row1 {
+  margin: 0;
+  opacity: 0;
+  animation: 2.01s fade-in-slide-down forwards 3s;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#expl-window-container #expl-window #demonstration3 #row1 .operator {
+  opacity: 0;
+  animation: 0.51s reveal-operators forwards 5.49s;
+}
+#expl-window-container #expl-window #demonstration3 #row1 .digit:first-child:not(:last-child) {
+  margin-right: -2%;
+  animation: 0.51s translate-left forwards 5.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row1 .digit:not(:last-child):not(:first-child) {
+  margin-left: -2%;
+  margin-right: -2%;
+  animation: 0.51s translate-left-right forwards 5.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row1 .digit:last-child:not(:first-child) {
+  margin-left: -2%;
+  animation: 0.51s translate-right forwards 5.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row1.divisor .digit:only-child {
+  animation: 0.5s color-change-lightgreen forwards 5.52s;
+}
+#expl-window-container #expl-window #demonstration3 #row1.not-divisor .digit:only-child {
+  animation: 0.5s color-change-red forwards 5.52s;
+}
+#expl-window-container #expl-window #demonstration3 #row2 {
+  margin: 0;
+  opacity: 0;
+  animation: 2.01s fade-in-slide-down forwards 6s;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#expl-window-container #expl-window #demonstration3 #row2 .operator {
+  opacity: 0;
+  animation: 0.51s reveal-operators forwards 8.49s;
+}
+#expl-window-container #expl-window #demonstration3 #row2 .digit:first-child:not(:last-child) {
+  margin-right: -2%;
+  animation: 0.51s translate-left forwards 8.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row2 .digit:not(:last-child):not(:first-child) {
+  margin-left: -2%;
+  margin-right: -2%;
+  animation: 0.51s translate-left-right forwards 8.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row2 .digit:last-child:not(:first-child) {
+  margin-left: -2%;
+  animation: 0.51s translate-right forwards 8.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row2.divisor .digit:only-child {
+  animation: 0.5s color-change-lightgreen forwards 8.52s;
+}
+#expl-window-container #expl-window #demonstration3 #row2.not-divisor .digit:only-child {
+  animation: 0.5s color-change-red forwards 8.52s;
+}
+#expl-window-container #expl-window #demonstration3 #row3 {
+  margin: 0;
+  opacity: 0;
+  animation: 2.01s fade-in-slide-down forwards 9s;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#expl-window-container #expl-window #demonstration3 #row3 .operator {
+  opacity: 0;
+  animation: 0.51s reveal-operators forwards 11.49s;
+}
+#expl-window-container #expl-window #demonstration3 #row3 .digit:first-child:not(:last-child) {
+  margin-right: -2%;
+  animation: 0.51s translate-left forwards 11.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row3 .digit:not(:last-child):not(:first-child) {
+  margin-left: -2%;
+  margin-right: -2%;
+  animation: 0.51s translate-left-right forwards 11.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row3 .digit:last-child:not(:first-child) {
+  margin-left: -2%;
+  animation: 0.51s translate-right forwards 11.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row3.divisor .digit:only-child {
+  animation: 0.5s color-change-lightgreen forwards 11.52s;
+}
+#expl-window-container #expl-window #demonstration3 #row3.not-divisor .digit:only-child {
+  animation: 0.5s color-change-red forwards 11.52s;
+}
+#expl-window-container #expl-window #demonstration3 #row4 {
+  margin: 0;
+  opacity: 0;
+  animation: 2.01s fade-in-slide-down forwards 12s;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#expl-window-container #expl-window #demonstration3 #row4 .operator {
+  opacity: 0;
+  animation: 0.51s reveal-operators forwards 14.49s;
+}
+#expl-window-container #expl-window #demonstration3 #row4 .digit:first-child:not(:last-child) {
+  margin-right: -2%;
+  animation: 0.51s translate-left forwards 14.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row4 .digit:not(:last-child):not(:first-child) {
+  margin-left: -2%;
+  margin-right: -2%;
+  animation: 0.51s translate-left-right forwards 14.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row4 .digit:last-child:not(:first-child) {
+  margin-left: -2%;
+  animation: 0.51s translate-right forwards 14.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row4.divisor .digit:only-child {
+  animation: 0.5s color-change-lightgreen forwards 14.52s;
+}
+#expl-window-container #expl-window #demonstration3 #row4.not-divisor .digit:only-child {
+  animation: 0.5s color-change-red forwards 14.52s;
+}
+#expl-window-container #expl-window #demonstration3 #row5 {
+  margin: 0;
+  opacity: 0;
+  animation: 2.01s fade-in-slide-down forwards 15s;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#expl-window-container #expl-window #demonstration3 #row5 .operator {
+  opacity: 0;
+  animation: 0.51s reveal-operators forwards 17.49s;
+}
+#expl-window-container #expl-window #demonstration3 #row5 .digit:first-child:not(:last-child) {
+  margin-right: -2%;
+  animation: 0.51s translate-left forwards 17.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row5 .digit:not(:last-child):not(:first-child) {
+  margin-left: -2%;
+  margin-right: -2%;
+  animation: 0.51s translate-left-right forwards 17.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row5 .digit:last-child:not(:first-child) {
+  margin-left: -2%;
+  animation: 0.51s translate-right forwards 17.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row5.divisor .digit:only-child {
+  animation: 0.5s color-change-lightgreen forwards 17.52s;
+}
+#expl-window-container #expl-window #demonstration3 #row5.not-divisor .digit:only-child {
+  animation: 0.5s color-change-red forwards 17.52s;
+}
+#expl-window-container #expl-window #demonstration3 #row6 {
+  margin: 0;
+  opacity: 0;
+  animation: 2.01s fade-in-slide-down forwards 18s;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#expl-window-container #expl-window #demonstration3 #row6 .operator {
+  opacity: 0;
+  animation: 0.51s reveal-operators forwards 20.49s;
+}
+#expl-window-container #expl-window #demonstration3 #row6 .digit:first-child:not(:last-child) {
+  margin-right: -2%;
+  animation: 0.51s translate-left forwards 20.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row6 .digit:not(:last-child):not(:first-child) {
+  margin-left: -2%;
+  margin-right: -2%;
+  animation: 0.51s translate-left-right forwards 20.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row6 .digit:last-child:not(:first-child) {
+  margin-left: -2%;
+  animation: 0.51s translate-right forwards 20.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row6.divisor .digit:only-child {
+  animation: 0.5s color-change-lightgreen forwards 20.52s;
+}
+#expl-window-container #expl-window #demonstration3 #row6.not-divisor .digit:only-child {
+  animation: 0.5s color-change-red forwards 20.52s;
+}
+#expl-window-container #expl-window #demonstration3 #row7 {
+  margin: 0;
+  opacity: 0;
+  animation: 2.01s fade-in-slide-down forwards 21s;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#expl-window-container #expl-window #demonstration3 #row7 .operator {
+  opacity: 0;
+  animation: 0.51s reveal-operators forwards 23.49s;
+}
+#expl-window-container #expl-window #demonstration3 #row7 .digit:first-child:not(:last-child) {
+  margin-right: -2%;
+  animation: 0.51s translate-left forwards 23.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row7 .digit:not(:last-child):not(:first-child) {
+  margin-left: -2%;
+  margin-right: -2%;
+  animation: 0.51s translate-left-right forwards 23.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row7 .digit:last-child:not(:first-child) {
+  margin-left: -2%;
+  animation: 0.51s translate-right forwards 23.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row7.divisor .digit:only-child {
+  animation: 0.5s color-change-lightgreen forwards 23.52s;
+}
+#expl-window-container #expl-window #demonstration3 #row7.not-divisor .digit:only-child {
+  animation: 0.5s color-change-red forwards 23.52s;
+}
+#expl-window-container #expl-window #demonstration3 #row8 {
+  margin: 0;
+  opacity: 0;
+  animation: 2.01s fade-in-slide-down forwards 24s;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#expl-window-container #expl-window #demonstration3 #row8 .operator {
+  opacity: 0;
+  animation: 0.51s reveal-operators forwards 26.49s;
+}
+#expl-window-container #expl-window #demonstration3 #row8 .digit:first-child:not(:last-child) {
+  margin-right: -2%;
+  animation: 0.51s translate-left forwards 26.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row8 .digit:not(:last-child):not(:first-child) {
+  margin-left: -2%;
+  margin-right: -2%;
+  animation: 0.51s translate-left-right forwards 26.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row8 .digit:last-child:not(:first-child) {
+  margin-left: -2%;
+  animation: 0.51s translate-right forwards 26.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row8.divisor .digit:only-child {
+  animation: 0.5s color-change-lightgreen forwards 26.52s;
+}
+#expl-window-container #expl-window #demonstration3 #row8.not-divisor .digit:only-child {
+  animation: 0.5s color-change-red forwards 26.52s;
+}
+#expl-window-container #expl-window #demonstration3 #row9 {
+  margin: 0;
+  opacity: 0;
+  animation: 2.01s fade-in-slide-down forwards 27s;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#expl-window-container #expl-window #demonstration3 #row9 .operator {
+  opacity: 0;
+  animation: 0.51s reveal-operators forwards 29.49s;
+}
+#expl-window-container #expl-window #demonstration3 #row9 .digit:first-child:not(:last-child) {
+  margin-right: -2%;
+  animation: 0.51s translate-left forwards 29.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row9 .digit:not(:last-child):not(:first-child) {
+  margin-left: -2%;
+  margin-right: -2%;
+  animation: 0.51s translate-left-right forwards 29.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row9 .digit:last-child:not(:first-child) {
+  margin-left: -2%;
+  animation: 0.51s translate-right forwards 29.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row9.divisor .digit:only-child {
+  animation: 0.5s color-change-lightgreen forwards 29.52s;
+}
+#expl-window-container #expl-window #demonstration3 #row9.not-divisor .digit:only-child {
+  animation: 0.5s color-change-red forwards 29.52s;
+}
+#expl-window-container #expl-window #demonstration3 #row10 {
+  margin: 0;
+  opacity: 0;
+  animation: 2.01s fade-in-slide-down forwards 30s;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#expl-window-container #expl-window #demonstration3 #row10 .operator {
+  opacity: 0;
+  animation: 0.51s reveal-operators forwards 32.49s;
+}
+#expl-window-container #expl-window #demonstration3 #row10 .digit:first-child:not(:last-child) {
+  margin-right: -2%;
+  animation: 0.51s translate-left forwards 32.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row10 .digit:not(:last-child):not(:first-child) {
+  margin-left: -2%;
+  margin-right: -2%;
+  animation: 0.51s translate-left-right forwards 32.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row10 .digit:last-child:not(:first-child) {
+  margin-left: -2%;
+  animation: 0.51s translate-right forwards 32.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row10.divisor .digit:only-child {
+  animation: 0.5s color-change-lightgreen forwards 32.52s;
+}
+#expl-window-container #expl-window #demonstration3 #row10.not-divisor .digit:only-child {
+  animation: 0.5s color-change-red forwards 32.52s;
+}
+#expl-window-container #expl-window #demonstration3 #row11 {
+  margin: 0;
+  opacity: 0;
+  animation: 2.01s fade-in-slide-down forwards 33s;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#expl-window-container #expl-window #demonstration3 #row11 .operator {
+  opacity: 0;
+  animation: 0.51s reveal-operators forwards 35.49s;
+}
+#expl-window-container #expl-window #demonstration3 #row11 .digit:first-child:not(:last-child) {
+  margin-right: -2%;
+  animation: 0.51s translate-left forwards 35.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row11 .digit:not(:last-child):not(:first-child) {
+  margin-left: -2%;
+  margin-right: -2%;
+  animation: 0.51s translate-left-right forwards 35.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row11 .digit:last-child:not(:first-child) {
+  margin-left: -2%;
+  animation: 0.51s translate-right forwards 35.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row11.divisor .digit:only-child {
+  animation: 0.5s color-change-lightgreen forwards 35.52s;
+}
+#expl-window-container #expl-window #demonstration3 #row11.not-divisor .digit:only-child {
+  animation: 0.5s color-change-red forwards 35.52s;
+}
+#expl-window-container #expl-window #demonstration3 #row12 {
+  margin: 0;
+  opacity: 0;
+  animation: 2.01s fade-in-slide-down forwards 36s;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#expl-window-container #expl-window #demonstration3 #row12 .operator {
+  opacity: 0;
+  animation: 0.51s reveal-operators forwards 38.49s;
+}
+#expl-window-container #expl-window #demonstration3 #row12 .digit:first-child:not(:last-child) {
+  margin-right: -2%;
+  animation: 0.51s translate-left forwards 38.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row12 .digit:not(:last-child):not(:first-child) {
+  margin-left: -2%;
+  margin-right: -2%;
+  animation: 0.51s translate-left-right forwards 38.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row12 .digit:last-child:not(:first-child) {
+  margin-left: -2%;
+  animation: 0.51s translate-right forwards 38.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row12.divisor .digit:only-child {
+  animation: 0.5s color-change-lightgreen forwards 38.52s;
+}
+#expl-window-container #expl-window #demonstration3 #row12.not-divisor .digit:only-child {
+  animation: 0.5s color-change-red forwards 38.52s;
+}
+#expl-window-container #expl-window #demonstration3 #row13 {
+  margin: 0;
+  opacity: 0;
+  animation: 2.01s fade-in-slide-down forwards 39s;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#expl-window-container #expl-window #demonstration3 #row13 .operator {
+  opacity: 0;
+  animation: 0.51s reveal-operators forwards 41.49s;
+}
+#expl-window-container #expl-window #demonstration3 #row13 .digit:first-child:not(:last-child) {
+  margin-right: -2%;
+  animation: 0.51s translate-left forwards 41.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row13 .digit:not(:last-child):not(:first-child) {
+  margin-left: -2%;
+  margin-right: -2%;
+  animation: 0.51s translate-left-right forwards 41.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row13 .digit:last-child:not(:first-child) {
+  margin-left: -2%;
+  animation: 0.51s translate-right forwards 41.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row13.divisor .digit:only-child {
+  animation: 0.5s color-change-lightgreen forwards 41.52s;
+}
+#expl-window-container #expl-window #demonstration3 #row13.not-divisor .digit:only-child {
+  animation: 0.5s color-change-red forwards 41.52s;
+}
+#expl-window-container #expl-window #demonstration3 #row14 {
+  margin: 0;
+  opacity: 0;
+  animation: 2.01s fade-in-slide-down forwards 42s;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#expl-window-container #expl-window #demonstration3 #row14 .operator {
+  opacity: 0;
+  animation: 0.51s reveal-operators forwards 44.49s;
+}
+#expl-window-container #expl-window #demonstration3 #row14 .digit:first-child:not(:last-child) {
+  margin-right: -2%;
+  animation: 0.51s translate-left forwards 44.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row14 .digit:not(:last-child):not(:first-child) {
+  margin-left: -2%;
+  margin-right: -2%;
+  animation: 0.51s translate-left-right forwards 44.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row14 .digit:last-child:not(:first-child) {
+  margin-left: -2%;
+  animation: 0.51s translate-right forwards 44.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row14.divisor .digit:only-child {
+  animation: 0.5s color-change-lightgreen forwards 44.52s;
+}
+#expl-window-container #expl-window #demonstration3 #row14.not-divisor .digit:only-child {
+  animation: 0.5s color-change-red forwards 44.52s;
+}
+#expl-window-container #expl-window #demonstration3 #row15 {
+  margin: 0;
+  opacity: 0;
+  animation: 2.01s fade-in-slide-down forwards 45s;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#expl-window-container #expl-window #demonstration3 #row15 .operator {
+  opacity: 0;
+  animation: 0.51s reveal-operators forwards 47.49s;
+}
+#expl-window-container #expl-window #demonstration3 #row15 .digit:first-child:not(:last-child) {
+  margin-right: -2%;
+  animation: 0.51s translate-left forwards 47.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row15 .digit:not(:last-child):not(:first-child) {
+  margin-left: -2%;
+  margin-right: -2%;
+  animation: 0.51s translate-left-right forwards 47.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row15 .digit:last-child:not(:first-child) {
+  margin-left: -2%;
+  animation: 0.51s translate-right forwards 47.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row15.divisor .digit:only-child {
+  animation: 0.5s color-change-lightgreen forwards 47.52s;
+}
+#expl-window-container #expl-window #demonstration3 #row15.not-divisor .digit:only-child {
+  animation: 0.5s color-change-red forwards 47.52s;
+}
+#expl-window-container #expl-window #demonstration3 #row16 {
+  margin: 0;
+  opacity: 0;
+  animation: 2.01s fade-in-slide-down forwards 48s;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#expl-window-container #expl-window #demonstration3 #row16 .operator {
+  opacity: 0;
+  animation: 0.51s reveal-operators forwards 50.49s;
+}
+#expl-window-container #expl-window #demonstration3 #row16 .digit:first-child:not(:last-child) {
+  margin-right: -2%;
+  animation: 0.51s translate-left forwards 50.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row16 .digit:not(:last-child):not(:first-child) {
+  margin-left: -2%;
+  margin-right: -2%;
+  animation: 0.51s translate-left-right forwards 50.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row16 .digit:last-child:not(:first-child) {
+  margin-left: -2%;
+  animation: 0.51s translate-right forwards 50.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row16.divisor .digit:only-child {
+  animation: 0.5s color-change-lightgreen forwards 50.52s;
+}
+#expl-window-container #expl-window #demonstration3 #row16.not-divisor .digit:only-child {
+  animation: 0.5s color-change-red forwards 50.52s;
+}
+#expl-window-container #expl-window #demonstration3 #row17 {
+  margin: 0;
+  opacity: 0;
+  animation: 2.01s fade-in-slide-down forwards 51s;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#expl-window-container #expl-window #demonstration3 #row17 .operator {
+  opacity: 0;
+  animation: 0.51s reveal-operators forwards 53.49s;
+}
+#expl-window-container #expl-window #demonstration3 #row17 .digit:first-child:not(:last-child) {
+  margin-right: -2%;
+  animation: 0.51s translate-left forwards 53.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row17 .digit:not(:last-child):not(:first-child) {
+  margin-left: -2%;
+  margin-right: -2%;
+  animation: 0.51s translate-left-right forwards 53.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row17 .digit:last-child:not(:first-child) {
+  margin-left: -2%;
+  animation: 0.51s translate-right forwards 53.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row17.divisor .digit:only-child {
+  animation: 0.5s color-change-lightgreen forwards 53.52s;
+}
+#expl-window-container #expl-window #demonstration3 #row17.not-divisor .digit:only-child {
+  animation: 0.5s color-change-red forwards 53.52s;
+}
+#expl-window-container #expl-window #demonstration3 #row18 {
+  margin: 0;
+  opacity: 0;
+  animation: 2.01s fade-in-slide-down forwards 54s;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#expl-window-container #expl-window #demonstration3 #row18 .operator {
+  opacity: 0;
+  animation: 0.51s reveal-operators forwards 56.49s;
+}
+#expl-window-container #expl-window #demonstration3 #row18 .digit:first-child:not(:last-child) {
+  margin-right: -2%;
+  animation: 0.51s translate-left forwards 56.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row18 .digit:not(:last-child):not(:first-child) {
+  margin-left: -2%;
+  margin-right: -2%;
+  animation: 0.51s translate-left-right forwards 56.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row18 .digit:last-child:not(:first-child) {
+  margin-left: -2%;
+  animation: 0.51s translate-right forwards 56.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row18.divisor .digit:only-child {
+  animation: 0.5s color-change-lightgreen forwards 56.52s;
+}
+#expl-window-container #expl-window #demonstration3 #row18.not-divisor .digit:only-child {
+  animation: 0.5s color-change-red forwards 56.52s;
+}
+#expl-window-container #expl-window #demonstration3 #row19 {
+  margin: 0;
+  opacity: 0;
+  animation: 2.01s fade-in-slide-down forwards 57s;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#expl-window-container #expl-window #demonstration3 #row19 .operator {
+  opacity: 0;
+  animation: 0.51s reveal-operators forwards 59.49s;
+}
+#expl-window-container #expl-window #demonstration3 #row19 .digit:first-child:not(:last-child) {
+  margin-right: -2%;
+  animation: 0.51s translate-left forwards 59.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row19 .digit:not(:last-child):not(:first-child) {
+  margin-left: -2%;
+  margin-right: -2%;
+  animation: 0.51s translate-left-right forwards 59.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row19 .digit:last-child:not(:first-child) {
+  margin-left: -2%;
+  animation: 0.51s translate-right forwards 59.01s;
+}
+#expl-window-container #expl-window #demonstration3 #row19.divisor .digit:only-child {
+  animation: 0.5s color-change-lightgreen forwards 59.52s;
+}
+#expl-window-container #expl-window #demonstration3 #row19.not-divisor .digit:only-child {
+  animation: 0.5s color-change-red forwards 59.52s;
+}
+@keyframes translate-left {
+  from {
+    margin-right: -2%;
+  }
+  to {
+    margin-right: 3%;
+  }
+}
+@keyframes translate-left-right {
+  from {
+    margin-right: -2%;
+    margin-left: -2%;
+  }
+  to {
+    margin-left: 3%;
+    margin-right: 3%;
+  }
+}
+@keyframes translate-right {
+  from {
+    margin-left: -15%;
+  }
+  to {
+    margin-left: 10%;
+  }
+}
+@keyframes reveal-operators {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in-slide-down {
+  0% {
+    margin: 0;
+    opacity: 0;
+  }
+  50% {
+    margin-top: 0.7em;
+    margin-bottom: 0.1em;
+    opacity: 0;
+  }
+  100% {
+    margin-top: 0.7em;
+    margin-bottom: 0.1em;
+    opacity: 1;
+  }
+}
+@keyframes color-change-lightgreen-translate {
+  from {
+    color: black;
+  }
+  to {
+    color: lightgreen;
+    margin-left: 0.5em;
+  }
+}
+@keyframes color-change-red-translate {
+  from {
+    color: black;
+  }
+  to {
+    color: red;
+    margin-left: 0.5em;
+  }
+}
+@keyframes color-change-lightgreen {
+  from {
+    color: black;
+  }
+  to {
+    color: lightgreen;
+    margin-left: 0em;
+  }
+}
+@keyframes color-change-red {
+  from {
+    color: black;
+  }
+  to {
+    color: red;
+    margin-left: 0em;
+  }
+}
+
+@keyframes grow {
+  from {
+    width: 0;
+    height: 0;
+  }
+  to {
+    width: 40em;
+    height: 25em;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/*# sourceMappingURL=ExplanationWindow.css.map */

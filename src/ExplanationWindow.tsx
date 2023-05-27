@@ -1,7 +1,8 @@
 import React, {ReactElement} from "react";
 import {getDigitSum, IRule} from "./App";
+import './ExplanationWindow.css'
 
-function Demonstration2(props: {dividend: number, divides: boolean}): ReactElement {
+function Lastdigit(props: {dividend: number, divides: boolean}): ReactElement {
     const dividendString = String(props.dividend)
     const firstDigits = dividendString.split('').slice(0, dividendString.length - 1)
     const lastDigit = dividendString.split('').at(-1)
@@ -48,7 +49,7 @@ function getDemonstration(ruleNumber: number, dividend: number, divides: boolean
         case 1: return <Demonstration1 dividend={dividend} divides={divides}/>
         case 3: return <DigitSum dividend={dividend} divides={divides}/>
         case 9: return <DigitSum dividend={dividend} divides={divides}/>
-        default: return <Demonstration2 dividend={dividend} divides={divides}/>
+        default: return <Lastdigit dividend={dividend} divides={divides}/>
     }
 }
 
