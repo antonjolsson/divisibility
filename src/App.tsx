@@ -69,17 +69,24 @@ function getNumberAsDigits(number: number): number[] {
     return str.split('').map(s => parseInt(s));
 }
 
-function divisibleBy11(number: number): boolean {
+export function getAlternatingSum(dividend: number,
+                           continueCondition: (number: number, tries: number) => boolean): number {
     let tries = 0
-    while (number > 11 && tries++ < 100) {
-        number = getNumberAsDigits(number)
+    while (continueCondition(dividend, tries++)) {
+        dividend = getNumberAsDigits(dividend)
             .reduce((acc, curr, i) => {
                 if (i === 0) return acc
                 if (i % 2 === 0) return acc + curr
                 return acc - curr
             }) // Alternating sum!
+        console.log(dividend)
     }
-    return [0, 11].includes(number);
+    return dividend;
+}
+
+function divisibleBy11(dividend: number): boolean {
+    dividend = getAlternatingSum(dividend, (number: number, tries: number) => number > 11 && tries < 100);
+    return [0, 11].includes(dividend);
 }
 
 function divisibleBy4(number: number): boolean {
@@ -152,7 +159,12 @@ function Table(props: {number: number}): ReactElement {
             explanation: 'An integer is divisible by 10 if ends with 0',
             divides: getNLastDigits(props.number, 1) === 0
         },
-        {divisor: 11, name: 'Alternating sum', explanation: '', divides: divisibleBy11(props.number)},
+        {
+            divisor: 11,
+            name: 'Alternating sum',
+            explanation: 'An integer is divisible by 11 if its alternating sum (alternatingly - and +) is',
+            divides: divisibleBy11(props.number)
+        },
         {divisor: 12, name: 'Divisible by 3 and 4', explanation: '', divides: getDigitSum(props.number) % 3 === 0 && divisibleBy4(props.number)}
     ]
 

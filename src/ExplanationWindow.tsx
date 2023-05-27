@@ -1,5 +1,5 @@
 import React, {ReactElement} from "react";
-import {getDigitSum, IRule} from "./App";
+import {getAlternatingSum, getDigitSum, IRule} from "./App";
 import './ExplanationWindow.css'
 
 function Lastdigit(props: {dividend: number, divides: boolean}): ReactElement {
@@ -16,29 +16,44 @@ function Demonstration1(props: { divides: boolean, dividend: number }): ReactEle
     </h1>;
 }
 
-function DigitSum(props: { divides: boolean, dividend: number }): ReactElement {
+function DigitSum(props: { divides: boolean, dividend: number, alternating: boolean, divisor: number }): ReactElement {
     // eslint-disable-next-line jsx-a11y/heading-has-content
     const sums : number[] = []
     let dividend = props.dividend
     sums.push(dividend)
-    while (dividend > 10) {
-        const sum = getDigitSum(dividend)
+    while (dividend > 9 && dividend > props.divisor) {
+        const sum = props.alternating
+            ? getAlternatingSum(dividend, (number, tries) => number > props.divisor && tries < 100)
+            : getDigitSum(dividend)
         sums.push(sum)
         dividend = sum
         console.log(sums)
     }
     console.log(sums)
 
-    function addPluses(strings: string[]): string[] {
-        return strings.length === 1 ? strings :
-            strings.map((str, i) => [str].concat((i < strings.length - 1) ? ['+'] : ['='])).flat()
+    function getOperator(i: number, digits: string[]): string {
+        if (i < digits.length - 1) {
+            return (props.alternating && i % 2 === 0) ? '-' : '+'
+        }
+        return '='
+    }
+
+    function addOperators(digits: string[]): string[] {
+        // Alternate digits with operators unless number less than 10 or dividend
+        return (digits.length === 1 || parseInt(digits.join('')) <= props.divisor)? digits :
+            digits.map((str, i) => [str].concat([getOperator(i, digits)])).flat()
+    }
+
+    function getChars(sum: number): string[] {
+        const string = String(sum)
+        return (sum < 9 || sum <= props.divisor) ? [string] : string.split('')
     }
 
     return <div id={'demonstration3'}>
         {/* Need to reverse the array and ID:s to keep scrollbar scrolled to the bottom during animations */}
         {sums.reverse().map((sum, i, arr) => <h1 key={i} className={props.divides ? 'divisor' : 'not-divisor'}
                                                  id={'row' + String(arr.length - 1 - i)}>
-            {addPluses(String(sum).split('')).map((v, i) => <span key={i} className={i % 2 === 1 ? 'operator' : 'digit'}>{v}</span>)}
+            {addOperators(getChars(sum)).map((v, i) => <span key={i} className={i % 2 === 1 ? 'operator' : 'digit'}>{v}</span>)}
         </h1>)}
     </div>;
 }
@@ -47,8 +62,9 @@ function getDemonstration(ruleNumber: number, dividend: number, divides: boolean
     console.log(divides)
     switch (ruleNumber) {
         case 1: return <Demonstration1 dividend={dividend} divides={divides}/>
-        case 3: return <DigitSum dividend={dividend} divides={divides}/>
-        case 9: return <DigitSum dividend={dividend} divides={divides}/>
+        case 3: return <DigitSum dividend={dividend} divides={divides} alternating={false} divisor={3}/>
+        case 9: return <DigitSum dividend={dividend} divides={divides} alternating={false} divisor={9}/>
+        case 11: return <DigitSum dividend={dividend} divides={divides} alternating={true} divisor={11}/>
         default: return <Lastdigit dividend={dividend} divides={divides}/>
     }
 }
