@@ -45,7 +45,7 @@ function TableRow(props: { entries: string[], marked: boolean, markedRank: numbe
     </div>;
 }
 
-function getDigitSum(number: number): number {
+export function getDigitSum(number: number): number {
     return String(number)
         .split('')
         .map(s => parseInt(s))
@@ -135,7 +135,12 @@ function Table(props: {number: number}): ReactElement {
         {divisor: 6, name: 'Divisible by 2 and 3', explanation: '', divides: isEvenLongVersion(props.number) && getDigitSum(props.number) % 3 === 0},
         {divisor: 7, name: '5 x last + rest', explanation: '', divides: divisibleBy7(props.number)},
         {divisor: 8, name: 'Last 3 digits', explanation: '', divides: isEvenLongVersion(getNLastDigits(props.number, 3) / 2 / 2)},
-        {divisor: 9, name: 'Digit sum', explanation: '', divides: getDigitSum(props.number) % 9 === 0},
+        {
+            divisor: 9,
+            name: 'Digit sum',
+            explanation: 'An integer is divisible by 9 if the sum of its digits is',
+            divides: getDigitSum(props.number) % 9 === 0
+        },
         {divisor: 10, name: 'End in 0', explanation: '', divides: getNLastDigits(props.number, 1) === 0},
         {divisor: 11, name: 'Alternating sum', explanation: '', divides: divisibleBy11(props.number)},
         {divisor: 12, name: 'Divisible by 3 and 4', explanation: '', divides: getDigitSum(props.number) % 3 === 0 && divisibleBy4(props.number)}

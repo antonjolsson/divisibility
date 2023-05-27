@@ -1,5 +1,5 @@
 import React, {ReactElement} from "react";
-import {IRule} from "./App";
+import {getDigitSum, IRule} from "./App";
 
 function Demonstration2(props: {dividend: number, divides: boolean}): ReactElement {
     const dividendString = String(props.dividend)
@@ -15,14 +15,7 @@ function Demonstration1(props: { divides: boolean, dividend: number }): ReactEle
     </h1>;
 }
 
-function getDigitSum(dividend: number): number {
-    const digits = String(dividend).split('')
-    return digits
-        .map(str => parseInt(str))
-        .reduce((p, c) => p + c)
-}
-
-function Demonstration3(props: { divides: boolean, dividend: number }): ReactElement {
+function DigitSum(props: { divides: boolean, dividend: number }): ReactElement {
     // eslint-disable-next-line jsx-a11y/heading-has-content
     const sums : number[] = []
     let dividend = props.dividend
@@ -53,7 +46,8 @@ function getDemonstration(ruleNumber: number, dividend: number, divides: boolean
     console.log(divides)
     switch (ruleNumber) {
         case 1: return <Demonstration1 dividend={dividend} divides={divides}/>
-        case 3: return <Demonstration3 dividend={dividend} divides={divides}/>
+        case 3: return <DigitSum dividend={dividend} divides={divides}/>
+        case 9: return <DigitSum dividend={dividend} divides={divides}/>
         default: return <Demonstration2 dividend={dividend} divides={divides}/>
     }
 }
