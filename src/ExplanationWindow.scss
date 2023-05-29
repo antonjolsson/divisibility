@@ -44,13 +44,14 @@
             font-weight: 400;
             margin-bottom: 0.5em;
             width: 90%;
+            text-align: center;
         }
 
         h1 {
             font-size: 3em;
         }
 
-        .divisor, .not-divisor {
+        .divisor, .not-divisor, .division-row {
             line-height: 0.4em;
         }
 
@@ -64,23 +65,20 @@
             }
         }
 
-        #demonstration2 {
-            &.divisor span {
-                animation: $color-change-dur color-change-lightgreen-translate forwards 1s;
-            }
-
-            &.not-divisor span {
-                animation: $color-change-dur color-change-red-translate forwards 1s;
-            }
+        #demonstrationDigitSum {
+            flex-direction: column-reverse;
+            justify-content: flex-end;
         }
 
-        #demonstration3 {
-            overflow: auto;
+        #demonstrationLastNDigits {
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        #demonstrationLastNDigits, #demonstrationDigitSum {
             width: 80%;
             display: flex;
             align-items: center;
-            flex-direction: column-reverse;
-            justify-content: flex-end;
             $anim-dur: 3s;
             $margin-condensed: -2%;
             $margin-extended: 3%;
@@ -94,7 +92,21 @@
                     flex-direction: row;
                     justify-content: center;
 
-                    .operator {
+                    &.demonstrationLastDigit {
+                        &.divisor span {
+                            animation: $color-change-dur color-change-lightgreen-translate forwards $i * $anim-dur + 1s;
+                        }
+
+                        &.not-divisor span {
+                            animation: $color-change-dur color-change-red-translate forwards $i * $anim-dur + 1s;
+                        }
+                    }
+
+                    &.division-row span {
+                        margin-left: 0.3em;
+                    }
+
+                    &.division-row span, .operator {
                         opacity: 0;
                         animation: $anim-dur * 0.17 reveal-operators forwards ($i + 0.83) * $anim-dur;
                     }
@@ -223,7 +235,7 @@
     }
     to {
         width: 40em;
-        height: 25em;
+        height: 28em;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);

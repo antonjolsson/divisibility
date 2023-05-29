@@ -136,7 +136,12 @@ function Table(props: {number: number}): ReactElement {
             explanation: 'An integer is divisible by 3 if the sum of its digits is',
             divides: getDigitSum(props.number) % 3 === 0
         },
-        {divisor: 4, name: 'Last two digits', explanation: '', divides: divisibleBy4(props.number)},
+        {
+            divisor: 4,
+            name: 'Last two digits',
+            explanation: 'An integer is divisible by 4 if the last 2 digits are (can be divided by 2 and then checked if even)',
+            divides: divisibleBy4(props.number)
+        },
         {
             divisor: 5,
             name: 'End in 0 or 5',
@@ -145,7 +150,12 @@ function Table(props: {number: number}): ReactElement {
         },
         {divisor: 6, name: 'Divisible by 2 and 3', explanation: '', divides: isEvenLongVersion(props.number) && getDigitSum(props.number) % 3 === 0},
         {divisor: 7, name: '5 x last + rest', explanation: '', divides: divisibleBy7(props.number)},
-        {divisor: 8, name: 'Last 3 digits', explanation: '', divides: isEvenLongVersion(getNLastDigits(props.number, 3) / 2 / 2)},
+        {
+            divisor: 8,
+            name: 'Last 3 digits',
+            explanation: 'An integer is divisible by 8 if the last 3 digits are (can be divided by 2, twice, and then checked if even)',
+            divides: isEvenLongVersion(getNLastDigits(props.number, 3) / 2 / 2)
+        },
         {
             divisor: 9,
             name: 'Digit sum',
