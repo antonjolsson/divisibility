@@ -1,4 +1,4 @@
-import React, {ReactElement} from "react";
+import React, {ReactElement, useEffect, useState} from "react";
 import {getAlternatingSum, getDigitSum, IRule} from "./App";
 import './ExplanationWindow.css'
 
@@ -87,18 +87,34 @@ function getDemonstration(ruleNumber: number, dividend: number, divides: boolean
     }
 }
 
-export function ExplanationWindow(props: { coords: { x: number; y: number }, rule: IRule, dividend: number }): ReactElement {
+export function ExplanationWindow(props: { coords: { x: number; y: number }, rule: IRule, dividend: number,
+    show: boolean }): ReactElement {
+    const [show, setShow] = useState(false)
+    const [rootClassName, setRootClassName] = useState('')
+
+    useEffect(() => {
+        if (props.show) {
+            setRootClassName('grow')
+            setShow(true)
+        } else {
+            setRootClassName('fade-out')
+            setTimeout(() => setShow(false), 500)
+        }
+    }, [props.show])
+
     function stopPropagation(e: React.MouseEvent<HTMLDivElement>): void {
         e.stopPropagation()
     }
 
-    return <div id={'expl-window-container'} style={{left: props.coords.x, top: props.coords.y}}>
-        <div id={'expl-window-bg'}></div>
-        <div onClick={(e): void => stopPropagation(e)} id={'expl-window'}>
-            <h2 className={'headline'}>{`Divisor: ${props.rule.divisor}`}</h2>
-            <h2 className={'headline'}>{`Rule: ${props.rule.name}`}</h2>
-            <div id={'explanation'} dangerouslySetInnerHTML={{ __html: props.rule.explanation }}/>
-            {getDemonstration(props.rule.divisor, props.dividend, props.rule.divides)}
-        </div>
-    </div>;
+    return <>
+        {show && <div id={'expl-window-container'} className={rootClassName} style={{left: props.coords.x, top: props.coords.y}}>
+            <div id={'expl-window-bg'}></div>
+            <div onClick={(e): void => stopPropagation(e)} id={'expl-window'}>
+                <h2 className={'headline'}>{`Divisor: ${props.rule.divisor}`}</h2>
+                <h2 className={'headline'}>{`Rule: ${props.rule.name}`}</h2>
+                <div id={'explanation'} dangerouslySetInnerHTML={{__html: props.rule.explanation}}/>
+                {getDemonstration(props.rule.divisor, props.dividend, props.rule.divides)}
+            </div>
+        </div>}
+    </>
 }

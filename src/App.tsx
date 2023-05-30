@@ -238,7 +238,7 @@ function App(): ReactElement {
                               <h3>Memorable shortcuts for testing divisibility by natural numbers up to 12</h3>
                               <Input onChange={(n: number): void => setDividend(n)}/>
                               <Table number={dividend}/>
-                              {showExplanation && <ExplanationWindow coords={infoButtonCoordsForRule} rule={ruleExplained}
+                              {<ExplanationWindow show={showExplanation} coords={infoButtonCoordsForRule} rule={ruleExplained}
                                                                      dividend={dividend}/>}
                           </div>
                       </ExplainedRuleContext.Provider>

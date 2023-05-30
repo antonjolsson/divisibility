@@ -6,7 +6,40 @@
     box-shadow: 7px 8px 20px 0 rgba(0 0 0 / 0.5);
     z-index: 10;
 
-    animation: 0.5s grow forwards;
+    &.grow {
+        animation: 0.5s grow forwards;
+    }
+
+    @keyframes fade-in {
+        from {
+            opacity: 0
+        }
+        to {
+            opacity: 1
+        }
+    }
+
+    @keyframes fade-out {
+        from {
+            left: 50%;
+            top: 50%;
+            opacity: 1
+        }
+        to {
+            left: 50%;
+            top: 50%;
+            opacity: 0
+        }
+    }
+
+    &.fade-out {
+        width: 40em;
+        height: 28em;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        animation: 0.5s fade-out forwards;
+    }
 
     #expl-window-bg {
         position: absolute;
@@ -30,6 +63,8 @@
         align-items: center;
         flex-direction: column;
         $color-change-dur: 0.5s;
+
+        animation: 0.5s fade-in forwards;
 
         .headline {
             font-size: 2.5em;

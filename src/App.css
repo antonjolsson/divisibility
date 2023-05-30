@@ -149,14 +149,6 @@ html, body, #root {
 .App .rule #info-button12:hover {
   height: 1em;
 }
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 .App h2 {
   font-size: 1.1em;
 }
