@@ -115,25 +115,22 @@
             display: flex;
             align-items: center;
             $anim-dur: 3s;
-            $margin-condensed: -2%;
-            $margin-extended: 3%;
+            $margin-condensed: -0.2em;
+            $margin-extended: 0.1em;
             @for $i from 0 to 20 {
 
                 #row#{$i} {
                     margin: 0;
                     opacity: 0;
                     animation: $anim-dur * 0.67 fade-in-slide-down forwards $i * $anim-dur;
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: center;
 
                     &.demonstrationLastDigit {
                         &.divisor span {
-                            animation: $color-change-dur color-change-lightgreen-translate forwards $i * $anim-dur + 1s;
+                            animation: $color-change-dur * 2 color-change-lightgreen-translate forwards $i * $anim-dur + 1s;
                         }
 
                         &.not-divisor span {
-                            animation: $color-change-dur color-change-red-translate forwards $i * $anim-dur + 1s;
+                            animation: $color-change-dur * 2 color-change-red-translate forwards $i * $anim-dur + 1s;
                         }
                     }
 
@@ -141,9 +138,16 @@
                         margin-left: 0.3em;
                     }
 
+                    .operator {
+                        animation: $anim-dur * 0.17 reveal-operators forwards ($i + 0.83) * $anim-dur;
+                    }
+
+                    &.division-row span {
+                        animation: $anim-dur * 0.17 * 3 reveal-operators forwards ($i + 0.83) * $anim-dur * 0.5;
+                    }
+
                     &.division-row span, .operator {
                         opacity: 0;
-                        animation: $anim-dur * 0.17 reveal-operators forwards ($i + 0.83) * $anim-dur;
                     }
 
                     // Left-most digit (not single-digit number)
@@ -236,30 +240,44 @@
         }
     }
 
-    @mixin color-change($color, $margin-left) {
-        from {
+    @mixin color-change-translate($color, $margin-left) {
+        0% {
+            margin-left: 0;
             color: black;
         }
-        to {
+        50% {
+            color: black;;
+            margin-left: #{$margin-left}em;
+        }
+        100% {
             color: $color;
             margin-left: #{$margin-left}em;
         }
     }
 
+    @mixin color-change($color) {
+        from {
+            color: black;
+        }
+        to {
+            color: $color;
+        }
+    }
+
     @keyframes color-change-lightgreen-translate {
-        @include color-change(lightgreen, 0.5);
+        @include color-change-translate(lightgreen, 0.5);
     }
 
     @keyframes color-change-red-translate {
-        @include color-change(red, 0.5);
+        @include color-change-translate(red, 0.5);
     }
 
     @keyframes color-change-lightgreen {
-        @include color-change(lightgreen, 0);
+        @include color-change(lightgreen);
     }
 
     @keyframes color-change-red {
-        @include color-change(red, 0);
+        @include color-change(red);
     }
 }
 
