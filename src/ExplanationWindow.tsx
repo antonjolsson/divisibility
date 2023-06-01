@@ -1,8 +1,8 @@
 import React, {ReactElement, useEffect, useState} from "react";
-import {getAlternatingSum, getDigitSum, IRule} from "./App";
+import {get5XLastPlusRest, getAlternatingSum, getDigitSum, IRule} from "./App";
 import './ExplanationWindow.css'
 
-function LastNDigits(props: {dividend: number, divides: boolean, digits: number}): ReactElement {
+function LastNDigits(props: {dividend: number, divides: boolean, digits: number, className?: string}): ReactElement {
     const dividends = [props.dividend]
     let dividend = props.dividend
     let digits = props.digits
@@ -17,7 +17,7 @@ function LastNDigits(props: {dividend: number, divides: boolean, digits: number}
 
     console.log(dividends)
 
-    return <div id={'demonstrationLastNDigits'}>
+    return <div id={'demonstrationLastNDigits'} className={props.className ?? ''}>
     {dividends.map((v, i, arr) => i < arr.length - 1
         ? <h1 key={i} id={`row${i}`} className={'division-row'}>{v}
             <span>/ 2 = </span>
@@ -30,7 +30,7 @@ function LastNDigits(props: {dividend: number, divides: boolean, digits: number}
     </div>
 }
 
-function Demonstration1(props: { divides: boolean, dividend: number }): ReactElement {
+function Demo1(props: { divides: boolean, dividend: number }): ReactElement {
     return <h1 id={'demonstration1'} className={props.divides ? 'divisor' : 'not-divisor'}>
         <span>{props.dividend}</span>
     </h1>;
@@ -76,14 +76,41 @@ function DigitSum(props: { divides: boolean, dividend: number, alternating: bool
     </div>;
 }
 
+function Demo7(props: { divides: boolean, dividend: number }): ReactElement {
+    let dividend = props.dividend
+    const dividends = [dividend]
+    while (dividend > 98) {
+        dividend = get5XLastPlusRest(dividend)
+        dividends.push(dividend)
+    }
+    return <div id={'demo7'}>
+        {dividends
+            .reverse()
+            .map((dividend, i, arr) => {
+                const id = 'row' + String(arr.length - 1 - i)
+                    return (i === 0)
+                        ? <h1 key={i} className={`demo-last-row ${props.divides ? 'divisor' : 'not-divisor'}`} id={id}>
+                            <span>{dividend}</span></h1>
+                        : <h1 key={i} id={id}>
+                            <span id={'left-most-digits'}>{String(dividend).slice(0, -1)}</span>
+                            <span id={'hidden-equation-left-part'}> + 5 x </span>
+                            <span id={'right-most-digit'}>{String(dividend).at(-1)}</span>
+                            <span id={'hidden-equation-right-part'}>= {arr[i -  1]}</span>
+                        </h1>
+                }
+            )}
+    </div>
+}
+
 function getDemonstration(ruleNumber: number, dividend: number, divides: boolean): ReactElement {
     switch (ruleNumber) {
-        case 1: return <Demonstration1 dividend={dividend} divides={divides}/>
+        case 1: return <Demo1 dividend={dividend} divides={divides}/>
         case 4: return <LastNDigits dividend={dividend} divides={divides} digits={2}/>
         case 3: case 9: case 11: return <DigitSum dividend={dividend} divides={divides} alternating={ruleNumber === 11}
                                                   divisor={ruleNumber}/>
+        case 7: return <Demo7 dividend={dividend} divides={divides}/>
         case 8: return <LastNDigits dividend={dividend} divides={divides} digits={3}/>
-        default: return <LastNDigits dividend={dividend} divides={divides} digits={1}/>
+        default: return <LastNDigits dividend={dividend} divides={divides} digits={1} className={'single-row'}/>
     }
 }
 

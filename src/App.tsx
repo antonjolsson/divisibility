@@ -2,7 +2,7 @@ import React, {createContext, ReactElement, SetStateAction, useContext, useEffec
 import './App.css';
 import {ExplanationWindow} from "./ExplanationWindow";
 
-const DEFAULT_DIVIDEND = 999
+const DEFAULT_DIVIDEND = 112
 
 const BackgroundClickedContext = createContext({bgClicked: false, setBgClicked: (v: SetStateAction<boolean>) => {}})
 const ShowExplanationContext = createContext({showExplanation: false, setShowExplanation: (v: SetStateAction<boolean>) => {}})
@@ -92,11 +92,15 @@ function divisibleBy4(number: number): boolean {
     return isEvenLongVersion(getNLastDigits(number, 2) / 2);
 }
 
+export function get5XLastPlusRest(number: number): number {
+    const last = getNLastDigits(number, 1)
+    const rest = Math.trunc(number / 10)
+    return 5 * last + rest;
+}
+
 function divisibleBy7(number: number): boolean {
     do {
-        const last = getNLastDigits(number, 1)
-        const rest = Math.trunc(number / 10)
-        number = 5 * last + rest;
+        number = get5XLastPlusRest(number);
     } while (number > 98)
     return number % 7 === 0
 }
@@ -149,7 +153,11 @@ function Table(props: {number: number}): ReactElement {
             divides: [0, 5].includes(getNLastDigits(props.number, 1))
         },
         {divisor: 6, name: 'Divisible by 2 and 3', explanation: '', divides: isEvenLongVersion(props.number) && getDigitSum(props.number) % 3 === 0},
-        {divisor: 7, name: '5 x last + rest', explanation: '', divides: divisibleBy7(props.number)},
+        {
+            divisor: 7,
+            name: '5 x last + rest',
+            explanation: 'An integer is divisible by 7 if 5 x its last digit + the rest is',
+            divides: divisibleBy7(props.number)},
         {
             divisor: 8,
             name: 'Last 3 digits',

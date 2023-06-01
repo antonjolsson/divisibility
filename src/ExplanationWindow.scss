@@ -86,7 +86,7 @@
             font-size: 3em;
         }
 
-        .divisor, .not-divisor, .division-row {
+        .divisor, .not-divisor, .division-row, #demo7 h1 {
             line-height: 0.4em;
         }
 
@@ -100,23 +100,61 @@
             }
         }
 
-        #demonstrationDigitSum {
+        #demonstrationDigitSum, #demo7 {
             flex-direction: column-reverse;
             justify-content: flex-end;
+        }
+
+        #demo7 {
+            justify-content: flex-start;
         }
 
         #demonstrationLastNDigits {
             flex-direction: column;
             justify-content: flex-start;
+
+            &.single-row {
+                overflow: hidden;
+            }
         }
 
-        #demonstrationLastNDigits, #demonstrationDigitSum {
-            width: 80%;
+        #demonstrationLastNDigits, #demonstrationDigitSum, #demo7 {
+            width: 85%;
             display: flex;
             align-items: center;
             $anim-dur: 3s;
             $margin-condensed: -0.2em;
             $margin-extended: 0.1em;
+            $margin-extra-condensed: -1.1em;
+            $margin-extra-extended: 0.3em;
+
+            overflow: auto;
+            max-height: 40%;
+
+            @mixin translate-left($name, $from, $to) {
+                @keyframes #{$name} {
+                    from {
+                        margin-right: $from;
+                    }
+                    to {
+                        margin-right: $to;
+                    }
+                }
+            }
+
+            @mixin translate-left-right($name, $from, $to) {
+                @keyframes #{$name} {
+                    from {
+                        margin-right: $from;
+                        margin-left: $from;
+                    }
+                    to {
+                        margin-left: $to;
+                        margin-right: $to;
+                    }
+                }
+            }
+
             @for $i from 0 to 20 {
 
                 #row#{$i} {
@@ -136,31 +174,51 @@
 
                     &.division-row span {
                         margin-left: 0.3em;
-                    }
-
-                    .operator {
-                        animation: $anim-dur * 0.17 reveal-operators forwards ($i + 0.83) * $anim-dur;
-                    }
-
-                    &.division-row span {
                         animation: $anim-dur * 0.17 * 3 reveal-operators forwards ($i + 0.83) * $anim-dur * 0.5;
                     }
 
-                    &.division-row span, .operator {
+                    #hidden-equation-left-part {
+                        margin-right: -0.4em;
+                        margin-left: -0.4em;
+                    }
+
+                    #left-most-digits {
+                        margin-right: -1.4em;
+                        @include translate-left(translate-left-large, -1.4em, 0.3em);
+                        animation: $anim-dur * 0.17 translate-left-large forwards ($i + 0.67) * $anim-dur;
+                    }
+
+                    #right-most-digit {
+                        margin-left: -1.0em;
+                        margin-right: $margin-extra-condensed;
+                        @include translate-left-right(translate-left-right-large, -1.0em, $margin-extra-extended);
+                        animation: $anim-dur * 0.17 translate-left-right-large forwards ($i + 0.67) * $anim-dur;
+                    }
+
+                    .operator, #hidden-equation-left-part, #hidden-equation-right-part {
+                        animation: $anim-dur * 0.17 reveal-operators forwards ($i + 0.83) * $anim-dur;
+                    }
+
+                    &.division-row span, .operator, #hidden-equation-left-part, #hidden-equation-right-part {
                         opacity: 0;
                     }
 
                     // Left-most digit (not single-digit number)
                     .digit:first-child:not(:last-child) {
+                        @include translate-left(translate-left-small, $margin-condensed, $margin-extended);
+                        animation: $anim-dur * 0.17 translate-left-small forwards ($i + 0.67) * $anim-dur;
+                    }
+
+                    .digit:first-child:not(:last-child) {
                         margin-right: $margin-condensed;
-                        animation: $anim-dur * 0.17 translate-left forwards ($i + 0.67) * $anim-dur;
                     }
 
                     // Mid-digit
                     .digit:not(:last-child):not(:first-child) {
                         margin-left: $margin-condensed;
                         margin-right: $margin-condensed;
-                        animation: $anim-dur * 0.17 translate-left-right forwards ($i + 0.67) * $anim-dur;
+                        @include translate-left-right(translate-left-right-small, $margin-condensed, $margin-extended);
+                        animation: $anim-dur * 0.17 translate-left-right-small forwards ($i + 0.67) * $anim-dur;
                     }
 
                     // Right-most digit (not single-digit)
@@ -170,33 +228,12 @@
                     }
 
                     // Single-digit numbers
-                    &.divisor .digit:only-child {
+                    &.divisor .digit:only-child, &.divisor.demo-last-row span {
                         animation: $color-change-dur color-change-lightgreen forwards ($i + 0.84) * $anim-dur;
                     }
-                    &.not-divisor .digit:only-child {
+                    &.not-divisor .digit:only-child, &.not-divisor.demo-last-row span {
                         animation: $color-change-dur color-change-red forwards ($i + 0.84) * $anim-dur;
                     }
-
-                }
-            }
-
-            @keyframes translate-left {
-                from {
-                    margin-right: $margin-condensed;
-                }
-                to {
-                    margin-right: $margin-extended;
-                }
-            }
-
-            @keyframes translate-left-right {
-                from {
-                    margin-right: $margin-condensed;
-                    margin-left: $margin-condensed;
-                }
-                to {
-                    margin-left: $margin-extended;
-                    margin-right: $margin-extended;
                 }
             }
         }
