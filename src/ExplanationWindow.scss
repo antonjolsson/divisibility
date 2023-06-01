@@ -165,10 +165,16 @@
                     &.demonstrationLastDigit {
                         &.divisor span {
                             animation: $color-change-dur * 2 color-change-lightgreen-translate forwards $i * $anim-dur + 1s;
+                            &#sole-digit {
+                                animation: $color-change-dur * 2 color-change-lightgreen forwards $i * $anim-dur + 1s;
+                            }
                         }
 
                         &.not-divisor span {
                             animation: $color-change-dur * 2 color-change-red-translate forwards $i * $anim-dur + 1s;
+                            &#sole-digit {
+                                animation: $color-change-dur * 2 color-change-red forwards $i * $anim-dur + 1s;
+                            }
                         }
                     }
 

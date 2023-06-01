@@ -25,7 +25,7 @@ function LastNDigits(props: {dividend: number, divides: boolean, digits: number,
         </h1>
         : <h1 key={i} id={`row${i}`}
               className={'demonstrationLastDigit ' + (props.divides ? 'divisor' : 'not-divisor')}>{firstDigits}
-            <span>{lastDigit}</span>
+            <span id={firstDigits.length === 0 ? 'sole-digit' : ''}>{lastDigit}</span>
         </h1>)}
     </div>
 }

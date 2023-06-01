@@ -114,8 +114,14 @@
 #expl-window-container #expl-window #demonstrationLastNDigits #row0.demonstrationLastDigit.divisor span, #expl-window-container #expl-window #demonstrationDigitSum #row0.demonstrationLastDigit.divisor span, #expl-window-container #expl-window #demo7 #row0.demonstrationLastDigit.divisor span {
   animation: 1s color-change-lightgreen-translate forwards 1s;
 }
+#expl-window-container #expl-window #demonstrationLastNDigits #row0.demonstrationLastDigit.divisor span#sole-digit, #expl-window-container #expl-window #demonstrationDigitSum #row0.demonstrationLastDigit.divisor span#sole-digit, #expl-window-container #expl-window #demo7 #row0.demonstrationLastDigit.divisor span#sole-digit {
+  animation: 1s color-change-lightgreen forwards 1s;
+}
 #expl-window-container #expl-window #demonstrationLastNDigits #row0.demonstrationLastDigit.not-divisor span, #expl-window-container #expl-window #demonstrationDigitSum #row0.demonstrationLastDigit.not-divisor span, #expl-window-container #expl-window #demo7 #row0.demonstrationLastDigit.not-divisor span {
   animation: 1s color-change-red-translate forwards 1s;
+}
+#expl-window-container #expl-window #demonstrationLastNDigits #row0.demonstrationLastDigit.not-divisor span#sole-digit, #expl-window-container #expl-window #demonstrationDigitSum #row0.demonstrationLastDigit.not-divisor span#sole-digit, #expl-window-container #expl-window #demo7 #row0.demonstrationLastDigit.not-divisor span#sole-digit {
+  animation: 1s color-change-red forwards 1s;
 }
 #expl-window-container #expl-window #demonstrationLastNDigits #row0.division-row span, #expl-window-container #expl-window #demonstrationDigitSum #row0.division-row span, #expl-window-container #expl-window #demo7 #row0.division-row span {
   margin-left: 0.3em;
@@ -205,8 +211,14 @@
 #expl-window-container #expl-window #demonstrationLastNDigits #row1.demonstrationLastDigit.divisor span, #expl-window-container #expl-window #demonstrationDigitSum #row1.demonstrationLastDigit.divisor span, #expl-window-container #expl-window #demo7 #row1.demonstrationLastDigit.divisor span {
   animation: 1s color-change-lightgreen-translate forwards 4s;
 }
+#expl-window-container #expl-window #demonstrationLastNDigits #row1.demonstrationLastDigit.divisor span#sole-digit, #expl-window-container #expl-window #demonstrationDigitSum #row1.demonstrationLastDigit.divisor span#sole-digit, #expl-window-container #expl-window #demo7 #row1.demonstrationLastDigit.divisor span#sole-digit {
+  animation: 1s color-change-lightgreen forwards 4s;
+}
 #expl-window-container #expl-window #demonstrationLastNDigits #row1.demonstrationLastDigit.not-divisor span, #expl-window-container #expl-window #demonstrationDigitSum #row1.demonstrationLastDigit.not-divisor span, #expl-window-container #expl-window #demo7 #row1.demonstrationLastDigit.not-divisor span {
   animation: 1s color-change-red-translate forwards 4s;
+}
+#expl-window-container #expl-window #demonstrationLastNDigits #row1.demonstrationLastDigit.not-divisor span#sole-digit, #expl-window-container #expl-window #demonstrationDigitSum #row1.demonstrationLastDigit.not-divisor span#sole-digit, #expl-window-container #expl-window #demo7 #row1.demonstrationLastDigit.not-divisor span#sole-digit {
+  animation: 1s color-change-red forwards 4s;
 }
 #expl-window-container #expl-window #demonstrationLastNDigits #row1.division-row span, #expl-window-container #expl-window #demonstrationDigitSum #row1.division-row span, #expl-window-container #expl-window #demo7 #row1.division-row span {
   margin-left: 0.3em;
@@ -296,8 +308,14 @@
 #expl-window-container #expl-window #demonstrationLastNDigits #row2.demonstrationLastDigit.divisor span, #expl-window-container #expl-window #demonstrationDigitSum #row2.demonstrationLastDigit.divisor span, #expl-window-container #expl-window #demo7 #row2.demonstrationLastDigit.divisor span {
   animation: 1s color-change-lightgreen-translate forwards 7s;
 }
+#expl-window-container #expl-window #demonstrationLastNDigits #row2.demonstrationLastDigit.divisor span#sole-digit, #expl-window-container #expl-window #demonstrationDigitSum #row2.demonstrationLastDigit.divisor span#sole-digit, #expl-window-container #expl-window #demo7 #row2.demonstrationLastDigit.divisor span#sole-digit {
+  animation: 1s color-change-lightgreen forwards 7s;
+}
 #expl-window-container #expl-window #demonstrationLastNDigits #row2.demonstrationLastDigit.not-divisor span, #expl-window-container #expl-window #demonstrationDigitSum #row2.demonstrationLastDigit.not-divisor span, #expl-window-container #expl-window #demo7 #row2.demonstrationLastDigit.not-divisor span {
   animation: 1s color-change-red-translate forwards 7s;
+}
+#expl-window-container #expl-window #demonstrationLastNDigits #row2.demonstrationLastDigit.not-divisor span#sole-digit, #expl-window-container #expl-window #demonstrationDigitSum #row2.demonstrationLastDigit.not-divisor span#sole-digit, #expl-window-container #expl-window #demo7 #row2.demonstrationLastDigit.not-divisor span#sole-digit {
+  animation: 1s color-change-red forwards 7s;
 }
 #expl-window-container #expl-window #demonstrationLastNDigits #row2.division-row span, #expl-window-container #expl-window #demonstrationDigitSum #row2.division-row span, #expl-window-container #expl-window #demo7 #row2.division-row span {
   margin-left: 0.3em;
@@ -387,8 +405,14 @@
 #expl-window-container #expl-window #demonstrationLastNDigits #row3.demonstrationLastDigit.divisor span, #expl-window-container #expl-window #demonstrationDigitSum #row3.demonstrationLastDigit.divisor span, #expl-window-container #expl-window #demo7 #row3.demonstrationLastDigit.divisor span {
   animation: 1s color-change-lightgreen-translate forwards 10s;
 }
+#expl-window-container #expl-window #demonstrationLastNDigits #row3.demonstrationLastDigit.divisor span#sole-digit, #expl-window-container #expl-window #demonstrationDigitSum #row3.demonstrationLastDigit.divisor span#sole-digit, #expl-window-container #expl-window #demo7 #row3.demonstrationLastDigit.divisor span#sole-digit {
+  animation: 1s color-change-lightgreen forwards 10s;
+}
 #expl-window-container #expl-window #demonstrationLastNDigits #row3.demonstrationLastDigit.not-divisor span, #expl-window-container #expl-window #demonstrationDigitSum #row3.demonstrationLastDigit.not-divisor span, #expl-window-container #expl-window #demo7 #row3.demonstrationLastDigit.not-divisor span {
   animation: 1s color-change-red-translate forwards 10s;
+}
+#expl-window-container #expl-window #demonstrationLastNDigits #row3.demonstrationLastDigit.not-divisor span#sole-digit, #expl-window-container #expl-window #demonstrationDigitSum #row3.demonstrationLastDigit.not-divisor span#sole-digit, #expl-window-container #expl-window #demo7 #row3.demonstrationLastDigit.not-divisor span#sole-digit {
+  animation: 1s color-change-red forwards 10s;
 }
 #expl-window-container #expl-window #demonstrationLastNDigits #row3.division-row span, #expl-window-container #expl-window #demonstrationDigitSum #row3.division-row span, #expl-window-container #expl-window #demo7 #row3.division-row span {
   margin-left: 0.3em;
@@ -478,8 +502,14 @@
 #expl-window-container #expl-window #demonstrationLastNDigits #row4.demonstrationLastDigit.divisor span, #expl-window-container #expl-window #demonstrationDigitSum #row4.demonstrationLastDigit.divisor span, #expl-window-container #expl-window #demo7 #row4.demonstrationLastDigit.divisor span {
   animation: 1s color-change-lightgreen-translate forwards 13s;
 }
+#expl-window-container #expl-window #demonstrationLastNDigits #row4.demonstrationLastDigit.divisor span#sole-digit, #expl-window-container #expl-window #demonstrationDigitSum #row4.demonstrationLastDigit.divisor span#sole-digit, #expl-window-container #expl-window #demo7 #row4.demonstrationLastDigit.divisor span#sole-digit {
+  animation: 1s color-change-lightgreen forwards 13s;
+}
 #expl-window-container #expl-window #demonstrationLastNDigits #row4.demonstrationLastDigit.not-divisor span, #expl-window-container #expl-window #demonstrationDigitSum #row4.demonstrationLastDigit.not-divisor span, #expl-window-container #expl-window #demo7 #row4.demonstrationLastDigit.not-divisor span {
   animation: 1s color-change-red-translate forwards 13s;
+}
+#expl-window-container #expl-window #demonstrationLastNDigits #row4.demonstrationLastDigit.not-divisor span#sole-digit, #expl-window-container #expl-window #demonstrationDigitSum #row4.demonstrationLastDigit.not-divisor span#sole-digit, #expl-window-container #expl-window #demo7 #row4.demonstrationLastDigit.not-divisor span#sole-digit {
+  animation: 1s color-change-red forwards 13s;
 }
 #expl-window-container #expl-window #demonstrationLastNDigits #row4.division-row span, #expl-window-container #expl-window #demonstrationDigitSum #row4.division-row span, #expl-window-container #expl-window #demo7 #row4.division-row span {
   margin-left: 0.3em;
@@ -569,8 +599,14 @@
 #expl-window-container #expl-window #demonstrationLastNDigits #row5.demonstrationLastDigit.divisor span, #expl-window-container #expl-window #demonstrationDigitSum #row5.demonstrationLastDigit.divisor span, #expl-window-container #expl-window #demo7 #row5.demonstrationLastDigit.divisor span {
   animation: 1s color-change-lightgreen-translate forwards 16s;
 }
+#expl-window-container #expl-window #demonstrationLastNDigits #row5.demonstrationLastDigit.divisor span#sole-digit, #expl-window-container #expl-window #demonstrationDigitSum #row5.demonstrationLastDigit.divisor span#sole-digit, #expl-window-container #expl-window #demo7 #row5.demonstrationLastDigit.divisor span#sole-digit {
+  animation: 1s color-change-lightgreen forwards 16s;
+}
 #expl-window-container #expl-window #demonstrationLastNDigits #row5.demonstrationLastDigit.not-divisor span, #expl-window-container #expl-window #demonstrationDigitSum #row5.demonstrationLastDigit.not-divisor span, #expl-window-container #expl-window #demo7 #row5.demonstrationLastDigit.not-divisor span {
   animation: 1s color-change-red-translate forwards 16s;
+}
+#expl-window-container #expl-window #demonstrationLastNDigits #row5.demonstrationLastDigit.not-divisor span#sole-digit, #expl-window-container #expl-window #demonstrationDigitSum #row5.demonstrationLastDigit.not-divisor span#sole-digit, #expl-window-container #expl-window #demo7 #row5.demonstrationLastDigit.not-divisor span#sole-digit {
+  animation: 1s color-change-red forwards 16s;
 }
 #expl-window-container #expl-window #demonstrationLastNDigits #row5.division-row span, #expl-window-container #expl-window #demonstrationDigitSum #row5.division-row span, #expl-window-container #expl-window #demo7 #row5.division-row span {
   margin-left: 0.3em;
@@ -660,8 +696,14 @@
 #expl-window-container #expl-window #demonstrationLastNDigits #row6.demonstrationLastDigit.divisor span, #expl-window-container #expl-window #demonstrationDigitSum #row6.demonstrationLastDigit.divisor span, #expl-window-container #expl-window #demo7 #row6.demonstrationLastDigit.divisor span {
   animation: 1s color-change-lightgreen-translate forwards 19s;
 }
+#expl-window-container #expl-window #demonstrationLastNDigits #row6.demonstrationLastDigit.divisor span#sole-digit, #expl-window-container #expl-window #demonstrationDigitSum #row6.demonstrationLastDigit.divisor span#sole-digit, #expl-window-container #expl-window #demo7 #row6.demonstrationLastDigit.divisor span#sole-digit {
+  animation: 1s color-change-lightgreen forwards 19s;
+}
 #expl-window-container #expl-window #demonstrationLastNDigits #row6.demonstrationLastDigit.not-divisor span, #expl-window-container #expl-window #demonstrationDigitSum #row6.demonstrationLastDigit.not-divisor span, #expl-window-container #expl-window #demo7 #row6.demonstrationLastDigit.not-divisor span {
   animation: 1s color-change-red-translate forwards 19s;
+}
+#expl-window-container #expl-window #demonstrationLastNDigits #row6.demonstrationLastDigit.not-divisor span#sole-digit, #expl-window-container #expl-window #demonstrationDigitSum #row6.demonstrationLastDigit.not-divisor span#sole-digit, #expl-window-container #expl-window #demo7 #row6.demonstrationLastDigit.not-divisor span#sole-digit {
+  animation: 1s color-change-red forwards 19s;
 }
 #expl-window-container #expl-window #demonstrationLastNDigits #row6.division-row span, #expl-window-container #expl-window #demonstrationDigitSum #row6.division-row span, #expl-window-container #expl-window #demo7 #row6.division-row span {
   margin-left: 0.3em;
@@ -751,8 +793,14 @@
 #expl-window-container #expl-window #demonstrationLastNDigits #row7.demonstrationLastDigit.divisor span, #expl-window-container #expl-window #demonstrationDigitSum #row7.demonstrationLastDigit.divisor span, #expl-window-container #expl-window #demo7 #row7.demonstrationLastDigit.divisor span {
   animation: 1s color-change-lightgreen-translate forwards 22s;
 }
+#expl-window-container #expl-window #demonstrationLastNDigits #row7.demonstrationLastDigit.divisor span#sole-digit, #expl-window-container #expl-window #demonstrationDigitSum #row7.demonstrationLastDigit.divisor span#sole-digit, #expl-window-container #expl-window #demo7 #row7.demonstrationLastDigit.divisor span#sole-digit {
+  animation: 1s color-change-lightgreen forwards 22s;
+}
 #expl-window-container #expl-window #demonstrationLastNDigits #row7.demonstrationLastDigit.not-divisor span, #expl-window-container #expl-window #demonstrationDigitSum #row7.demonstrationLastDigit.not-divisor span, #expl-window-container #expl-window #demo7 #row7.demonstrationLastDigit.not-divisor span {
   animation: 1s color-change-red-translate forwards 22s;
+}
+#expl-window-container #expl-window #demonstrationLastNDigits #row7.demonstrationLastDigit.not-divisor span#sole-digit, #expl-window-container #expl-window #demonstrationDigitSum #row7.demonstrationLastDigit.not-divisor span#sole-digit, #expl-window-container #expl-window #demo7 #row7.demonstrationLastDigit.not-divisor span#sole-digit {
+  animation: 1s color-change-red forwards 22s;
 }
 #expl-window-container #expl-window #demonstrationLastNDigits #row7.division-row span, #expl-window-container #expl-window #demonstrationDigitSum #row7.division-row span, #expl-window-container #expl-window #demo7 #row7.division-row span {
   margin-left: 0.3em;
@@ -842,8 +890,14 @@
 #expl-window-container #expl-window #demonstrationLastNDigits #row8.demonstrationLastDigit.divisor span, #expl-window-container #expl-window #demonstrationDigitSum #row8.demonstrationLastDigit.divisor span, #expl-window-container #expl-window #demo7 #row8.demonstrationLastDigit.divisor span {
   animation: 1s color-change-lightgreen-translate forwards 25s;
 }
+#expl-window-container #expl-window #demonstrationLastNDigits #row8.demonstrationLastDigit.divisor span#sole-digit, #expl-window-container #expl-window #demonstrationDigitSum #row8.demonstrationLastDigit.divisor span#sole-digit, #expl-window-container #expl-window #demo7 #row8.demonstrationLastDigit.divisor span#sole-digit {
+  animation: 1s color-change-lightgreen forwards 25s;
+}
 #expl-window-container #expl-window #demonstrationLastNDigits #row8.demonstrationLastDigit.not-divisor span, #expl-window-container #expl-window #demonstrationDigitSum #row8.demonstrationLastDigit.not-divisor span, #expl-window-container #expl-window #demo7 #row8.demonstrationLastDigit.not-divisor span {
   animation: 1s color-change-red-translate forwards 25s;
+}
+#expl-window-container #expl-window #demonstrationLastNDigits #row8.demonstrationLastDigit.not-divisor span#sole-digit, #expl-window-container #expl-window #demonstrationDigitSum #row8.demonstrationLastDigit.not-divisor span#sole-digit, #expl-window-container #expl-window #demo7 #row8.demonstrationLastDigit.not-divisor span#sole-digit {
+  animation: 1s color-change-red forwards 25s;
 }
 #expl-window-container #expl-window #demonstrationLastNDigits #row8.division-row span, #expl-window-container #expl-window #demonstrationDigitSum #row8.division-row span, #expl-window-container #expl-window #demo7 #row8.division-row span {
   margin-left: 0.3em;
@@ -933,8 +987,14 @@
 #expl-window-container #expl-window #demonstrationLastNDigits #row9.demonstrationLastDigit.divisor span, #expl-window-container #expl-window #demonstrationDigitSum #row9.demonstrationLastDigit.divisor span, #expl-window-container #expl-window #demo7 #row9.demonstrationLastDigit.divisor span {
   animation: 1s color-change-lightgreen-translate forwards 28s;
 }
+#expl-window-container #expl-window #demonstrationLastNDigits #row9.demonstrationLastDigit.divisor span#sole-digit, #expl-window-container #expl-window #demonstrationDigitSum #row9.demonstrationLastDigit.divisor span#sole-digit, #expl-window-container #expl-window #demo7 #row9.demonstrationLastDigit.divisor span#sole-digit {
+  animation: 1s color-change-lightgreen forwards 28s;
+}
 #expl-window-container #expl-window #demonstrationLastNDigits #row9.demonstrationLastDigit.not-divisor span, #expl-window-container #expl-window #demonstrationDigitSum #row9.demonstrationLastDigit.not-divisor span, #expl-window-container #expl-window #demo7 #row9.demonstrationLastDigit.not-divisor span {
   animation: 1s color-change-red-translate forwards 28s;
+}
+#expl-window-container #expl-window #demonstrationLastNDigits #row9.demonstrationLastDigit.not-divisor span#sole-digit, #expl-window-container #expl-window #demonstrationDigitSum #row9.demonstrationLastDigit.not-divisor span#sole-digit, #expl-window-container #expl-window #demo7 #row9.demonstrationLastDigit.not-divisor span#sole-digit {
+  animation: 1s color-change-red forwards 28s;
 }
 #expl-window-container #expl-window #demonstrationLastNDigits #row9.division-row span, #expl-window-container #expl-window #demonstrationDigitSum #row9.division-row span, #expl-window-container #expl-window #demo7 #row9.division-row span {
   margin-left: 0.3em;
@@ -1024,8 +1084,14 @@
 #expl-window-container #expl-window #demonstrationLastNDigits #row10.demonstrationLastDigit.divisor span, #expl-window-container #expl-window #demonstrationDigitSum #row10.demonstrationLastDigit.divisor span, #expl-window-container #expl-window #demo7 #row10.demonstrationLastDigit.divisor span {
   animation: 1s color-change-lightgreen-translate forwards 31s;
 }
+#expl-window-container #expl-window #demonstrationLastNDigits #row10.demonstrationLastDigit.divisor span#sole-digit, #expl-window-container #expl-window #demonstrationDigitSum #row10.demonstrationLastDigit.divisor span#sole-digit, #expl-window-container #expl-window #demo7 #row10.demonstrationLastDigit.divisor span#sole-digit {
+  animation: 1s color-change-lightgreen forwards 31s;
+}
 #expl-window-container #expl-window #demonstrationLastNDigits #row10.demonstrationLastDigit.not-divisor span, #expl-window-container #expl-window #demonstrationDigitSum #row10.demonstrationLastDigit.not-divisor span, #expl-window-container #expl-window #demo7 #row10.demonstrationLastDigit.not-divisor span {
   animation: 1s color-change-red-translate forwards 31s;
+}
+#expl-window-container #expl-window #demonstrationLastNDigits #row10.demonstrationLastDigit.not-divisor span#sole-digit, #expl-window-container #expl-window #demonstrationDigitSum #row10.demonstrationLastDigit.not-divisor span#sole-digit, #expl-window-container #expl-window #demo7 #row10.demonstrationLastDigit.not-divisor span#sole-digit {
+  animation: 1s color-change-red forwards 31s;
 }
 #expl-window-container #expl-window #demonstrationLastNDigits #row10.division-row span, #expl-window-container #expl-window #demonstrationDigitSum #row10.division-row span, #expl-window-container #expl-window #demo7 #row10.division-row span {
   margin-left: 0.3em;
@@ -1115,8 +1181,14 @@
 #expl-window-container #expl-window #demonstrationLastNDigits #row11.demonstrationLastDigit.divisor span, #expl-window-container #expl-window #demonstrationDigitSum #row11.demonstrationLastDigit.divisor span, #expl-window-container #expl-window #demo7 #row11.demonstrationLastDigit.divisor span {
   animation: 1s color-change-lightgreen-translate forwards 34s;
 }
+#expl-window-container #expl-window #demonstrationLastNDigits #row11.demonstrationLastDigit.divisor span#sole-digit, #expl-window-container #expl-window #demonstrationDigitSum #row11.demonstrationLastDigit.divisor span#sole-digit, #expl-window-container #expl-window #demo7 #row11.demonstrationLastDigit.divisor span#sole-digit {
+  animation: 1s color-change-lightgreen forwards 34s;
+}
 #expl-window-container #expl-window #demonstrationLastNDigits #row11.demonstrationLastDigit.not-divisor span, #expl-window-container #expl-window #demonstrationDigitSum #row11.demonstrationLastDigit.not-divisor span, #expl-window-container #expl-window #demo7 #row11.demonstrationLastDigit.not-divisor span {
   animation: 1s color-change-red-translate forwards 34s;
+}
+#expl-window-container #expl-window #demonstrationLastNDigits #row11.demonstrationLastDigit.not-divisor span#sole-digit, #expl-window-container #expl-window #demonstrationDigitSum #row11.demonstrationLastDigit.not-divisor span#sole-digit, #expl-window-container #expl-window #demo7 #row11.demonstrationLastDigit.not-divisor span#sole-digit {
+  animation: 1s color-change-red forwards 34s;
 }
 #expl-window-container #expl-window #demonstrationLastNDigits #row11.division-row span, #expl-window-container #expl-window #demonstrationDigitSum #row11.division-row span, #expl-window-container #expl-window #demo7 #row11.division-row span {
   margin-left: 0.3em;
@@ -1206,8 +1278,14 @@
 #expl-window-container #expl-window #demonstrationLastNDigits #row12.demonstrationLastDigit.divisor span, #expl-window-container #expl-window #demonstrationDigitSum #row12.demonstrationLastDigit.divisor span, #expl-window-container #expl-window #demo7 #row12.demonstrationLastDigit.divisor span {
   animation: 1s color-change-lightgreen-translate forwards 37s;
 }
+#expl-window-container #expl-window #demonstrationLastNDigits #row12.demonstrationLastDigit.divisor span#sole-digit, #expl-window-container #expl-window #demonstrationDigitSum #row12.demonstrationLastDigit.divisor span#sole-digit, #expl-window-container #expl-window #demo7 #row12.demonstrationLastDigit.divisor span#sole-digit {
+  animation: 1s color-change-lightgreen forwards 37s;
+}
 #expl-window-container #expl-window #demonstrationLastNDigits #row12.demonstrationLastDigit.not-divisor span, #expl-window-container #expl-window #demonstrationDigitSum #row12.demonstrationLastDigit.not-divisor span, #expl-window-container #expl-window #demo7 #row12.demonstrationLastDigit.not-divisor span {
   animation: 1s color-change-red-translate forwards 37s;
+}
+#expl-window-container #expl-window #demonstrationLastNDigits #row12.demonstrationLastDigit.not-divisor span#sole-digit, #expl-window-container #expl-window #demonstrationDigitSum #row12.demonstrationLastDigit.not-divisor span#sole-digit, #expl-window-container #expl-window #demo7 #row12.demonstrationLastDigit.not-divisor span#sole-digit {
+  animation: 1s color-change-red forwards 37s;
 }
 #expl-window-container #expl-window #demonstrationLastNDigits #row12.division-row span, #expl-window-container #expl-window #demonstrationDigitSum #row12.division-row span, #expl-window-container #expl-window #demo7 #row12.division-row span {
   margin-left: 0.3em;
@@ -1297,8 +1375,14 @@
 #expl-window-container #expl-window #demonstrationLastNDigits #row13.demonstrationLastDigit.divisor span, #expl-window-container #expl-window #demonstrationDigitSum #row13.demonstrationLastDigit.divisor span, #expl-window-container #expl-window #demo7 #row13.demonstrationLastDigit.divisor span {
   animation: 1s color-change-lightgreen-translate forwards 40s;
 }
+#expl-window-container #expl-window #demonstrationLastNDigits #row13.demonstrationLastDigit.divisor span#sole-digit, #expl-window-container #expl-window #demonstrationDigitSum #row13.demonstrationLastDigit.divisor span#sole-digit, #expl-window-container #expl-window #demo7 #row13.demonstrationLastDigit.divisor span#sole-digit {
+  animation: 1s color-change-lightgreen forwards 40s;
+}
 #expl-window-container #expl-window #demonstrationLastNDigits #row13.demonstrationLastDigit.not-divisor span, #expl-window-container #expl-window #demonstrationDigitSum #row13.demonstrationLastDigit.not-divisor span, #expl-window-container #expl-window #demo7 #row13.demonstrationLastDigit.not-divisor span {
   animation: 1s color-change-red-translate forwards 40s;
+}
+#expl-window-container #expl-window #demonstrationLastNDigits #row13.demonstrationLastDigit.not-divisor span#sole-digit, #expl-window-container #expl-window #demonstrationDigitSum #row13.demonstrationLastDigit.not-divisor span#sole-digit, #expl-window-container #expl-window #demo7 #row13.demonstrationLastDigit.not-divisor span#sole-digit {
+  animation: 1s color-change-red forwards 40s;
 }
 #expl-window-container #expl-window #demonstrationLastNDigits #row13.division-row span, #expl-window-container #expl-window #demonstrationDigitSum #row13.division-row span, #expl-window-container #expl-window #demo7 #row13.division-row span {
   margin-left: 0.3em;
@@ -1388,8 +1472,14 @@
 #expl-window-container #expl-window #demonstrationLastNDigits #row14.demonstrationLastDigit.divisor span, #expl-window-container #expl-window #demonstrationDigitSum #row14.demonstrationLastDigit.divisor span, #expl-window-container #expl-window #demo7 #row14.demonstrationLastDigit.divisor span {
   animation: 1s color-change-lightgreen-translate forwards 43s;
 }
+#expl-window-container #expl-window #demonstrationLastNDigits #row14.demonstrationLastDigit.divisor span#sole-digit, #expl-window-container #expl-window #demonstrationDigitSum #row14.demonstrationLastDigit.divisor span#sole-digit, #expl-window-container #expl-window #demo7 #row14.demonstrationLastDigit.divisor span#sole-digit {
+  animation: 1s color-change-lightgreen forwards 43s;
+}
 #expl-window-container #expl-window #demonstrationLastNDigits #row14.demonstrationLastDigit.not-divisor span, #expl-window-container #expl-window #demonstrationDigitSum #row14.demonstrationLastDigit.not-divisor span, #expl-window-container #expl-window #demo7 #row14.demonstrationLastDigit.not-divisor span {
   animation: 1s color-change-red-translate forwards 43s;
+}
+#expl-window-container #expl-window #demonstrationLastNDigits #row14.demonstrationLastDigit.not-divisor span#sole-digit, #expl-window-container #expl-window #demonstrationDigitSum #row14.demonstrationLastDigit.not-divisor span#sole-digit, #expl-window-container #expl-window #demo7 #row14.demonstrationLastDigit.not-divisor span#sole-digit {
+  animation: 1s color-change-red forwards 43s;
 }
 #expl-window-container #expl-window #demonstrationLastNDigits #row14.division-row span, #expl-window-container #expl-window #demonstrationDigitSum #row14.division-row span, #expl-window-container #expl-window #demo7 #row14.division-row span {
   margin-left: 0.3em;
@@ -1479,8 +1569,14 @@
 #expl-window-container #expl-window #demonstrationLastNDigits #row15.demonstrationLastDigit.divisor span, #expl-window-container #expl-window #demonstrationDigitSum #row15.demonstrationLastDigit.divisor span, #expl-window-container #expl-window #demo7 #row15.demonstrationLastDigit.divisor span {
   animation: 1s color-change-lightgreen-translate forwards 46s;
 }
+#expl-window-container #expl-window #demonstrationLastNDigits #row15.demonstrationLastDigit.divisor span#sole-digit, #expl-window-container #expl-window #demonstrationDigitSum #row15.demonstrationLastDigit.divisor span#sole-digit, #expl-window-container #expl-window #demo7 #row15.demonstrationLastDigit.divisor span#sole-digit {
+  animation: 1s color-change-lightgreen forwards 46s;
+}
 #expl-window-container #expl-window #demonstrationLastNDigits #row15.demonstrationLastDigit.not-divisor span, #expl-window-container #expl-window #demonstrationDigitSum #row15.demonstrationLastDigit.not-divisor span, #expl-window-container #expl-window #demo7 #row15.demonstrationLastDigit.not-divisor span {
   animation: 1s color-change-red-translate forwards 46s;
+}
+#expl-window-container #expl-window #demonstrationLastNDigits #row15.demonstrationLastDigit.not-divisor span#sole-digit, #expl-window-container #expl-window #demonstrationDigitSum #row15.demonstrationLastDigit.not-divisor span#sole-digit, #expl-window-container #expl-window #demo7 #row15.demonstrationLastDigit.not-divisor span#sole-digit {
+  animation: 1s color-change-red forwards 46s;
 }
 #expl-window-container #expl-window #demonstrationLastNDigits #row15.division-row span, #expl-window-container #expl-window #demonstrationDigitSum #row15.division-row span, #expl-window-container #expl-window #demo7 #row15.division-row span {
   margin-left: 0.3em;
@@ -1570,8 +1666,14 @@
 #expl-window-container #expl-window #demonstrationLastNDigits #row16.demonstrationLastDigit.divisor span, #expl-window-container #expl-window #demonstrationDigitSum #row16.demonstrationLastDigit.divisor span, #expl-window-container #expl-window #demo7 #row16.demonstrationLastDigit.divisor span {
   animation: 1s color-change-lightgreen-translate forwards 49s;
 }
+#expl-window-container #expl-window #demonstrationLastNDigits #row16.demonstrationLastDigit.divisor span#sole-digit, #expl-window-container #expl-window #demonstrationDigitSum #row16.demonstrationLastDigit.divisor span#sole-digit, #expl-window-container #expl-window #demo7 #row16.demonstrationLastDigit.divisor span#sole-digit {
+  animation: 1s color-change-lightgreen forwards 49s;
+}
 #expl-window-container #expl-window #demonstrationLastNDigits #row16.demonstrationLastDigit.not-divisor span, #expl-window-container #expl-window #demonstrationDigitSum #row16.demonstrationLastDigit.not-divisor span, #expl-window-container #expl-window #demo7 #row16.demonstrationLastDigit.not-divisor span {
   animation: 1s color-change-red-translate forwards 49s;
+}
+#expl-window-container #expl-window #demonstrationLastNDigits #row16.demonstrationLastDigit.not-divisor span#sole-digit, #expl-window-container #expl-window #demonstrationDigitSum #row16.demonstrationLastDigit.not-divisor span#sole-digit, #expl-window-container #expl-window #demo7 #row16.demonstrationLastDigit.not-divisor span#sole-digit {
+  animation: 1s color-change-red forwards 49s;
 }
 #expl-window-container #expl-window #demonstrationLastNDigits #row16.division-row span, #expl-window-container #expl-window #demonstrationDigitSum #row16.division-row span, #expl-window-container #expl-window #demo7 #row16.division-row span {
   margin-left: 0.3em;
@@ -1661,8 +1763,14 @@
 #expl-window-container #expl-window #demonstrationLastNDigits #row17.demonstrationLastDigit.divisor span, #expl-window-container #expl-window #demonstrationDigitSum #row17.demonstrationLastDigit.divisor span, #expl-window-container #expl-window #demo7 #row17.demonstrationLastDigit.divisor span {
   animation: 1s color-change-lightgreen-translate forwards 52s;
 }
+#expl-window-container #expl-window #demonstrationLastNDigits #row17.demonstrationLastDigit.divisor span#sole-digit, #expl-window-container #expl-window #demonstrationDigitSum #row17.demonstrationLastDigit.divisor span#sole-digit, #expl-window-container #expl-window #demo7 #row17.demonstrationLastDigit.divisor span#sole-digit {
+  animation: 1s color-change-lightgreen forwards 52s;
+}
 #expl-window-container #expl-window #demonstrationLastNDigits #row17.demonstrationLastDigit.not-divisor span, #expl-window-container #expl-window #demonstrationDigitSum #row17.demonstrationLastDigit.not-divisor span, #expl-window-container #expl-window #demo7 #row17.demonstrationLastDigit.not-divisor span {
   animation: 1s color-change-red-translate forwards 52s;
+}
+#expl-window-container #expl-window #demonstrationLastNDigits #row17.demonstrationLastDigit.not-divisor span#sole-digit, #expl-window-container #expl-window #demonstrationDigitSum #row17.demonstrationLastDigit.not-divisor span#sole-digit, #expl-window-container #expl-window #demo7 #row17.demonstrationLastDigit.not-divisor span#sole-digit {
+  animation: 1s color-change-red forwards 52s;
 }
 #expl-window-container #expl-window #demonstrationLastNDigits #row17.division-row span, #expl-window-container #expl-window #demonstrationDigitSum #row17.division-row span, #expl-window-container #expl-window #demo7 #row17.division-row span {
   margin-left: 0.3em;
@@ -1752,8 +1860,14 @@
 #expl-window-container #expl-window #demonstrationLastNDigits #row18.demonstrationLastDigit.divisor span, #expl-window-container #expl-window #demonstrationDigitSum #row18.demonstrationLastDigit.divisor span, #expl-window-container #expl-window #demo7 #row18.demonstrationLastDigit.divisor span {
   animation: 1s color-change-lightgreen-translate forwards 55s;
 }
+#expl-window-container #expl-window #demonstrationLastNDigits #row18.demonstrationLastDigit.divisor span#sole-digit, #expl-window-container #expl-window #demonstrationDigitSum #row18.demonstrationLastDigit.divisor span#sole-digit, #expl-window-container #expl-window #demo7 #row18.demonstrationLastDigit.divisor span#sole-digit {
+  animation: 1s color-change-lightgreen forwards 55s;
+}
 #expl-window-container #expl-window #demonstrationLastNDigits #row18.demonstrationLastDigit.not-divisor span, #expl-window-container #expl-window #demonstrationDigitSum #row18.demonstrationLastDigit.not-divisor span, #expl-window-container #expl-window #demo7 #row18.demonstrationLastDigit.not-divisor span {
   animation: 1s color-change-red-translate forwards 55s;
+}
+#expl-window-container #expl-window #demonstrationLastNDigits #row18.demonstrationLastDigit.not-divisor span#sole-digit, #expl-window-container #expl-window #demonstrationDigitSum #row18.demonstrationLastDigit.not-divisor span#sole-digit, #expl-window-container #expl-window #demo7 #row18.demonstrationLastDigit.not-divisor span#sole-digit {
+  animation: 1s color-change-red forwards 55s;
 }
 #expl-window-container #expl-window #demonstrationLastNDigits #row18.division-row span, #expl-window-container #expl-window #demonstrationDigitSum #row18.division-row span, #expl-window-container #expl-window #demo7 #row18.division-row span {
   margin-left: 0.3em;
@@ -1843,8 +1957,14 @@
 #expl-window-container #expl-window #demonstrationLastNDigits #row19.demonstrationLastDigit.divisor span, #expl-window-container #expl-window #demonstrationDigitSum #row19.demonstrationLastDigit.divisor span, #expl-window-container #expl-window #demo7 #row19.demonstrationLastDigit.divisor span {
   animation: 1s color-change-lightgreen-translate forwards 58s;
 }
+#expl-window-container #expl-window #demonstrationLastNDigits #row19.demonstrationLastDigit.divisor span#sole-digit, #expl-window-container #expl-window #demonstrationDigitSum #row19.demonstrationLastDigit.divisor span#sole-digit, #expl-window-container #expl-window #demo7 #row19.demonstrationLastDigit.divisor span#sole-digit {
+  animation: 1s color-change-lightgreen forwards 58s;
+}
 #expl-window-container #expl-window #demonstrationLastNDigits #row19.demonstrationLastDigit.not-divisor span, #expl-window-container #expl-window #demonstrationDigitSum #row19.demonstrationLastDigit.not-divisor span, #expl-window-container #expl-window #demo7 #row19.demonstrationLastDigit.not-divisor span {
   animation: 1s color-change-red-translate forwards 58s;
+}
+#expl-window-container #expl-window #demonstrationLastNDigits #row19.demonstrationLastDigit.not-divisor span#sole-digit, #expl-window-container #expl-window #demonstrationDigitSum #row19.demonstrationLastDigit.not-divisor span#sole-digit, #expl-window-container #expl-window #demo7 #row19.demonstrationLastDigit.not-divisor span#sole-digit {
+  animation: 1s color-change-red forwards 58s;
 }
 #expl-window-container #expl-window #demonstrationLastNDigits #row19.division-row span, #expl-window-container #expl-window #demonstrationDigitSum #row19.division-row span, #expl-window-container #expl-window #demo7 #row19.division-row span {
   margin-left: 0.3em;
