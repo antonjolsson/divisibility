@@ -33,8 +33,8 @@ function TableRow(props: { entries: string[], marked: boolean, markedRank: numbe
     }
 
     return <div className={'table-row'}>
-        {props.marked && <img className={`stroke ${props.marked ? '' : 'reverse-anim'}`} src={'stroke.svg'} alt={'stroke'}
-              id={`stroke${props.markedRank}`}></img>}
+        {props.marked && <img className={`stroke ${props.marked ? '' : 'reverse-anim'}`} src={'stroke.svg'}
+                              alt={`stroke${props.entries[0]}`} id={`stroke${props.markedRank}`}></img>}
         <h2 className={'divisor'}>{props.entries[0]}</h2>
         <div className={'rule'}>
             <h2>{props.entries[1]}</h2>
@@ -217,11 +217,10 @@ function Input(props: {onChange: (n: number) => void}): ReactElement {
         props.onChange(value);
     }
 
-    return <div id={'number-input'}>
-        <label>Number to test</label>
-        <input ref={inputRef} type={'number'} defaultValue={DEFAULT_DIVIDEND} maxLength={6} max={maxValue} min={minValue}
-               onChange={(e): void => onChange(e)}/>
-    </div>;
+    return <><label>Number to test
+            <input ref={inputRef} type={'number'} defaultValue={DEFAULT_DIVIDEND} maxLength={6} max={maxValue} min={minValue}
+                   onChange={(e): void => onChange(e)}/>
+        </label></>
 }
 
 function App(): ReactElement {

@@ -167,19 +167,16 @@ html, body, #root {
   font-weight: 300;
   margin-top: 0;
 }
-.App #number-input {
-  display: flex;
-  flex-direction: column;
-  width: 15em;
-  justify-content: center;
-  align-items: center;
-}
-.App #number-input label {
+.App label {
   margin-bottom: 0;
   line-height: 0.5em;
   margin-top: 0.8em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-.App #number-input input {
+.App label input {
   font-family: "Kalam", Verdana, sans-serif;
   font-size: 2.5em;
   font-weight: 700;
@@ -188,6 +185,7 @@ html, body, #root {
   border: none;
   text-align: center;
   outline: none;
+  margin-right: -15px;
 }
 .App #table {
   height: 70%;
