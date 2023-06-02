@@ -15,8 +15,6 @@ function LastNDigits(props: {dividend: number, divides: boolean, digits: number,
     const firstDigits = lastDividendString.split('').slice(0, lastDividendString.length - 1)
     const lastDigit = lastDividendString.split('').at(-1)
 
-    console.log(dividends)
-
     return <div id={'demonstrationLastNDigits'} className={props.className ?? ''}>
     {dividends.map((v, i, arr) => i < arr.length - 1
         ? <h1 key={i} id={`row${i}`} className={'division-row'}>{v}
