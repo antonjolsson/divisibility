@@ -21,12 +21,12 @@ html, body, #root {
   opacity: 0.3;
 }
 .App h1 {
-  font-size: 3em;
+  font-size: 3rem;
   margin-bottom: 0;
-  line-height: 1em;
+  line-height: 1rem;
 }
 .App > h1 {
-  margin-top: 0;
+  margin-top: 2.5rem;
 }
 .App .rule {
   flex: 2;
@@ -36,124 +36,124 @@ html, body, #root {
   align-items: center;
 }
 .App .rule #info-button0 {
-  margin-left: 1em;
-  height: 0.8em;
+  margin-left: 1rem;
+  height: 0.8rem;
   transition: height 0.3s;
   cursor: pointer;
 }
 .App .rule #info-button0:hover {
-  height: 1em;
+  height: 1rem;
 }
 .App .rule #info-button1 {
-  margin-left: 1em;
-  height: 0.8em;
+  margin-left: 1rem;
+  height: 0.8rem;
   transition: height 0.3s;
   cursor: pointer;
 }
 .App .rule #info-button1:hover {
-  height: 1em;
+  height: 1rem;
 }
 .App .rule #info-button2 {
-  margin-left: 1em;
-  height: 0.8em;
+  margin-left: 1rem;
+  height: 0.8rem;
   transition: height 0.3s;
   cursor: pointer;
 }
 .App .rule #info-button2:hover {
-  height: 1em;
+  height: 1rem;
 }
 .App .rule #info-button3 {
-  margin-left: 1em;
-  height: 0.8em;
+  margin-left: 1rem;
+  height: 0.8rem;
   transition: height 0.3s;
   cursor: pointer;
 }
 .App .rule #info-button3:hover {
-  height: 1em;
+  height: 1rem;
 }
 .App .rule #info-button4 {
-  margin-left: 1em;
-  height: 0.8em;
+  margin-left: 1rem;
+  height: 0.8rem;
   transition: height 0.3s;
   cursor: pointer;
 }
 .App .rule #info-button4:hover {
-  height: 1em;
+  height: 1rem;
 }
 .App .rule #info-button5 {
-  margin-left: 1em;
-  height: 0.8em;
+  margin-left: 1rem;
+  height: 0.8rem;
   transition: height 0.3s;
   cursor: pointer;
 }
 .App .rule #info-button5:hover {
-  height: 1em;
+  height: 1rem;
 }
 .App .rule #info-button6 {
-  margin-left: 1em;
-  height: 0.8em;
+  margin-left: 1rem;
+  height: 0.8rem;
   transition: height 0.3s;
   cursor: pointer;
 }
 .App .rule #info-button6:hover {
-  height: 1em;
+  height: 1rem;
 }
 .App .rule #info-button7 {
-  margin-left: 1em;
-  height: 0.8em;
+  margin-left: 1rem;
+  height: 0.8rem;
   transition: height 0.3s;
   cursor: pointer;
 }
 .App .rule #info-button7:hover {
-  height: 1em;
+  height: 1rem;
 }
 .App .rule #info-button8 {
-  margin-left: 1em;
-  height: 0.8em;
+  margin-left: 1rem;
+  height: 0.8rem;
   transition: height 0.3s;
   cursor: pointer;
 }
 .App .rule #info-button8:hover {
-  height: 1em;
+  height: 1rem;
 }
 .App .rule #info-button9 {
-  margin-left: 1em;
-  height: 0.8em;
+  margin-left: 1rem;
+  height: 0.8rem;
   transition: height 0.3s;
   cursor: pointer;
 }
 .App .rule #info-button9:hover {
-  height: 1em;
+  height: 1rem;
 }
 .App .rule #info-button10 {
-  margin-left: 1em;
-  height: 0.8em;
+  margin-left: 1rem;
+  height: 0.8rem;
   transition: height 0.3s;
   cursor: pointer;
 }
 .App .rule #info-button10:hover {
-  height: 1em;
+  height: 1rem;
 }
 .App .rule #info-button11 {
-  margin-left: 1em;
-  height: 0.8em;
+  margin-left: 1rem;
+  height: 0.8rem;
   transition: height 0.3s;
   cursor: pointer;
 }
 .App .rule #info-button11:hover {
-  height: 1em;
+  height: 1rem;
 }
 .App .rule #info-button12 {
-  margin-left: 1em;
-  height: 0.8em;
+  margin-left: 1rem;
+  height: 0.8rem;
   transition: height 0.3s;
   cursor: pointer;
 }
 .App .rule #info-button12:hover {
-  height: 1em;
+  height: 1rem;
 }
 .App h2 {
-  font-size: 1.1em;
+  font-size: 1.1rem;
 }
 .App h2.divisor {
   flex: 1.2;
@@ -162,22 +162,29 @@ html, body, #root {
   flex: 0.7 0.7;
 }
 .App h2 {
-  font-size: 1.1em;
+  font-size: 1.1rem;
   font-weight: 700;
 }
-.App h3, .App label {
-  font-size: 0.9em;
-  font-weight: 300;
+.App h3 {
+  margin-top: 1rem;
+  margin-bottom: 0.4rem;
+  max-width: 80%;
+}
+.App label {
   margin-top: 0;
+}
+.App h3, .App label {
+  font-size: 0.9rem;
+  font-weight: 300;
   text-align: center;
 }
 .App #credits h4 {
-  font-size: 0.7em;
+  font-size: 0.7rem;
   font-weight: 300;
   text-align: center;
 }
 .App #credits h4:nth-of-type(1) {
-  margin-top: 2em;
+  margin-top: 1rem;
   margin-bottom: 0;
 }
 .App #credits h4:nth-of-type(2) {
@@ -193,8 +200,8 @@ html, body, #root {
 }
 .App label {
   margin-bottom: 0;
-  line-height: 0.5em;
-  margin-top: 0.8em;
+  line-height: 0.5rem;
+  margin-top: 0.8rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -202,9 +209,9 @@ html, body, #root {
 }
 .App label input {
   font-family: "Kalam", Verdana, sans-serif;
-  font-size: 2.5em;
+  font-size: 2.5rem;
   font-weight: 700;
-  width: 4em;
+  width: 9rem;
   background-color: rgba(0, 0, 0, 0);
   border: none;
   text-align: center;
@@ -212,13 +219,14 @@ html, body, #root {
   margin-right: -15px;
 }
 .App #table {
-  width: 70%;
-  max-width: 45em;
+  width: 80%;
+  max-width: 40rem;
+  margin-top: -1rem;
 }
 .App #table .table-row {
   display: flex;
   flex-direction: row;
-  height: 2.1em;
+  height: 2.1rem;
   align-items: center;
   position: relative;
 }
@@ -434,6 +442,12 @@ html, body, #root {
   }
   to {
     clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  }
+}
+
+@media (max-width: 650px) {
+  html {
+    font-size: 10px;
   }
 }
 
