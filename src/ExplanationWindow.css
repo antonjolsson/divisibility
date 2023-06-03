@@ -9,14 +9,6 @@
 #expl-window-container.grow {
   animation: 0.5s grow forwards;
 }
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 @keyframes fade-out {
   from {
     left: 50%;
@@ -41,13 +33,22 @@
   position: absolute;
   background-image: url("../public/bg.jpg");
   background-size: 79em;
-  opacity: 0.3;
+  opacity: 0;
   background-color: red;
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: 1s fade-in-bg forwards;
+}
+@keyframes fade-in-bg {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.3;
+  }
 }
 #expl-window-container #expl-window {
   width: 100%;
@@ -57,7 +58,15 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  animation: 0.5s fade-in forwards;
+  animation: 0.5s fade-in-fg forwards;
+}
+@keyframes fade-in-fg {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 #expl-window-container #expl-window .headline {
   font-size: 2.5em;
@@ -99,12 +108,34 @@
 #expl-window-container #expl-window #demonstrationLastNDigits.single-row {
   overflow: hidden;
 }
-#expl-window-container #expl-window #demonstrationLastNDigits, #expl-window-container #expl-window #demonstrationDigitSum, #expl-window-container #expl-window #demo7 {
+#expl-window-container #expl-window #composite-demo {
+  flex-direction: column;
+}
+#expl-window-container #expl-window #composite-demo h1 {
+  font-size: 2.5em;
+}
+#expl-window-container #expl-window #composite-demo .child.single-row {
+  height: 35%;
+}
+#expl-window-container #expl-window #composite-demo .child {
+  height: 60%;
+}
+#expl-window-container #expl-window #composite-demo .child#demonstrationLastNDigits {
+  justify-content: flex-end;
+}
+#expl-window-container #expl-window #composite-demo .child:not(#expl-window-container #expl-window #composite-demo .child#demonstrationLastNDigits) {
+  justify-content: initial;
+}
+#expl-window-container #expl-window #demonstrationLastNDigits, #expl-window-container #expl-window #demonstrationDigitSum, #expl-window-container #expl-window #demo7, #expl-window-container #expl-window #composite-demo {
   width: 85%;
   display: flex;
   align-items: center;
+}
+#expl-window-container #expl-window #demonstrationLastNDigits:not(#expl-window-container #expl-window #demonstrationLastNDigits.single-row, #expl-window-container #expl-window #demonstrationDigitSum.single-row, #expl-window-container #expl-window #demo7.single-row, #expl-window-container #expl-window #composite-demo.single-row):not(#expl-window-container #expl-window #demonstrationLastNDigits.child, #expl-window-container #expl-window #demonstrationDigitSum.child, #expl-window-container #expl-window #demo7.child, #expl-window-container #expl-window #composite-demo.child), #expl-window-container #expl-window #demonstrationDigitSum:not(#expl-window-container #expl-window #demonstrationLastNDigits.single-row, #expl-window-container #expl-window #demonstrationDigitSum.single-row, #expl-window-container #expl-window #demo7.single-row, #expl-window-container #expl-window #composite-demo.single-row):not(#expl-window-container #expl-window #demonstrationLastNDigits.child, #expl-window-container #expl-window #demonstrationDigitSum.child, #expl-window-container #expl-window #demo7.child, #expl-window-container #expl-window #composite-demo.child), #expl-window-container #expl-window #demo7:not(#expl-window-container #expl-window #demonstrationLastNDigits.single-row, #expl-window-container #expl-window #demonstrationDigitSum.single-row, #expl-window-container #expl-window #demo7.single-row, #expl-window-container #expl-window #composite-demo.single-row):not(#expl-window-container #expl-window #demonstrationLastNDigits.child, #expl-window-container #expl-window #demonstrationDigitSum.child, #expl-window-container #expl-window #demo7.child, #expl-window-container #expl-window #composite-demo.child), #expl-window-container #expl-window #composite-demo:not(#expl-window-container #expl-window #demonstrationLastNDigits.single-row, #expl-window-container #expl-window #demonstrationDigitSum.single-row, #expl-window-container #expl-window #demo7.single-row, #expl-window-container #expl-window #composite-demo.single-row):not(#expl-window-container #expl-window #demonstrationLastNDigits.child, #expl-window-container #expl-window #demonstrationDigitSum.child, #expl-window-container #expl-window #demo7.child, #expl-window-container #expl-window #composite-demo.child) {
+  height: 40%;
+}
+#expl-window-container #expl-window #demonstrationLastNDigits, #expl-window-container #expl-window #demonstrationDigitSum, #expl-window-container #expl-window #demo7 {
   overflow: auto;
-  max-height: 40%;
 }
 #expl-window-container #expl-window #demonstrationLastNDigits #row0, #expl-window-container #expl-window #demonstrationDigitSum #row0, #expl-window-container #expl-window #demo7 #row0 {
   margin: 0;

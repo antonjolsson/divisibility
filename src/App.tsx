@@ -2,7 +2,7 @@ import React, {createContext, ReactElement, SetStateAction, useContext, useEffec
 import './App.css';
 import {ExplanationWindow} from "./ExplanationWindow";
 
-const DEFAULT_DIVIDEND = 112
+const DEFAULT_DIVIDEND = 999999
 
 const BackgroundClickedContext = createContext({bgClicked: false, setBgClicked: (v: SetStateAction<boolean>) => {}})
 const ShowExplanationContext = createContext({showExplanation: false, setShowExplanation: (v: SetStateAction<boolean>) => {}})
@@ -152,7 +152,11 @@ function Table(props: {number: number}): ReactElement {
             explanation: 'An integer is divisible by 5 if it ends in 0 or 5',
             divides: [0, 5].includes(getNLastDigits(props.number, 1))
         },
-        {divisor: 6, name: 'Divisible by 2 and 3', explanation: '', divides: isEvenLongVersion(props.number) && getDigitSum(props.number) % 3 === 0},
+        {
+            divisor: 6,
+            name: 'Divisible by 2 and 3',
+            explanation: 'An integer is divisible by 6 if it\'s divisible by 2 and 3 (check rules for those)',
+            divides: isEvenLongVersion(props.number) && getDigitSum(props.number) % 3 === 0},
         {
             divisor: 7,
             name: '5 x last + rest',
@@ -182,7 +186,11 @@ function Table(props: {number: number}): ReactElement {
             explanation: 'An integer is divisible by 11 if its alternating sum (alternatingly - and +) is',
             divides: divisibleBy11(props.number)
         },
-        {divisor: 12, name: 'Divisible by 3 and 4', explanation: '', divides: getDigitSum(props.number) % 3 === 0 && divisibleBy4(props.number)}
+        {
+            divisor: 12,
+            name: 'Divisible by 3 and 4',
+            explanation: 'An integer is divisible by 12 if it\'s divisible by 3 and 4 (check rules for those)',
+            divides: getDigitSum(props.number) % 3 === 0 && divisibleBy4(props.number)}
     ]
 
     return <div id={'table'}>
@@ -257,3 +265,4 @@ function App(): ReactElement {
 }
 
 export default App;
+export const DemoFinishedContext = createContext({finished: false, setFinished: (v: SetStateAction<boolean>) => {}})
