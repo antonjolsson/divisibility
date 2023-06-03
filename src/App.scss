@@ -18,8 +18,9 @@ html, body, #root {
     #bg {
         position: fixed;
         z-index: -10;
-        height: 100%;
         opacity: 0.3;
+        width: 100%;
+        height: auto;
     }
 
     h1 {
@@ -139,7 +140,7 @@ html, body, #root {
     #table {
         width: 80%;
         max-width: 40rem;
-        margin-top: -1rem;
+        margin-top: 0rem;
 
         .table-row {
             display: flex;

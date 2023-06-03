@@ -261,7 +261,7 @@ function App(): ReactElement {
                           }}>
                               <img id={'bg'} src={'bg.jpg'} alt={'bg'}/>
                               <h1>Divisibility</h1>
-                              <h3>Memorable shortcuts for testing divisibility by natural numbers up to 12</h3>
+                              <h3>Memorable shortcuts for testing divisibility of integers</h3>
                               <Input onChange={(n: number): void => setDividend(n)}/>
                               <Table number={dividend}/>
                               {<ExplanationWindow show={showExplanation} coords={infoButtonCoordsForRule} rule={ruleExplained}
