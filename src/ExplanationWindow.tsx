@@ -87,9 +87,9 @@ function DigitSum(props: { divides: boolean, dividend: number, alternating: bool
     return <div id={'demonstrationDigitSum'} className={props.className ?? ''}>
         {/* Need to reverse the array and ID:s to keep scrollbar scrolled to the bottom during animations */}
         {sums.reverse().map((sum, i, arr) => <h1 key={i} className={props.divides ? 'divisor' : 'not-divisor'}
-                                                 id={'row' + String(arr.length - 1 - i)} onAnimationEnd={(_): void => onAnimationEnd(i)}>
-            {addOperators(getChars(sum)).map((v, i) => <span key={i}
-                className={i % 2 === 1 ? 'operator' : 'digit'}>{v}</span>)}
+                                                 id={'row' + String(arr.length - 1 - i)}>
+            {addOperators(getChars(sum)).map((v, j) => <span key={j} onAnimationEnd={(_): void => onAnimationEnd(i)}
+                className={j % 2 === 1 ? 'operator' : 'digit'}>{v}</span>)}
         </h1>)}
     </div>;
 }
@@ -135,7 +135,7 @@ function getDemonstration(ruleNumber: number, dividend: number, divides: boolean
         case 1: return <Demo1 dividend={dividend} divides={divides} className={className}/>
         case 4: return <LastNDigits dividend={dividend} divides={divides} digits={2} className={className}/>
         case 3: case 9: case 11: return <DigitSum dividend={dividend} divides={divides} alternating={ruleNumber === 11}
-                                                  divisor={ruleNumber} className={className}/>
+                                divisor={ruleNumber} className={`${dividend < 10 ? 'single-row ' : ''}${className}`}/>
         case 6: case 12: return <CompositeDemo divisor={ruleNumber} dividend={dividend} divides={divides}/>
         case 7: return <Demo7 dividend={dividend} divides={divides} className={className}/>
         case 8: return <LastNDigits dividend={dividend} divides={divides} digits={3} className={className}/>
@@ -148,6 +148,12 @@ export function ExplanationWindow(props: { coords: { x: number; y: number }, rul
     const [show, setShow] = useState(false)
     const [rootClassName, setRootClassName] = useState('')
     const [firstDemoFinished, setFirstDemoFinished] =  useState(false)
+
+    useEffect(() => {
+        if (firstDemoFinished) {
+            console.log('firstDemoFinished')
+        }
+    }, [firstDemoFinished])
 
     useEffect(() => {
         if (props.show) {

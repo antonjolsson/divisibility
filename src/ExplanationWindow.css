@@ -58,6 +58,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  opacity: 0;
   animation: 0.5s fade-in-fg forwards;
 }
 @keyframes fade-in-fg {
@@ -101,6 +102,9 @@
 #expl-window-container #expl-window #demo7 {
   justify-content: flex-start;
 }
+#expl-window-container #expl-window #demo7 h1 {
+  font-size: 2.5em;
+}
 #expl-window-container #expl-window #demonstrationLastNDigits {
   flex-direction: column;
   justify-content: flex-start;
@@ -125,6 +129,10 @@
 }
 #expl-window-container #expl-window #composite-demo .child:not(#expl-window-container #expl-window #composite-demo .child#demonstrationLastNDigits) {
   justify-content: initial;
+}
+#expl-window-container #expl-window #composite-demo .child:nth-of-type(1) {
+  margin-top: -1em;
+  margin-bottom: 1em;
 }
 #expl-window-container #expl-window #demonstrationLastNDigits, #expl-window-container #expl-window #demonstrationDigitSum, #expl-window-container #expl-window #demo7, #expl-window-container #expl-window #composite-demo {
   width: 85%;
