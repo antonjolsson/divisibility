@@ -232,7 +232,7 @@ function Input(props: {onChange: (n: number) => void}): ReactElement {
 }
 
 function Credits(): ReactElement {
-    return <h4>{'Inspired by Numberphile video '}<a href={'https://www.youtube.com/watch?v=UDQjn_-pDSs'}>Why 7 is Weird</a>
+    return <h4>{'Inspired by Numberphile video '}<a href={'https://www.youtube.com/watch?v=UDQjn_-pDSs'}>{'>>Why 7 is Weird<<'}</a>
         {' | More divisibility rules on '}
         <a href={'https://en.wikipedia.org/wiki/Divisibility_rule'}>Wikipedia</a></h4>;
 }
