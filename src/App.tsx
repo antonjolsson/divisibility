@@ -231,6 +231,12 @@ function Input(props: {onChange: (n: number) => void}): ReactElement {
         </label></>
 }
 
+function Credits(): ReactElement {
+    return <h4>{'Inspired by Numberphile video '}<a href={'https://www.youtube.com/watch?v=UDQjn_-pDSs'}>Why 7 is Weird</a>
+        {' | More divisibility rules on '}
+        <a href={'https://en.wikipedia.org/wiki/Divisibility_rule'}>Wikipedia</a></h4>;
+}
+
 function App(): ReactElement {
     const [dividend, setDividend] = useState(-1)
     const [bgClicked, setBgClicked] = useState(false)
@@ -255,6 +261,7 @@ function App(): ReactElement {
                               <Table number={dividend}/>
                               {<ExplanationWindow show={showExplanation} coords={infoButtonCoordsForRule} rule={ruleExplained}
                                                                      dividend={dividend}/>}
+                              <Credits />
                           </div>
                       </ExplainedRuleContext.Provider>
                   </InfoButtonCoordsContext.Provider>
