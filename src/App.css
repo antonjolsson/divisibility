@@ -175,6 +175,14 @@ html, body, #root {
   font-weight: 300;
   margin-top: 2.5em;
 }
+.App h4 a {
+  text-decoration: none;
+  color: black;
+  transition: color 0.5s;
+}
+.App h4 a:hover {
+  color: green;
+}
 .App label {
   margin-bottom: 0;
   line-height: 0.5em;

@@ -80,6 +80,16 @@ html, body, #root {
         font-size: 0.7em;
         font-weight: 300;
         margin-top: 2.5em;
+
+        a {
+            text-decoration: none;
+            color: black;
+            transition: color 0.5s;
+
+            &:hover {
+                color: green;
+            }
+        }
     }
 
     label {
