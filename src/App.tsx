@@ -259,7 +259,7 @@ function App(): ReactElement {
                           <div className="App" onClick={(): void => {
                               setBgClicked(true)
                           }}>
-                              <img id={'bg'} src={'bg.jpg'} alt={'bg'}/>
+                              {/*<img id={'bg'} src={'bg.jpg'} alt={'bg'}/>*/}
                               <h1>Divisibility</h1>
                               <h3>Memorable shortcuts for testing divisibility of integers</h3>
                               <Input onChange={(n: number): void => setDividend(n)}/>
