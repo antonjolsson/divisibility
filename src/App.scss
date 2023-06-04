@@ -208,6 +208,32 @@ html, body, #root {
 
 @media (max-width: 650px) {
     html {
-        font-size: 10px;
+        font-size: 16px;
+
+        .App {
+            overflow: auto;
+
+            > h1 {
+                margin-top: 7rem;
+            }
+
+            > h3 {
+                line-height: 1.3em;
+            }
+
+            > h3, > label {
+                font-size: 1rem;
+            }
+
+            > label {
+                line-height: 0;
+
+                input {
+                    margin-right: 0;
+
+                    padding: 0;
+                }
+            }
+        }
     }
 }

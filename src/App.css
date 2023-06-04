@@ -448,7 +448,26 @@ html, body, #root {
 
 @media (max-width: 650px) {
   html {
-    font-size: 10px;
+    font-size: 16px;
+  }
+  html .App {
+    overflow: auto;
+  }
+  html .App > h1 {
+    margin-top: 7rem;
+  }
+  html .App > h3 {
+    line-height: 1.3em;
+  }
+  html .App > h3, html .App > label {
+    font-size: 1rem;
+  }
+  html .App > label {
+    line-height: 0;
+  }
+  html .App > label input {
+    margin-right: 0;
+    padding: 0;
   }
 }
 
