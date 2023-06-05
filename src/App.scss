@@ -26,14 +26,6 @@ body:before {
     align-items: center;
     flex-direction: column;
 
-    /*#bg {
-        position: fixed;
-        z-index: -10;
-        opacity: 0.3;
-        width: 100%;
-        height: auto;
-    }*/
-
     h1 {
         font-size: 3rem;
         margin-bottom: 0;
@@ -224,10 +216,6 @@ body:before {
         .App {
             overflow: auto;
 
-            > h1 {
-                margin-top: 7rem;
-            }
-
             > h3 {
                 line-height: 1.3em;
             }
@@ -243,6 +231,33 @@ body:before {
                     margin-right: 0;
                     padding: 0;
                 }
+            }
+
+            #table .table-row {
+                height: unset;
+                align-items: flex-start;
+
+                h2 {
+                    line-height: 1.3rem;
+                    margin: 0.5rem 0;
+                }
+
+                .divisor, .rule, .divisible {
+                    flex-shrink: 0;
+                }
+
+                .divisor {
+                    flex-basis: 28%;
+                }
+
+                .rule {
+                    flex-basis: 50%;
+                }
+
+                .divisible {
+                    flex-basis: 22%;
+                }
+
             }
         }
     }
