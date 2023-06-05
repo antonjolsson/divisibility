@@ -47,7 +47,6 @@ body:before {
   cursor: pointer;
 }
 .App .rule #info-button0:hover {
-  /*height: 1.0rem;*/
   transform: scale(1.25, 1.25);
 }
 .App .rule #info-button1 {
@@ -57,7 +56,6 @@ body:before {
   cursor: pointer;
 }
 .App .rule #info-button1:hover {
-  /*height: 1.0rem;*/
   transform: scale(1.25, 1.25);
 }
 .App .rule #info-button2 {
@@ -67,7 +65,6 @@ body:before {
   cursor: pointer;
 }
 .App .rule #info-button2:hover {
-  /*height: 1.0rem;*/
   transform: scale(1.25, 1.25);
 }
 .App .rule #info-button3 {
@@ -77,7 +74,6 @@ body:before {
   cursor: pointer;
 }
 .App .rule #info-button3:hover {
-  /*height: 1.0rem;*/
   transform: scale(1.25, 1.25);
 }
 .App .rule #info-button4 {
@@ -87,7 +83,6 @@ body:before {
   cursor: pointer;
 }
 .App .rule #info-button4:hover {
-  /*height: 1.0rem;*/
   transform: scale(1.25, 1.25);
 }
 .App .rule #info-button5 {
@@ -97,7 +92,6 @@ body:before {
   cursor: pointer;
 }
 .App .rule #info-button5:hover {
-  /*height: 1.0rem;*/
   transform: scale(1.25, 1.25);
 }
 .App .rule #info-button6 {
@@ -107,7 +101,6 @@ body:before {
   cursor: pointer;
 }
 .App .rule #info-button6:hover {
-  /*height: 1.0rem;*/
   transform: scale(1.25, 1.25);
 }
 .App .rule #info-button7 {
@@ -117,7 +110,6 @@ body:before {
   cursor: pointer;
 }
 .App .rule #info-button7:hover {
-  /*height: 1.0rem;*/
   transform: scale(1.25, 1.25);
 }
 .App .rule #info-button8 {
@@ -127,7 +119,6 @@ body:before {
   cursor: pointer;
 }
 .App .rule #info-button8:hover {
-  /*height: 1.0rem;*/
   transform: scale(1.25, 1.25);
 }
 .App .rule #info-button9 {
@@ -137,7 +128,6 @@ body:before {
   cursor: pointer;
 }
 .App .rule #info-button9:hover {
-  /*height: 1.0rem;*/
   transform: scale(1.25, 1.25);
 }
 .App .rule #info-button10 {
@@ -147,7 +137,6 @@ body:before {
   cursor: pointer;
 }
 .App .rule #info-button10:hover {
-  /*height: 1.0rem;*/
   transform: scale(1.25, 1.25);
 }
 .App .rule #info-button11 {
@@ -157,7 +146,6 @@ body:before {
   cursor: pointer;
 }
 .App .rule #info-button11:hover {
-  /*height: 1.0rem;*/
   transform: scale(1.25, 1.25);
 }
 .App .rule #info-button12 {
@@ -167,7 +155,6 @@ body:before {
   cursor: pointer;
 }
 .App .rule #info-button12:hover {
-  /*height: 1.0rem;*/
   transform: scale(1.25, 1.25);
 }
 .App h2 {
@@ -465,16 +452,20 @@ body:before {
 
 @media (max-width: 650px) {
   html {
-    font-size: 16px;
+    font-size: 14px;
   }
   html .App {
     overflow: auto;
+    height: unset;
+  }
+  html .App > h1 {
+    margin-top: 3rem;
   }
   html .App > h3 {
     line-height: 1.3em;
   }
   html .App > h3, html .App > label {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
   html .App > label {
     line-height: 0;
@@ -494,23 +485,32 @@ body:before {
   html .App #table .table-row h2 {
     line-height: 1.3rem;
     margin: 0.5rem 0;
+    font-size: 1.2rem;
   }
   html .App #table .table-row .divisor, html .App #table .table-row .rule, html .App #table .table-row .divisible {
     flex-shrink: 0;
   }
   html .App #table .table-row .divisor {
-    flex-basis: 28%;
+    flex-basis: 24%;
   }
   html .App #table .table-row .rule {
-    flex-basis: 50%;
-    padding-right: 1.5rem;
+    flex-basis: 46%;
+    padding-right: 1rem;
     align-items: flex-start;
   }
   html .App #table .table-row .rule img {
     margin-top: 0.6rem;
+    height: 1rem;
   }
   html .App #table .table-row .divisible {
-    flex-basis: 22%;
+    flex-basis: 30%;
+  }
+  html .App #credits {
+    margin-bottom: 2rem;
+    padding: 0 1.3rem;
+  }
+  html .App #credits h4 {
+    font-size: 0.9rem;
   }
 }
 

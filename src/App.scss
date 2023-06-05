@@ -51,7 +51,6 @@ body:before {
                 cursor: pointer;
 
                 &:hover {
-                    /*height: 1.0rem;*/
                     transform: scale(1.25, 1.25);
                 }
             }
@@ -212,17 +211,22 @@ body:before {
 
 @media (max-width: 650px) {
     html {
-        font-size: 16px;
+        font-size: 14px;
 
         .App {
             overflow: auto;
+            height: unset;
+
+            > h1 {
+                margin-top: 3rem;
+            }
 
             > h3 {
                 line-height: 1.3em;
             }
 
             > h3, > label {
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
 
             > label {
@@ -246,6 +250,7 @@ body:before {
                 h2 {
                     line-height: 1.3rem;
                     margin: 0.5rem 0;
+                    font-size: 1.2rem;
                 }
 
                 .divisor, .rule, .divisible {
@@ -253,23 +258,33 @@ body:before {
                 }
 
                 .divisor {
-                    flex-basis: 28%;
+                    flex-basis: 24%;
                 }
 
                 .rule {
-                    flex-basis: 50%;
-                    padding-right: 1.5rem;
+                    flex-basis: 46%;
+                    padding-right: 1.0rem;
                     align-items: flex-start;
 
                     img {
                         margin-top: 0.6rem;
+                        height: 1.0rem;
                     }
                 }
 
                 .divisible {
-                    flex-basis: 22%;
+                    flex-basis: 30%;
                 }
 
+            }
+
+            #credits {
+                margin-bottom: 2rem;
+                padding: 0 1.3rem;
+
+                h4 {
+                    font-size: 0.9rem;
+                }
             }
         }
     }
