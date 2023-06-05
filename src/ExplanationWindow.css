@@ -27,14 +27,13 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  animation: 0.5s fade-out forwards;
+  animation: 5s fade-out forwards;
 }
 #expl-window-container #expl-window-bg {
   position: absolute;
   background-image: url("../public/bg.jpg");
   background-size: 79em;
   opacity: 0;
-  background-color: red;
   width: 100%;
   height: 100%;
   display: flex;
@@ -2206,6 +2205,14 @@
     width: 100%;
     height: 100%;
     top: 0 !important;
+  }
+  #expl-window-container.fade-out {
+    width: 100%;
+    height: 100%;
+    left: 0 !important;
+    top: 0 !important;
+    transform: translate(0, 0);
+    animation: 0.5s fade-out forwards;
   }
   #expl-window-container.grow {
     animation: 0.5s slide-in forwards;
