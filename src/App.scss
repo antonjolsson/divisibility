@@ -47,11 +47,12 @@ body:before {
             #info-button#{$i} {
                 margin-left: 1rem;
                 height: 0.8rem;
-                transition: height 0.3s;
+                transition: all 0.3s;
                 cursor: pointer;
 
                 &:hover {
-                    height: 1.0rem;
+                    /*height: 1.0rem;*/
+                    transform: scale(1.25, 1.25);
                 }
             }
         }
@@ -61,7 +62,7 @@ body:before {
         font-size: 1.1rem;
 
         &.divisor {
-            flex: 1.2;
+            flex: 1;
         }
 
         &.divisible {
@@ -143,7 +144,7 @@ body:before {
     #table {
         width: 80%;
         max-width: 40rem;
-        margin-top: 0rem;
+        margin-top: 0;
 
         .table-row {
             display: flex;
@@ -237,6 +238,11 @@ body:before {
                 height: unset;
                 align-items: flex-start;
 
+                .stroke {
+                    height: 100%;
+                    width: 110%;
+                }
+
                 h2 {
                     line-height: 1.3rem;
                     margin: 0.5rem 0;
@@ -252,6 +258,12 @@ body:before {
 
                 .rule {
                     flex-basis: 50%;
+                    padding-right: 1.5rem;
+                    align-items: flex-start;
+
+                    img {
+                        margin-top: 0.6rem;
+                    }
                 }
 
                 .divisible {

@@ -38,8 +38,8 @@ function TableRow(props: { entries: string[], marked: boolean, markedRank: numbe
         <h2 className={'divisor'}>{props.entries[0]}</h2>
         <div className={'rule'}>
             <h2>{props.entries[1]}</h2>
-            {parseInt(props.entries[0]) > 0 && <img ref={infoButtonRef} id={`info-button${props.entries[0]}`} src={'info.svg'} alt={'info'}
-                  onClick={(e): void => onInfoButtonClick(e)}></img>}
+            {parseInt(props.entries[0]) > 0 && <img ref={infoButtonRef} id={`info-button${props.entries[0]}`}
+                                    src={'info.svg'} alt={'info'} onClick={(e): void => onInfoButtonClick(e)}></img>}
         </div>
         <h2 className={'divisible'}>{props.entries[3]}</h2>
     </div>;

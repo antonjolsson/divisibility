@@ -43,125 +43,138 @@ body:before {
 .App .rule #info-button0 {
   margin-left: 1rem;
   height: 0.8rem;
-  transition: height 0.3s;
+  transition: all 0.3s;
   cursor: pointer;
 }
 .App .rule #info-button0:hover {
-  height: 1rem;
+  /*height: 1.0rem;*/
+  transform: scale(1.25, 1.25);
 }
 .App .rule #info-button1 {
   margin-left: 1rem;
   height: 0.8rem;
-  transition: height 0.3s;
+  transition: all 0.3s;
   cursor: pointer;
 }
 .App .rule #info-button1:hover {
-  height: 1rem;
+  /*height: 1.0rem;*/
+  transform: scale(1.25, 1.25);
 }
 .App .rule #info-button2 {
   margin-left: 1rem;
   height: 0.8rem;
-  transition: height 0.3s;
+  transition: all 0.3s;
   cursor: pointer;
 }
 .App .rule #info-button2:hover {
-  height: 1rem;
+  /*height: 1.0rem;*/
+  transform: scale(1.25, 1.25);
 }
 .App .rule #info-button3 {
   margin-left: 1rem;
   height: 0.8rem;
-  transition: height 0.3s;
+  transition: all 0.3s;
   cursor: pointer;
 }
 .App .rule #info-button3:hover {
-  height: 1rem;
+  /*height: 1.0rem;*/
+  transform: scale(1.25, 1.25);
 }
 .App .rule #info-button4 {
   margin-left: 1rem;
   height: 0.8rem;
-  transition: height 0.3s;
+  transition: all 0.3s;
   cursor: pointer;
 }
 .App .rule #info-button4:hover {
-  height: 1rem;
+  /*height: 1.0rem;*/
+  transform: scale(1.25, 1.25);
 }
 .App .rule #info-button5 {
   margin-left: 1rem;
   height: 0.8rem;
-  transition: height 0.3s;
+  transition: all 0.3s;
   cursor: pointer;
 }
 .App .rule #info-button5:hover {
-  height: 1rem;
+  /*height: 1.0rem;*/
+  transform: scale(1.25, 1.25);
 }
 .App .rule #info-button6 {
   margin-left: 1rem;
   height: 0.8rem;
-  transition: height 0.3s;
+  transition: all 0.3s;
   cursor: pointer;
 }
 .App .rule #info-button6:hover {
-  height: 1rem;
+  /*height: 1.0rem;*/
+  transform: scale(1.25, 1.25);
 }
 .App .rule #info-button7 {
   margin-left: 1rem;
   height: 0.8rem;
-  transition: height 0.3s;
+  transition: all 0.3s;
   cursor: pointer;
 }
 .App .rule #info-button7:hover {
-  height: 1rem;
+  /*height: 1.0rem;*/
+  transform: scale(1.25, 1.25);
 }
 .App .rule #info-button8 {
   margin-left: 1rem;
   height: 0.8rem;
-  transition: height 0.3s;
+  transition: all 0.3s;
   cursor: pointer;
 }
 .App .rule #info-button8:hover {
-  height: 1rem;
+  /*height: 1.0rem;*/
+  transform: scale(1.25, 1.25);
 }
 .App .rule #info-button9 {
   margin-left: 1rem;
   height: 0.8rem;
-  transition: height 0.3s;
+  transition: all 0.3s;
   cursor: pointer;
 }
 .App .rule #info-button9:hover {
-  height: 1rem;
+  /*height: 1.0rem;*/
+  transform: scale(1.25, 1.25);
 }
 .App .rule #info-button10 {
   margin-left: 1rem;
   height: 0.8rem;
-  transition: height 0.3s;
+  transition: all 0.3s;
   cursor: pointer;
 }
 .App .rule #info-button10:hover {
-  height: 1rem;
+  /*height: 1.0rem;*/
+  transform: scale(1.25, 1.25);
 }
 .App .rule #info-button11 {
   margin-left: 1rem;
   height: 0.8rem;
-  transition: height 0.3s;
+  transition: all 0.3s;
   cursor: pointer;
 }
 .App .rule #info-button11:hover {
-  height: 1rem;
+  /*height: 1.0rem;*/
+  transform: scale(1.25, 1.25);
 }
 .App .rule #info-button12 {
   margin-left: 1rem;
   height: 0.8rem;
-  transition: height 0.3s;
+  transition: all 0.3s;
   cursor: pointer;
 }
 .App .rule #info-button12:hover {
-  height: 1rem;
+  /*height: 1.0rem;*/
+  transform: scale(1.25, 1.25);
 }
 .App h2 {
   font-size: 1.1rem;
 }
 .App h2.divisor {
-  flex: 1.2;
+  flex: 1;
 }
 .App h2.divisible {
   flex: 0.7 0.7;
@@ -226,7 +239,7 @@ body:before {
 .App #table {
   width: 80%;
   max-width: 40rem;
-  margin-top: 0rem;
+  margin-top: 0;
 }
 .App #table .table-row {
   display: flex;
@@ -474,6 +487,10 @@ body:before {
     height: unset;
     align-items: flex-start;
   }
+  html .App #table .table-row .stroke {
+    height: 100%;
+    width: 110%;
+  }
   html .App #table .table-row h2 {
     line-height: 1.3rem;
     margin: 0.5rem 0;
@@ -486,6 +503,11 @@ body:before {
   }
   html .App #table .table-row .rule {
     flex-basis: 50%;
+    padding-right: 1.5rem;
+    align-items: flex-start;
+  }
+  html .App #table .table-row .rule img {
+    margin-top: 0.6rem;
   }
   html .App #table .table-row .divisible {
     flex-basis: 22%;
