@@ -450,7 +450,7 @@ body:before {
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 650px), (max-height: 720px) {
   html {
     font-size: 14px;
   }
@@ -459,7 +459,7 @@ body:before {
     height: unset;
   }
   html .App > h1 {
-    margin-top: 3rem;
+    margin-top: 3.5rem;
   }
   html .App > h3 {
     line-height: 1.3em;
@@ -506,7 +506,7 @@ body:before {
     flex-basis: 30%;
   }
   html .App #credits {
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
     padding: 0 1.3rem;
   }
   html .App #credits h4 {

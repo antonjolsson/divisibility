@@ -76,6 +76,23 @@ $open-anim-duration: 0.5s;
         @include fade-in(fade-in-fg,  0, 1);
         animation: $open-anim-duration fade-in-fg forwards;
 
+        #close-button {
+            position: absolute;
+            font-size: 2.5rem;
+            line-height: 2rem;
+            margin: 0;
+            top: 2rem;
+            right: 2rem;
+            font-weight: 500;
+            transform: scaleY(0.8);
+            transition: transform 0.3s;
+
+            &:hover {
+                transform: scale(1.25, 1);
+                cursor: pointer;
+            }
+        }
+
         .headline {
             font-size: 2.5em;
             font-weight: 700;
@@ -383,5 +400,40 @@ $open-anim-duration: 0.5s;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes slide-in {
+    from {
+        left: 100%;
+    }
+    to {
+        left: 0;
+    }
+}
+
+@media (max-width: 650px), (max-height: 650px) {
+    #expl-window-container {
+        width: 100%;
+        height: 100%;
+        top: 0 !important;
+
+        &.grow {
+            animation: $open-anim-duration slide-in forwards;
+        }
+
+        #expl-window-bg {
+            opacity: 0.3;
+            animation: none;
+        }
+
+        #expl-window {
+            animation: none;
+            opacity: 1;
+
+            #demonstrationDigitSum {
+                height: auto;
+            }
+        }
     }
 }

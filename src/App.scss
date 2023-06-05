@@ -209,7 +209,7 @@ body:before {
     }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 650px), (max-height: 720px) {
     html {
         font-size: 14px;
 
@@ -218,7 +218,7 @@ body:before {
             height: unset;
 
             > h1 {
-                margin-top: 3rem;
+                margin-top: 3.5rem;
             }
 
             > h3 {
@@ -279,7 +279,7 @@ body:before {
             }
 
             #credits {
-                margin-bottom: 2rem;
+                margin-bottom: 0.5rem;
                 padding: 0 1.3rem;
 
                 h4 {

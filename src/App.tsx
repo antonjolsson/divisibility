@@ -4,7 +4,7 @@ import {ExplanationWindow} from "./ExplanationWindow";
 
 const DEFAULT_DIVIDEND = 999999
 
-const BackgroundClickedContext = createContext({bgClicked: false, setBgClicked: (v: SetStateAction<boolean>) => {}})
+export const BackgroundClickedContext = createContext({bgClicked: false, setBgClicked: (v: SetStateAction<boolean>) => {}})
 const ShowExplanationContext = createContext({showExplanation: false, setShowExplanation: (v: SetStateAction<boolean>) => {}})
 const InfoButtonCoordsContext = createContext({infoButtonCoords: {x: -1, y: -1},
         setInfoButtonCoords: (v: SetStateAction<{x: number, y: number}>) => {}})

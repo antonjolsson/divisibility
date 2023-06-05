@@ -69,6 +69,21 @@
     opacity: 1;
   }
 }
+#expl-window-container #expl-window #close-button {
+  position: absolute;
+  font-size: 2.5rem;
+  line-height: 2rem;
+  margin: 0;
+  top: 2rem;
+  right: 2rem;
+  font-weight: 500;
+  transform: scaleY(0.8);
+  transition: transform 0.3s;
+}
+#expl-window-container #expl-window #close-button:hover {
+  transform: scale(1.25, 1);
+  cursor: pointer;
+}
 #expl-window-container #expl-window .headline {
   font-size: 2.5em;
   font-weight: 700;
@@ -2176,6 +2191,35 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+  }
+}
+@keyframes slide-in {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0;
+  }
+}
+@media (max-width: 650px), (max-height: 650px) {
+  #expl-window-container {
+    width: 100%;
+    height: 100%;
+    top: 0 !important;
+  }
+  #expl-window-container.grow {
+    animation: 0.5s slide-in forwards;
+  }
+  #expl-window-container #expl-window-bg {
+    opacity: 0.3;
+    animation: none;
+  }
+  #expl-window-container #expl-window {
+    animation: none;
+    opacity: 1;
+  }
+  #expl-window-container #expl-window #demonstrationDigitSum {
+    height: auto;
   }
 }
 

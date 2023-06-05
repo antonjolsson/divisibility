@@ -1,5 +1,5 @@
 import React, {createContext, ReactElement, SetStateAction, useContext, useEffect, useState} from "react";
-import {get5XLastPlusRest, getAlternatingSum, getDigitSum, IRule} from "./App";
+import {BackgroundClickedContext, get5XLastPlusRest, getAlternatingSum, getDigitSum, IRule} from "./App";
 import './ExplanationWindow.css'
 
 export const DemoFinishedContext = createContext({finished: false, setFinished: (v: SetStateAction<boolean>) => {}})
@@ -148,6 +148,7 @@ export function ExplanationWindow(props: { coords: { x: number; y: number }, rul
     const [show, setShow] = useState(false)
     const [rootClassName, setRootClassName] = useState('')
     const [firstDemoFinished, setFirstDemoFinished] =  useState(false)
+    const bgClickedContext = useContext(BackgroundClickedContext)
 
     useEffect(() => {
         if (firstDemoFinished) {
@@ -173,7 +174,8 @@ export function ExplanationWindow(props: { coords: { x: number; y: number }, rul
     return <>
         {show && <div id={'expl-window-container'} className={rootClassName} style={{left: props.coords.x, top: props.coords.y}}>
             <div id={'expl-window-bg'}></div>
-            <div onClick={(e): void => stopPropagation(e)} id={'expl-window'}>
+            <div id={'expl-window'} onClick={(e): void => stopPropagation(e)}>
+                <h2 id={'close-button'} onClick={(): void => bgClickedContext.setBgClicked(true)}>x</h2>
                 <h2 className={'headline'}>{`Divisor: ${props.rule.divisor}`}</h2>
                 <h2 className={'headline'}>{`Rule: ${props.rule.name}`}</h2>
                 <div id={'explanation'} dangerouslySetInnerHTML={{__html: props.rule.explanation}}/>
