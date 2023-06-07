@@ -199,7 +199,8 @@ $open-anim-duration: 0.5s;
         }
 
         #demonstrationLastNDigits, #demonstrationDigitSum, #demo7 {
-            $anim-dur: 3s;
+            /*$anim-dur: 3s;*/
+            $anim-dur: 1.5s;
             $margin-condensed: -0.2em;
             $margin-extended: 0.1em;
             $margin-extra-condensed: -1.1em;
