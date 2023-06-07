@@ -6,6 +6,7 @@ export const DemoFinishedContext = createContext({finished: false, setFinished: 
 
 function LastNDigits(props: {dividend: number, divides: boolean, digits: number, className?: string}): ReactElement {
     const demoFinishedContext = useContext(DemoFinishedContext)
+    const className = props.digits > 1 ? ' multi-row' : ''
 
     const dividends = [props.dividend]
     let dividend = props.dividend
@@ -27,12 +28,12 @@ function LastNDigits(props: {dividend: number, divides: boolean, digits: number,
 
     return <div id={'demonstrationLastNDigits'} className={props.className ?? ''}>
     {dividends.map((v, i, arr) => i < arr.length - 1
-        ? <h1 key={i} id={`row${i}`} className={'division-row'}>{v}
+        ? <h1 key={i} id={`row${i}`} className={'division-row' + className}>{v}
             <span>/ 2 = </span>
             <span>{arr[i + 1]}</span>
         </h1>
         : <h1 key={i} id={`row${i}`}
-              className={'demonstrationLastDigit ' + (props.divides ? 'divisor' : 'not-divisor')}>{firstDigits}
+              className={'demonstrationLastDigit ' + (props.divides ? 'divisor' : 'not-divisor') + className}>{firstDigits}
             <span id={firstDigits.length === 0 ? 'sole-digit' : ''}
                   onAnimationEnd={(): void => onAnimationEnd(i, arr)}>{lastDigit}</span>
         </h1>)}
@@ -176,8 +177,8 @@ export function ExplanationWindow(props: { coords: { x: number; y: number }, rul
             <div id={'expl-window-bg'}></div>
             <div id={'expl-window'} onClick={(e): void => stopPropagation(e)}>
                 <h2 id={'close-button'} onClick={(): void => bgClickedContext.setBgClicked(true)}>x</h2>
-                <h2 className={'headline'}>{`Divisor: ${props.rule.divisor}`}</h2>
-                <h2 className={'headline'}>{`Rule: ${props.rule.name}`}</h2>
+                <h2 className={'headline-divisor'}>{`Divisor: ${props.rule.divisor}`}</h2>
+                <h2 className={'headline-rule'}>{`Rule: ${props.rule.name}`}</h2>
                 <div id={'explanation'} dangerouslySetInnerHTML={{__html: props.rule.explanation}}/>
                 <DemoFinishedContext.Provider value={{finished: firstDemoFinished, setFinished: setFirstDemoFinished}}>
                 {getDemonstration(props.rule.divisor, props.dividend, props.rule.divides)}

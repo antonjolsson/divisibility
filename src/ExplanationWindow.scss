@@ -92,7 +92,7 @@ $open-anim-duration: 0.5s;
             }
         }
 
-        .headline {
+        .headline-divisor, .headline-rule {
             font-size: 2.5em;
             font-weight: 700;
             line-height: 0;
@@ -439,8 +439,33 @@ $open-anim-duration: 0.5s;
             animation: none;
             opacity: 1;
 
-            #demonstrationDigitSum {
-                height: auto;
+            .headline-divisor, .headline-rule {
+                padding: 0 1rem;
+                line-height: 2.5rem;
+                margin-top: 0;
+                text-align: center;
+            }
+
+            .headline-divisor {
+                margin-bottom: 1rem;
+            }
+
+            .headline-rule {
+                margin-bottom: 1.5rem;
+            }
+
+            #demonstrationDigitSum,  #demonstrationLastNDigits {
+                height: auto !important;
+            }
+
+            #demonstrationLastNDigits {
+                h1 {
+                    line-height: 3rem;
+
+                    &.multi-row {
+                        font-size: 2.3rem;
+                    }
+                }
             }
         }
     }
