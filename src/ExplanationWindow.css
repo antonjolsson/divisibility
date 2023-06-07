@@ -2242,6 +2242,9 @@
   #expl-window-container #expl-window #demonstrationDigitSum, #expl-window-container #expl-window #demonstrationLastNDigits {
     height: auto !important;
   }
+  #expl-window-container #expl-window #demonstrationLastNDigits, #expl-window-container #expl-window #demonstration1, #expl-window-container #expl-window #composite-demo {
+    margin-top: 1rem;
+  }
   #expl-window-container #expl-window #demonstrationLastNDigits {
     overflow: hidden;
   }
@@ -2267,6 +2270,23 @@
   }
   #expl-window-container #expl-window #composite-demo .child:nth-of-type(2) {
     margin-top: 1rem;
+  }
+  #expl-window-container #expl-window .divisor, #expl-window-container #expl-window .not-divisor, #expl-window-container #expl-window .division-row, #expl-window-container #expl-window #demo7 h1 {
+    line-height: 3.5rem;
+    margin-top: 0;
+    line-break: anywhere;
+  }
+  @keyframes fade-in-slide-down {
+    0% {
+      margin: 0;
+      opacity: 0;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 }
 
