@@ -276,4 +276,3 @@ function App(): ReactElement {
 }
 
 export default App;
-export const DemoFinishedContext = createContext({finished: false, setFinished: (v: SetStateAction<boolean>) => {}})

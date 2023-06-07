@@ -27,7 +27,7 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  animation: 5s fade-out forwards;
+  animation: 0.5s fade-out forwards;
 }
 #expl-window-container #expl-window-bg {
   position: absolute;
@@ -111,6 +111,8 @@
 }
 #expl-window-container #expl-window #demonstrationDigitSum, #expl-window-container #expl-window #demo7 {
   flex-direction: column-reverse;
+}
+#expl-window-container #expl-window #demonstrationDigitSum {
   justify-content: flex-end;
 }
 #expl-window-container #expl-window #demo7 {
@@ -118,6 +120,9 @@
 }
 #expl-window-container #expl-window #demo7 h1 {
   font-size: 2.5em;
+}
+#expl-window-container #expl-window #demo7:not(#expl-window-container #expl-window #demo7.single-row) {
+  height: 40%;
 }
 #expl-window-container #expl-window #demonstrationLastNDigits {
   flex-direction: column;
@@ -128,6 +133,7 @@
 }
 #expl-window-container #expl-window #composite-demo {
   flex-direction: column;
+  height: 40%;
 }
 #expl-window-container #expl-window #composite-demo h1 {
   font-size: 2.5em;
@@ -154,8 +160,8 @@
   display: flex;
   align-items: center;
 }
-#expl-window-container #expl-window #demonstrationLastNDigits:not(#expl-window-container #expl-window #demonstrationLastNDigits.single-row, #expl-window-container #expl-window #demonstrationDigitSum.single-row, #expl-window-container #expl-window #demo7.single-row, #expl-window-container #expl-window #composite-demo.single-row):not(#expl-window-container #expl-window #demonstrationLastNDigits.child, #expl-window-container #expl-window #demonstrationDigitSum.child, #expl-window-container #expl-window #demo7.child, #expl-window-container #expl-window #composite-demo.child), #expl-window-container #expl-window #demonstrationDigitSum:not(#expl-window-container #expl-window #demonstrationLastNDigits.single-row, #expl-window-container #expl-window #demonstrationDigitSum.single-row, #expl-window-container #expl-window #demo7.single-row, #expl-window-container #expl-window #composite-demo.single-row):not(#expl-window-container #expl-window #demonstrationLastNDigits.child, #expl-window-container #expl-window #demonstrationDigitSum.child, #expl-window-container #expl-window #demo7.child, #expl-window-container #expl-window #composite-demo.child), #expl-window-container #expl-window #demo7:not(#expl-window-container #expl-window #demonstrationLastNDigits.single-row, #expl-window-container #expl-window #demonstrationDigitSum.single-row, #expl-window-container #expl-window #demo7.single-row, #expl-window-container #expl-window #composite-demo.single-row):not(#expl-window-container #expl-window #demonstrationLastNDigits.child, #expl-window-container #expl-window #demonstrationDigitSum.child, #expl-window-container #expl-window #demo7.child, #expl-window-container #expl-window #composite-demo.child), #expl-window-container #expl-window #composite-demo:not(#expl-window-container #expl-window #demonstrationLastNDigits.single-row, #expl-window-container #expl-window #demonstrationDigitSum.single-row, #expl-window-container #expl-window #demo7.single-row, #expl-window-container #expl-window #composite-demo.single-row):not(#expl-window-container #expl-window #demonstrationLastNDigits.child, #expl-window-container #expl-window #demonstrationDigitSum.child, #expl-window-container #expl-window #demo7.child, #expl-window-container #expl-window #composite-demo.child) {
-  height: 40%;
+#expl-window-container #expl-window #demonstrationLastNDigits:not(#expl-window-container #expl-window #demonstrationLastNDigits.single-row, #expl-window-container #expl-window #demonstrationDigitSum.single-row):not(#expl-window-container #expl-window #demonstrationLastNDigits.child, #expl-window-container #expl-window #demonstrationDigitSum.child), #expl-window-container #expl-window #demonstrationDigitSum:not(#expl-window-container #expl-window #demonstrationLastNDigits.single-row, #expl-window-container #expl-window #demonstrationDigitSum.single-row):not(#expl-window-container #expl-window #demonstrationLastNDigits.child, #expl-window-container #expl-window #demonstrationDigitSum.child) {
+  min-height: 40%;
 }
 #expl-window-container #expl-window #demonstrationLastNDigits, #expl-window-container #expl-window #demonstrationDigitSum, #expl-window-container #expl-window #demo7 {
   overflow: auto;
@@ -2241,6 +2247,7 @@
   }
   #expl-window-container #expl-window #demonstrationDigitSum, #expl-window-container #expl-window #demonstrationLastNDigits {
     height: auto !important;
+    min-height: unset !important;
   }
   #expl-window-container #expl-window #demonstrationLastNDigits, #expl-window-container #expl-window #demonstration1, #expl-window-container #expl-window #composite-demo {
     margin-top: 1rem;

@@ -102,7 +102,11 @@ function Demo7(props: { divides: boolean, dividend: number, className?: string }
         dividend = get5XLastPlusRest(dividend)
         dividends.push(dividend)
     }
-    return <div id={'demo7'} className={props.className ?? ''}>
+
+    return <div id={'demo7'}
+        className={[dividends.length < 4 ? 'single-row' : '', props.className ?? '']
+        .filter(str => str !== '')
+        .join(' ')}>
         {dividends
             .reverse()
             .map((dividend, i, arr) => {
