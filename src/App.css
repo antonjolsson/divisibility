@@ -212,11 +212,14 @@ body:before {
   position: relative;
 }
 .App #credits h4 .link-container .stroke {
-  height: 100%;
+  height: 110%;
   transition: all 0.15s;
+  transform: scaleX(5);
+  left: 100%;
+  clip-path: polygon(20% 0, 20% 0, 20% 100%, 20% 100%);
 }
 .App #credits h4 .link-container:hover .stroke {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(20% 0, 40% 0, 40% 100%, 20% 100%);
 }
 .App #credits h4#numberphile-link {
   margin-top: 1rem;
