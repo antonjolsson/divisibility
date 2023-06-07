@@ -183,10 +183,40 @@ body:before {
   font-weight: 300;
   text-align: center;
 }
+@keyframes draw-stroke {
+  from {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  }
+  to {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+.App .stroke-common, .App #table .table-row .stroke, .App #credits h4 .link-container .stroke {
+  position: absolute;
+  z-index: -1;
+  opacity: 0.4;
+  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  pointer-events: none;
+  width: 100%;
+  transform: translateX(-3%);
+}
 .App #credits h4 {
+  display: flex;
+  justify-content: center;
   font-size: 0.7rem;
   font-weight: 300;
   text-align: center;
+}
+.App #credits h4 .link-container {
+  margin-left: 0.3rem;
+  position: relative;
+}
+.App #credits h4 .link-container .stroke {
+  height: 100%;
+  transition: all 0.15s;
+}
+.App #credits h4 .link-container:hover .stroke {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 .App #credits h4#numberphile-link {
   margin-top: 1rem;
@@ -197,25 +227,8 @@ body:before {
 }
 .App #credits h4 a {
   text-decoration: none;
-  color: darkgreen;
-  position: absolute;
-  margin-left: 0.2rem;
-}
-.App #credits h4 a:after {
-  content: " ";
-  vertical-align: bottom;
-  bottom: 0.25rem;
-  left: 0;
-  position: relative;
-  background: darkgreen;
-  height: 0.1rem;
-  display: block;
-  width: 100%;
-  transition: opacity 0.5s;
-  opacity: 0;
-}
-.App #credits h4 a:hover:after {
-  opacity: 1;
+  font-weight: 500;
+  color: black;
 }
 .App label {
   margin-bottom: 0;
@@ -252,29 +265,11 @@ body:before {
 .App #table .table-row:not(:first-of-type) h2 {
   font-weight: 500;
 }
-.App #table .table-row .stroke {
-  position: absolute;
-  z-index: -1;
-  opacity: 0.4;
-  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-  pointer-events: none;
-  width: 100%;
-  transform: translateX(-3%);
-}
 .App #table .table-row .stroke#stroke0 {
   animation: 0.15s draw-stroke forwards 0s;
 }
 .App #table .table-row .stroke.reverse-anim#stroke0 {
   animation: 0.15s draw-stroke-reversed forwards 0s;
-}
-.App #table .table-row .stroke {
-  position: absolute;
-  z-index: -1;
-  opacity: 0.4;
-  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-  pointer-events: none;
-  width: 100%;
-  transform: translateX(-3%);
 }
 .App #table .table-row .stroke#stroke1 {
   animation: 0.15s draw-stroke forwards 0.2s;
@@ -282,29 +277,11 @@ body:before {
 .App #table .table-row .stroke.reverse-anim#stroke1 {
   animation: 0.15s draw-stroke-reversed forwards 0.2s;
 }
-.App #table .table-row .stroke {
-  position: absolute;
-  z-index: -1;
-  opacity: 0.4;
-  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-  pointer-events: none;
-  width: 100%;
-  transform: translateX(-3%);
-}
 .App #table .table-row .stroke#stroke2 {
   animation: 0.15s draw-stroke forwards 0.4s;
 }
 .App #table .table-row .stroke.reverse-anim#stroke2 {
   animation: 0.15s draw-stroke-reversed forwards 0.4s;
-}
-.App #table .table-row .stroke {
-  position: absolute;
-  z-index: -1;
-  opacity: 0.4;
-  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-  pointer-events: none;
-  width: 100%;
-  transform: translateX(-3%);
 }
 .App #table .table-row .stroke#stroke3 {
   animation: 0.15s draw-stroke forwards 0.6s;
@@ -312,29 +289,11 @@ body:before {
 .App #table .table-row .stroke.reverse-anim#stroke3 {
   animation: 0.15s draw-stroke-reversed forwards 0.6s;
 }
-.App #table .table-row .stroke {
-  position: absolute;
-  z-index: -1;
-  opacity: 0.4;
-  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-  pointer-events: none;
-  width: 100%;
-  transform: translateX(-3%);
-}
 .App #table .table-row .stroke#stroke4 {
   animation: 0.15s draw-stroke forwards 0.8s;
 }
 .App #table .table-row .stroke.reverse-anim#stroke4 {
   animation: 0.15s draw-stroke-reversed forwards 0.8s;
-}
-.App #table .table-row .stroke {
-  position: absolute;
-  z-index: -1;
-  opacity: 0.4;
-  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-  pointer-events: none;
-  width: 100%;
-  transform: translateX(-3%);
 }
 .App #table .table-row .stroke#stroke5 {
   animation: 0.15s draw-stroke forwards 1s;
@@ -342,29 +301,11 @@ body:before {
 .App #table .table-row .stroke.reverse-anim#stroke5 {
   animation: 0.15s draw-stroke-reversed forwards 1s;
 }
-.App #table .table-row .stroke {
-  position: absolute;
-  z-index: -1;
-  opacity: 0.4;
-  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-  pointer-events: none;
-  width: 100%;
-  transform: translateX(-3%);
-}
 .App #table .table-row .stroke#stroke6 {
   animation: 0.15s draw-stroke forwards 1.2s;
 }
 .App #table .table-row .stroke.reverse-anim#stroke6 {
   animation: 0.15s draw-stroke-reversed forwards 1.2s;
-}
-.App #table .table-row .stroke {
-  position: absolute;
-  z-index: -1;
-  opacity: 0.4;
-  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-  pointer-events: none;
-  width: 100%;
-  transform: translateX(-3%);
 }
 .App #table .table-row .stroke#stroke7 {
   animation: 0.15s draw-stroke forwards 1.4s;
@@ -372,29 +313,11 @@ body:before {
 .App #table .table-row .stroke.reverse-anim#stroke7 {
   animation: 0.15s draw-stroke-reversed forwards 1.4s;
 }
-.App #table .table-row .stroke {
-  position: absolute;
-  z-index: -1;
-  opacity: 0.4;
-  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-  pointer-events: none;
-  width: 100%;
-  transform: translateX(-3%);
-}
 .App #table .table-row .stroke#stroke8 {
   animation: 0.15s draw-stroke forwards 1.6s;
 }
 .App #table .table-row .stroke.reverse-anim#stroke8 {
   animation: 0.15s draw-stroke-reversed forwards 1.6s;
-}
-.App #table .table-row .stroke {
-  position: absolute;
-  z-index: -1;
-  opacity: 0.4;
-  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-  pointer-events: none;
-  width: 100%;
-  transform: translateX(-3%);
 }
 .App #table .table-row .stroke#stroke9 {
   animation: 0.15s draw-stroke forwards 1.8s;
@@ -402,29 +325,11 @@ body:before {
 .App #table .table-row .stroke.reverse-anim#stroke9 {
   animation: 0.15s draw-stroke-reversed forwards 1.8s;
 }
-.App #table .table-row .stroke {
-  position: absolute;
-  z-index: -1;
-  opacity: 0.4;
-  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-  pointer-events: none;
-  width: 100%;
-  transform: translateX(-3%);
-}
 .App #table .table-row .stroke#stroke10 {
   animation: 0.15s draw-stroke forwards 2s;
 }
 .App #table .table-row .stroke.reverse-anim#stroke10 {
   animation: 0.15s draw-stroke-reversed forwards 2s;
-}
-.App #table .table-row .stroke {
-  position: absolute;
-  z-index: -1;
-  opacity: 0.4;
-  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-  pointer-events: none;
-  width: 100%;
-  transform: translateX(-3%);
 }
 .App #table .table-row .stroke#stroke11 {
   animation: 0.15s draw-stroke forwards 2.2s;
@@ -432,28 +337,11 @@ body:before {
 .App #table .table-row .stroke.reverse-anim#stroke11 {
   animation: 0.15s draw-stroke-reversed forwards 2.2s;
 }
-.App #table .table-row .stroke {
-  position: absolute;
-  z-index: -1;
-  opacity: 0.4;
-  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-  pointer-events: none;
-  width: 100%;
-  transform: translateX(-3%);
-}
 .App #table .table-row .stroke#stroke12 {
   animation: 0.15s draw-stroke forwards 2.4s;
 }
 .App #table .table-row .stroke.reverse-anim#stroke12 {
   animation: 0.15s draw-stroke-reversed forwards 2.4s;
-}
-@keyframes draw-stroke {
-  from {
-    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-  }
-  to {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  }
 }
 @keyframes draw-stroke-reversed {
   from {

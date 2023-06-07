@@ -90,8 +90,53 @@ body:before {
         text-align: center;
     }
 
+    @keyframes draw-stroke {
+        from {
+            $viewport-width: 0;
+            clip-path: polygon(0 0, $viewport-width 0, $viewport-width 100%, 0 100%);
+        }
+        to {
+            $viewport-width: 100%;
+            clip-path: polygon(0 0, $viewport-width 0, $viewport-width 100%, 0 100%);
+        }
+    }
+
+    $stroke-anim-duration: 0.15s;
+
+    .stroke-common {
+        position: absolute;
+        z-index: -1;
+        opacity: 0.4;
+        $viewport-width: 0;
+        clip-path: polygon(0 0, $viewport-width 0, $viewport-width 100%, 0 100%);
+        pointer-events: none;
+        width: 100%;
+        transform: translateX(-3%);
+    }
+
     #credits {
         h4 {
+            display: flex;
+            justify-content: center;
+
+            .link-container {
+                margin-left: 0.3rem;
+                position: relative;
+
+                .stroke {
+                    @extend .stroke-common;
+                    height: 100%;
+                    transition: all $stroke-anim-duration;
+                }
+
+                &:hover {
+                    .stroke {
+                        $viewport-width: 100%;
+                        clip-path: polygon(0 0, $viewport-width 0, $viewport-width 100%, 0 100%);
+                    }
+                }
+            }
+
             &#numberphile-link {
                 margin-top: 1rem;
                 margin-bottom: 0;
@@ -107,27 +152,8 @@ body:before {
 
             a {
                 text-decoration: none;
-                color: darkgreen;
-                position: absolute;
-                margin-left: 0.2rem;
-
-                &:after {
-                    content: ' ';
-                    vertical-align: bottom;
-                    bottom: 0.25rem;
-                    left: 0;
-                    position: relative;
-                    background: darkgreen;
-                    height: 0.1rem;
-                    display: block;
-                    width: 100%;
-                    transition: opacity 0.5s;
-                    opacity: 0;
-                }
-
-                &:hover:after {
-                    opacity: 1;
-                }
+                font-weight: 500;
+                color: black;
             }
         }
     }
@@ -173,39 +199,19 @@ body:before {
 
             @for $i from 0 to 13 {
                 .stroke {
-                    $anim-duration: 0.15s;
-
                     &#stroke#{$i} {
                         $anim-delay: #{$i * 0.2}s;
-                        animation: $anim-duration draw-stroke forwards $anim-delay;
+                        animation: $stroke-anim-duration draw-stroke forwards $anim-delay;
                     }
 
-                    position: absolute;
-                    z-index: -1;
-                    opacity: 0.4;
-                    $viewport-width: 0;
-                    clip-path: polygon(0 0, $viewport-width 0, $viewport-width 100%, 0 100%);
-                    pointer-events: none;
-                    width: 100%;
-                    transform: translateX(-3%);
+                    @extend .stroke-common;
 
                     &.reverse-anim {
                         &#stroke#{$i} {
                             $anim-delay: #{$i * 0.2}s;
-                            animation: $anim-duration draw-stroke-reversed forwards $anim-delay;
+                            animation: $stroke-anim-duration draw-stroke-reversed forwards $anim-delay;
                         }
                     }
-                }
-            }
-
-            @keyframes draw-stroke {
-                from {
-                    $viewport-width: 0;
-                    clip-path: polygon(0 0, $viewport-width 0, $viewport-width 100%, 0 100%);
-                }
-                to {
-                    $viewport-width: 100%;
-                    clip-path: polygon(0 0, $viewport-width 0, $viewport-width 100%, 0 100%);
                 }
             }
 

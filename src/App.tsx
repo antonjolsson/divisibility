@@ -233,11 +233,20 @@ function Input(props: {onChange: (n: number) => void}): ReactElement {
 
 function Credits(): ReactElement {
     return <div id={'credits'}>
-        <h4 id={'numberphile-link'}>{'Inspired by Numberphile video'}<a href={'https://www.youtube.com/watch?v=UDQjn_-pDSs'}>
-        {'Why 7 is Weird'}</a>
+        <h4 id={'numberphile-link'}>{'Inspired by Numberphile video'}
+            <div className={'link-container'}>
+                <img className={'stroke'} src={'stroke.svg'} alt={'stroke'}></img>
+                <a href={'https://www.youtube.com/watch?v=UDQjn_-pDSs'}>
+                    {'Why 7 is Weird'}</a>
+            </div>
+
     </h4>
         <h4 id={'wiki-link'}>{'More divisibility rules on'}
-            <a href={'https://en.wikipedia.org/wiki/Divisibility_rule'}>Wikipedia</a>
+            <div className={'link-container'}>
+                <img className={'stroke'} src={'stroke.svg'} alt={'stroke'}></img>
+                <a href={'https://en.wikipedia.org/wiki/Divisibility_rule'}>Wikipedia</a>
+            </div>
+
         </h4>
     </div>;
 }
