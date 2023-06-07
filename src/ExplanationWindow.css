@@ -137,6 +137,7 @@
 }
 #expl-window-container #expl-window #composite-demo .child {
   height: 60%;
+  width: 100%;
 }
 #expl-window-container #expl-window #composite-demo .child#demonstrationLastNDigits {
   justify-content: flex-end;
@@ -2220,6 +2221,7 @@
   #expl-window-container #expl-window-bg {
     opacity: 0.3;
     animation: none;
+    background-size: cover;
   }
   #expl-window-container #expl-window {
     animation: none;
@@ -2243,7 +2245,7 @@
   #expl-window-container #expl-window #demonstrationLastNDigits {
     overflow: hidden;
   }
-  #expl-window-container #expl-window #demonstrationLastNDigits h1 {
+  #expl-window-container #expl-window #demonstrationLastNDigits:not(.child) h1 {
     line-height: 3rem;
   }
   #expl-window-container #expl-window #demonstrationLastNDigits h1.multi-row {
@@ -2255,6 +2257,16 @@
   #expl-window-container #expl-window #demo7 h1 {
     line-height: 3rem;
     font-size: 2.2rem;
+  }
+  #expl-window-container #expl-window #composite-demo {
+    height: min-content !important;
+  }
+  #expl-window-container #expl-window #composite-demo .child:nth-of-type(1) {
+    margin-bottom: unset;
+    margin-top: unset;
+  }
+  #expl-window-container #expl-window #composite-demo .child:nth-of-type(2) {
+    margin-top: 1rem;
   }
 }
 

@@ -450,13 +450,14 @@ body:before {
   }
 }
 
-@media (max-width: 650px), (max-height: 720px) {
+@media (max-width: 650px), (max-height: 650px) {
   html {
     font-size: 14px;
   }
   html .App {
+    padding-top: 5%;
     overflow: auto;
-    height: unset;
+    height: min-content;
   }
   html .App > h1 {
     margin-top: 3.5rem;
