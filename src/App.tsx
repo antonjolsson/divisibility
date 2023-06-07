@@ -233,10 +233,10 @@ function Input(props: {onChange: (n: number) => void}): ReactElement {
 
 function Credits(): ReactElement {
     return <div id={'credits'}>
-        <h4>{'Inspired by Numberphile video '}<a href={'https://www.youtube.com/watch?v=UDQjn_-pDSs'}>
-        {'>>Why 7 is Weird<<'}</a>
+        <h4 id={'numberphile-link'}>{'Inspired by Numberphile video'}<a href={'https://www.youtube.com/watch?v=UDQjn_-pDSs'}>
+        {'Why 7 is Weird'}</a>
     </h4>
-        <h4>{'More divisibility rules on '}
+        <h4 id={'wiki-link'}>{'More divisibility rules on'}
             <a href={'https://en.wikipedia.org/wiki/Divisibility_rule'}>Wikipedia</a>
         </h4>
     </div>;

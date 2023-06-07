@@ -181,8 +181,8 @@ export function ExplanationWindow(props: { coords: { x: number; y: number }, rul
             <div id={'expl-window-bg'}></div>
             <div id={'expl-window'} onClick={(e): void => stopPropagation(e)}>
                 <h2 id={'close-button'} onClick={(): void => bgClickedContext.setBgClicked(true)}>x</h2>
-                <h2 className={'headline-divisor'}>{`Divisor: ${props.rule.divisor}`}</h2>
-                <h2 className={'headline-rule'}>{`Rule: ${props.rule.name}`}</h2>
+                <h2 className={'headline-divisor'}><span>Divisor: </span>{`${props.rule.divisor}`}</h2>
+                <h2 className={'headline-rule'}><span>Rule: </span>{`${props.rule.name}`}</h2>
                 <div id={'explanation'} dangerouslySetInnerHTML={{__html: props.rule.explanation}}/>
                 <DemoFinishedContext.Provider value={{finished: firstDemoFinished, setFinished: setFirstDemoFinished}}>
                 {getDemonstration(props.rule.divisor, props.dividend, props.rule.divides)}
