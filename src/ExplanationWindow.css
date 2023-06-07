@@ -2240,11 +2240,21 @@
   #expl-window-container #expl-window #demonstrationDigitSum, #expl-window-container #expl-window #demonstrationLastNDigits {
     height: auto !important;
   }
+  #expl-window-container #expl-window #demonstrationLastNDigits {
+    overflow: hidden;
+  }
   #expl-window-container #expl-window #demonstrationLastNDigits h1 {
     line-height: 3rem;
   }
   #expl-window-container #expl-window #demonstrationLastNDigits h1.multi-row {
     font-size: 2.3rem;
+  }
+  #expl-window-container #expl-window #demo7 {
+    height: unset !important;
+  }
+  #expl-window-container #expl-window #demo7 h1 {
+    line-height: 3rem;
+    font-size: 2.2rem;
   }
 }
 
