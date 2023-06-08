@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap");
-.stroke-common, #expl-window-container #expl-window #demonstration1 .stroke, #expl-window-container #expl-window #demonstrationLastNDigits #row0.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationDigitSum #row0.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demo7 #row0.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationLastNDigits #row1.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationDigitSum #row1.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demo7 #row1.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationLastNDigits #row2.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationDigitSum #row2.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demo7 #row2.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationLastNDigits #row3.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationDigitSum #row3.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demo7 #row3.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationLastNDigits #row4.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationDigitSum #row4.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demo7 #row4.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationLastNDigits #row5.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationDigitSum #row5.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demo7 #row5.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationLastNDigits #row6.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationDigitSum #row6.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demo7 #row6.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationLastNDigits #row7.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationDigitSum #row7.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demo7 #row7.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationLastNDigits #row8.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationDigitSum #row8.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demo7 #row8.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationLastNDigits #row9.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationDigitSum #row9.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demo7 #row9.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationLastNDigits #row10.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationDigitSum #row10.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demo7 #row10.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationLastNDigits #row11.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationDigitSum #row11.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demo7 #row11.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationLastNDigits #row12.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationDigitSum #row12.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demo7 #row12.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationLastNDigits #row13.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationDigitSum #row13.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demo7 #row13.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationLastNDigits #row14.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationDigitSum #row14.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demo7 #row14.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationLastNDigits #row15.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationDigitSum #row15.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demo7 #row15.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationLastNDigits #row16.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationDigitSum #row16.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demo7 #row16.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationLastNDigits #row17.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationDigitSum #row17.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demo7 #row17.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationLastNDigits #row18.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationDigitSum #row18.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demo7 #row18.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationLastNDigits #row19.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationDigitSum #row19.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demo7 #row19.demonstrationLastDigit .stroke, .App #table .table-row .stroke, .App #credits h4 .link-container .stroke {
+.stroke-common, #expl-window-container #expl-window #demonstration1 .stroke, .App #table .table-row .stroke, .App #credits h4 .link-container .stroke {
   position: absolute;
   z-index: -1;
   opacity: 0.4;
@@ -635,24 +635,25 @@ body:before {
 #expl-window-container #expl-window #demonstrationLastNDigits #row0.demonstrationLastDigit, #expl-window-container #expl-window #demonstrationDigitSum #row0.demonstrationLastDigit, #expl-window-container #expl-window #demo7 #row0.demonstrationLastDigit {
   display: flex;
   align-items: center;
+  /*.stroke {
+      @include partial-stroke($i * $anim-dur + 1s + $color-change-dur, 51%);
+      height: 100%;
+      width: calc(100% + 0.5rem);
+      translate: -2.75rem -0.3rem;
+  }*/
 }
-#expl-window-container #expl-window #demonstrationLastNDigits #row0.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationDigitSum #row0.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demo7 #row0.demonstrationLastDigit .stroke {
-  height: 120%;
-  transform: scaleX(5) translateY(-0.3rem);
-  left: 100%;
-  clip-path: polygon(51% 0, 51% 0, 51% 100%, 51% 100%);
-  animation: 0.5s draw-stroke-partial-51 forwards 1.5s;
+#expl-window-container #expl-window #demonstrationLastNDigits #row0.demonstrationLastDigit #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row0.demonstrationLastDigit #bg-stroke, #expl-window-container #expl-window #demo7 #row0.demonstrationLastDigit #bg-stroke {
+  translate: -0.2rem -5%;
+  position: absolute;
+  opacity: 0.4;
   height: 100%;
-  width: calc(100% + 0.5rem);
-  translate: -2.75rem -0.3rem;
+  animation: 0.5s bg-stroke-animation forwards 1.5s;
 }
-@keyframes draw-stroke-partial-51 {
-  from {
-    clip-path: polygon(51% 0, 51% 0, 51% 100%, 51% 100%);
-  }
-  to {
-    clip-path: polygon(51% 0, 71% 0, 71% 100%, 51% 100%);
-  }
+#expl-window-container #expl-window #demonstrationLastNDigits #row0.demonstrationLastDigit.divisor #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row0.demonstrationLastDigit.divisor #bg-stroke, #expl-window-container #expl-window #demo7 #row0.demonstrationLastDigit.divisor #bg-stroke {
+  background: lightgreen;
+}
+#expl-window-container #expl-window #demonstrationLastNDigits #row0.demonstrationLastDigit.not-divisor #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row0.demonstrationLastDigit.not-divisor #bg-stroke, #expl-window-container #expl-window #demo7 #row0.demonstrationLastDigit.not-divisor #bg-stroke {
+  background: red;
 }
 #expl-window-container #expl-window #demonstrationLastNDigits #row0.division-row span, #expl-window-container #expl-window #demonstrationDigitSum #row0.division-row span, #expl-window-container #expl-window #demo7 #row0.division-row span {
   margin-left: 0.3em;
@@ -748,24 +749,25 @@ body:before {
 #expl-window-container #expl-window #demonstrationLastNDigits #row1.demonstrationLastDigit, #expl-window-container #expl-window #demonstrationDigitSum #row1.demonstrationLastDigit, #expl-window-container #expl-window #demo7 #row1.demonstrationLastDigit {
   display: flex;
   align-items: center;
+  /*.stroke {
+      @include partial-stroke($i * $anim-dur + 1s + $color-change-dur, 51%);
+      height: 100%;
+      width: calc(100% + 0.5rem);
+      translate: -2.75rem -0.3rem;
+  }*/
 }
-#expl-window-container #expl-window #demonstrationLastNDigits #row1.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationDigitSum #row1.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demo7 #row1.demonstrationLastDigit .stroke {
-  height: 120%;
-  transform: scaleX(5) translateY(-0.3rem);
-  left: 100%;
-  clip-path: polygon(51% 0, 51% 0, 51% 100%, 51% 100%);
-  animation: 0.5s draw-stroke-partial-51 forwards 3s;
+#expl-window-container #expl-window #demonstrationLastNDigits #row1.demonstrationLastDigit #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row1.demonstrationLastDigit #bg-stroke, #expl-window-container #expl-window #demo7 #row1.demonstrationLastDigit #bg-stroke {
+  translate: -0.2rem -5%;
+  position: absolute;
+  opacity: 0.4;
   height: 100%;
-  width: calc(100% + 0.5rem);
-  translate: -2.75rem -0.3rem;
+  animation: 0.5s bg-stroke-animation forwards 3s;
 }
-@keyframes draw-stroke-partial-51 {
-  from {
-    clip-path: polygon(51% 0, 51% 0, 51% 100%, 51% 100%);
-  }
-  to {
-    clip-path: polygon(51% 0, 71% 0, 71% 100%, 51% 100%);
-  }
+#expl-window-container #expl-window #demonstrationLastNDigits #row1.demonstrationLastDigit.divisor #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row1.demonstrationLastDigit.divisor #bg-stroke, #expl-window-container #expl-window #demo7 #row1.demonstrationLastDigit.divisor #bg-stroke {
+  background: lightgreen;
+}
+#expl-window-container #expl-window #demonstrationLastNDigits #row1.demonstrationLastDigit.not-divisor #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row1.demonstrationLastDigit.not-divisor #bg-stroke, #expl-window-container #expl-window #demo7 #row1.demonstrationLastDigit.not-divisor #bg-stroke {
+  background: red;
 }
 #expl-window-container #expl-window #demonstrationLastNDigits #row1.division-row span, #expl-window-container #expl-window #demonstrationDigitSum #row1.division-row span, #expl-window-container #expl-window #demo7 #row1.division-row span {
   margin-left: 0.3em;
@@ -861,24 +863,25 @@ body:before {
 #expl-window-container #expl-window #demonstrationLastNDigits #row2.demonstrationLastDigit, #expl-window-container #expl-window #demonstrationDigitSum #row2.demonstrationLastDigit, #expl-window-container #expl-window #demo7 #row2.demonstrationLastDigit {
   display: flex;
   align-items: center;
+  /*.stroke {
+      @include partial-stroke($i * $anim-dur + 1s + $color-change-dur, 51%);
+      height: 100%;
+      width: calc(100% + 0.5rem);
+      translate: -2.75rem -0.3rem;
+  }*/
 }
-#expl-window-container #expl-window #demonstrationLastNDigits #row2.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationDigitSum #row2.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demo7 #row2.demonstrationLastDigit .stroke {
-  height: 120%;
-  transform: scaleX(5) translateY(-0.3rem);
-  left: 100%;
-  clip-path: polygon(51% 0, 51% 0, 51% 100%, 51% 100%);
-  animation: 0.5s draw-stroke-partial-51 forwards 4.5s;
+#expl-window-container #expl-window #demonstrationLastNDigits #row2.demonstrationLastDigit #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row2.demonstrationLastDigit #bg-stroke, #expl-window-container #expl-window #demo7 #row2.demonstrationLastDigit #bg-stroke {
+  translate: -0.2rem -5%;
+  position: absolute;
+  opacity: 0.4;
   height: 100%;
-  width: calc(100% + 0.5rem);
-  translate: -2.75rem -0.3rem;
+  animation: 0.5s bg-stroke-animation forwards 4.5s;
 }
-@keyframes draw-stroke-partial-51 {
-  from {
-    clip-path: polygon(51% 0, 51% 0, 51% 100%, 51% 100%);
-  }
-  to {
-    clip-path: polygon(51% 0, 71% 0, 71% 100%, 51% 100%);
-  }
+#expl-window-container #expl-window #demonstrationLastNDigits #row2.demonstrationLastDigit.divisor #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row2.demonstrationLastDigit.divisor #bg-stroke, #expl-window-container #expl-window #demo7 #row2.demonstrationLastDigit.divisor #bg-stroke {
+  background: lightgreen;
+}
+#expl-window-container #expl-window #demonstrationLastNDigits #row2.demonstrationLastDigit.not-divisor #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row2.demonstrationLastDigit.not-divisor #bg-stroke, #expl-window-container #expl-window #demo7 #row2.demonstrationLastDigit.not-divisor #bg-stroke {
+  background: red;
 }
 #expl-window-container #expl-window #demonstrationLastNDigits #row2.division-row span, #expl-window-container #expl-window #demonstrationDigitSum #row2.division-row span, #expl-window-container #expl-window #demo7 #row2.division-row span {
   margin-left: 0.3em;
@@ -974,24 +977,25 @@ body:before {
 #expl-window-container #expl-window #demonstrationLastNDigits #row3.demonstrationLastDigit, #expl-window-container #expl-window #demonstrationDigitSum #row3.demonstrationLastDigit, #expl-window-container #expl-window #demo7 #row3.demonstrationLastDigit {
   display: flex;
   align-items: center;
+  /*.stroke {
+      @include partial-stroke($i * $anim-dur + 1s + $color-change-dur, 51%);
+      height: 100%;
+      width: calc(100% + 0.5rem);
+      translate: -2.75rem -0.3rem;
+  }*/
 }
-#expl-window-container #expl-window #demonstrationLastNDigits #row3.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationDigitSum #row3.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demo7 #row3.demonstrationLastDigit .stroke {
-  height: 120%;
-  transform: scaleX(5) translateY(-0.3rem);
-  left: 100%;
-  clip-path: polygon(51% 0, 51% 0, 51% 100%, 51% 100%);
-  animation: 0.5s draw-stroke-partial-51 forwards 6s;
+#expl-window-container #expl-window #demonstrationLastNDigits #row3.demonstrationLastDigit #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row3.demonstrationLastDigit #bg-stroke, #expl-window-container #expl-window #demo7 #row3.demonstrationLastDigit #bg-stroke {
+  translate: -0.2rem -5%;
+  position: absolute;
+  opacity: 0.4;
   height: 100%;
-  width: calc(100% + 0.5rem);
-  translate: -2.75rem -0.3rem;
+  animation: 0.5s bg-stroke-animation forwards 6s;
 }
-@keyframes draw-stroke-partial-51 {
-  from {
-    clip-path: polygon(51% 0, 51% 0, 51% 100%, 51% 100%);
-  }
-  to {
-    clip-path: polygon(51% 0, 71% 0, 71% 100%, 51% 100%);
-  }
+#expl-window-container #expl-window #demonstrationLastNDigits #row3.demonstrationLastDigit.divisor #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row3.demonstrationLastDigit.divisor #bg-stroke, #expl-window-container #expl-window #demo7 #row3.demonstrationLastDigit.divisor #bg-stroke {
+  background: lightgreen;
+}
+#expl-window-container #expl-window #demonstrationLastNDigits #row3.demonstrationLastDigit.not-divisor #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row3.demonstrationLastDigit.not-divisor #bg-stroke, #expl-window-container #expl-window #demo7 #row3.demonstrationLastDigit.not-divisor #bg-stroke {
+  background: red;
 }
 #expl-window-container #expl-window #demonstrationLastNDigits #row3.division-row span, #expl-window-container #expl-window #demonstrationDigitSum #row3.division-row span, #expl-window-container #expl-window #demo7 #row3.division-row span {
   margin-left: 0.3em;
@@ -1087,24 +1091,25 @@ body:before {
 #expl-window-container #expl-window #demonstrationLastNDigits #row4.demonstrationLastDigit, #expl-window-container #expl-window #demonstrationDigitSum #row4.demonstrationLastDigit, #expl-window-container #expl-window #demo7 #row4.demonstrationLastDigit {
   display: flex;
   align-items: center;
+  /*.stroke {
+      @include partial-stroke($i * $anim-dur + 1s + $color-change-dur, 51%);
+      height: 100%;
+      width: calc(100% + 0.5rem);
+      translate: -2.75rem -0.3rem;
+  }*/
 }
-#expl-window-container #expl-window #demonstrationLastNDigits #row4.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationDigitSum #row4.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demo7 #row4.demonstrationLastDigit .stroke {
-  height: 120%;
-  transform: scaleX(5) translateY(-0.3rem);
-  left: 100%;
-  clip-path: polygon(51% 0, 51% 0, 51% 100%, 51% 100%);
-  animation: 0.5s draw-stroke-partial-51 forwards 7.5s;
+#expl-window-container #expl-window #demonstrationLastNDigits #row4.demonstrationLastDigit #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row4.demonstrationLastDigit #bg-stroke, #expl-window-container #expl-window #demo7 #row4.demonstrationLastDigit #bg-stroke {
+  translate: -0.2rem -5%;
+  position: absolute;
+  opacity: 0.4;
   height: 100%;
-  width: calc(100% + 0.5rem);
-  translate: -2.75rem -0.3rem;
+  animation: 0.5s bg-stroke-animation forwards 7.5s;
 }
-@keyframes draw-stroke-partial-51 {
-  from {
-    clip-path: polygon(51% 0, 51% 0, 51% 100%, 51% 100%);
-  }
-  to {
-    clip-path: polygon(51% 0, 71% 0, 71% 100%, 51% 100%);
-  }
+#expl-window-container #expl-window #demonstrationLastNDigits #row4.demonstrationLastDigit.divisor #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row4.demonstrationLastDigit.divisor #bg-stroke, #expl-window-container #expl-window #demo7 #row4.demonstrationLastDigit.divisor #bg-stroke {
+  background: lightgreen;
+}
+#expl-window-container #expl-window #demonstrationLastNDigits #row4.demonstrationLastDigit.not-divisor #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row4.demonstrationLastDigit.not-divisor #bg-stroke, #expl-window-container #expl-window #demo7 #row4.demonstrationLastDigit.not-divisor #bg-stroke {
+  background: red;
 }
 #expl-window-container #expl-window #demonstrationLastNDigits #row4.division-row span, #expl-window-container #expl-window #demonstrationDigitSum #row4.division-row span, #expl-window-container #expl-window #demo7 #row4.division-row span {
   margin-left: 0.3em;
@@ -1200,24 +1205,25 @@ body:before {
 #expl-window-container #expl-window #demonstrationLastNDigits #row5.demonstrationLastDigit, #expl-window-container #expl-window #demonstrationDigitSum #row5.demonstrationLastDigit, #expl-window-container #expl-window #demo7 #row5.demonstrationLastDigit {
   display: flex;
   align-items: center;
+  /*.stroke {
+      @include partial-stroke($i * $anim-dur + 1s + $color-change-dur, 51%);
+      height: 100%;
+      width: calc(100% + 0.5rem);
+      translate: -2.75rem -0.3rem;
+  }*/
 }
-#expl-window-container #expl-window #demonstrationLastNDigits #row5.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationDigitSum #row5.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demo7 #row5.demonstrationLastDigit .stroke {
-  height: 120%;
-  transform: scaleX(5) translateY(-0.3rem);
-  left: 100%;
-  clip-path: polygon(51% 0, 51% 0, 51% 100%, 51% 100%);
-  animation: 0.5s draw-stroke-partial-51 forwards 9s;
+#expl-window-container #expl-window #demonstrationLastNDigits #row5.demonstrationLastDigit #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row5.demonstrationLastDigit #bg-stroke, #expl-window-container #expl-window #demo7 #row5.demonstrationLastDigit #bg-stroke {
+  translate: -0.2rem -5%;
+  position: absolute;
+  opacity: 0.4;
   height: 100%;
-  width: calc(100% + 0.5rem);
-  translate: -2.75rem -0.3rem;
+  animation: 0.5s bg-stroke-animation forwards 9s;
 }
-@keyframes draw-stroke-partial-51 {
-  from {
-    clip-path: polygon(51% 0, 51% 0, 51% 100%, 51% 100%);
-  }
-  to {
-    clip-path: polygon(51% 0, 71% 0, 71% 100%, 51% 100%);
-  }
+#expl-window-container #expl-window #demonstrationLastNDigits #row5.demonstrationLastDigit.divisor #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row5.demonstrationLastDigit.divisor #bg-stroke, #expl-window-container #expl-window #demo7 #row5.demonstrationLastDigit.divisor #bg-stroke {
+  background: lightgreen;
+}
+#expl-window-container #expl-window #demonstrationLastNDigits #row5.demonstrationLastDigit.not-divisor #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row5.demonstrationLastDigit.not-divisor #bg-stroke, #expl-window-container #expl-window #demo7 #row5.demonstrationLastDigit.not-divisor #bg-stroke {
+  background: red;
 }
 #expl-window-container #expl-window #demonstrationLastNDigits #row5.division-row span, #expl-window-container #expl-window #demonstrationDigitSum #row5.division-row span, #expl-window-container #expl-window #demo7 #row5.division-row span {
   margin-left: 0.3em;
@@ -1313,24 +1319,25 @@ body:before {
 #expl-window-container #expl-window #demonstrationLastNDigits #row6.demonstrationLastDigit, #expl-window-container #expl-window #demonstrationDigitSum #row6.demonstrationLastDigit, #expl-window-container #expl-window #demo7 #row6.demonstrationLastDigit {
   display: flex;
   align-items: center;
+  /*.stroke {
+      @include partial-stroke($i * $anim-dur + 1s + $color-change-dur, 51%);
+      height: 100%;
+      width: calc(100% + 0.5rem);
+      translate: -2.75rem -0.3rem;
+  }*/
 }
-#expl-window-container #expl-window #demonstrationLastNDigits #row6.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationDigitSum #row6.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demo7 #row6.demonstrationLastDigit .stroke {
-  height: 120%;
-  transform: scaleX(5) translateY(-0.3rem);
-  left: 100%;
-  clip-path: polygon(51% 0, 51% 0, 51% 100%, 51% 100%);
-  animation: 0.5s draw-stroke-partial-51 forwards 10.5s;
+#expl-window-container #expl-window #demonstrationLastNDigits #row6.demonstrationLastDigit #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row6.demonstrationLastDigit #bg-stroke, #expl-window-container #expl-window #demo7 #row6.demonstrationLastDigit #bg-stroke {
+  translate: -0.2rem -5%;
+  position: absolute;
+  opacity: 0.4;
   height: 100%;
-  width: calc(100% + 0.5rem);
-  translate: -2.75rem -0.3rem;
+  animation: 0.5s bg-stroke-animation forwards 10.5s;
 }
-@keyframes draw-stroke-partial-51 {
-  from {
-    clip-path: polygon(51% 0, 51% 0, 51% 100%, 51% 100%);
-  }
-  to {
-    clip-path: polygon(51% 0, 71% 0, 71% 100%, 51% 100%);
-  }
+#expl-window-container #expl-window #demonstrationLastNDigits #row6.demonstrationLastDigit.divisor #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row6.demonstrationLastDigit.divisor #bg-stroke, #expl-window-container #expl-window #demo7 #row6.demonstrationLastDigit.divisor #bg-stroke {
+  background: lightgreen;
+}
+#expl-window-container #expl-window #demonstrationLastNDigits #row6.demonstrationLastDigit.not-divisor #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row6.demonstrationLastDigit.not-divisor #bg-stroke, #expl-window-container #expl-window #demo7 #row6.demonstrationLastDigit.not-divisor #bg-stroke {
+  background: red;
 }
 #expl-window-container #expl-window #demonstrationLastNDigits #row6.division-row span, #expl-window-container #expl-window #demonstrationDigitSum #row6.division-row span, #expl-window-container #expl-window #demo7 #row6.division-row span {
   margin-left: 0.3em;
@@ -1426,24 +1433,25 @@ body:before {
 #expl-window-container #expl-window #demonstrationLastNDigits #row7.demonstrationLastDigit, #expl-window-container #expl-window #demonstrationDigitSum #row7.demonstrationLastDigit, #expl-window-container #expl-window #demo7 #row7.demonstrationLastDigit {
   display: flex;
   align-items: center;
+  /*.stroke {
+      @include partial-stroke($i * $anim-dur + 1s + $color-change-dur, 51%);
+      height: 100%;
+      width: calc(100% + 0.5rem);
+      translate: -2.75rem -0.3rem;
+  }*/
 }
-#expl-window-container #expl-window #demonstrationLastNDigits #row7.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationDigitSum #row7.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demo7 #row7.demonstrationLastDigit .stroke {
-  height: 120%;
-  transform: scaleX(5) translateY(-0.3rem);
-  left: 100%;
-  clip-path: polygon(51% 0, 51% 0, 51% 100%, 51% 100%);
-  animation: 0.5s draw-stroke-partial-51 forwards 12s;
+#expl-window-container #expl-window #demonstrationLastNDigits #row7.demonstrationLastDigit #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row7.demonstrationLastDigit #bg-stroke, #expl-window-container #expl-window #demo7 #row7.demonstrationLastDigit #bg-stroke {
+  translate: -0.2rem -5%;
+  position: absolute;
+  opacity: 0.4;
   height: 100%;
-  width: calc(100% + 0.5rem);
-  translate: -2.75rem -0.3rem;
+  animation: 0.5s bg-stroke-animation forwards 12s;
 }
-@keyframes draw-stroke-partial-51 {
-  from {
-    clip-path: polygon(51% 0, 51% 0, 51% 100%, 51% 100%);
-  }
-  to {
-    clip-path: polygon(51% 0, 71% 0, 71% 100%, 51% 100%);
-  }
+#expl-window-container #expl-window #demonstrationLastNDigits #row7.demonstrationLastDigit.divisor #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row7.demonstrationLastDigit.divisor #bg-stroke, #expl-window-container #expl-window #demo7 #row7.demonstrationLastDigit.divisor #bg-stroke {
+  background: lightgreen;
+}
+#expl-window-container #expl-window #demonstrationLastNDigits #row7.demonstrationLastDigit.not-divisor #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row7.demonstrationLastDigit.not-divisor #bg-stroke, #expl-window-container #expl-window #demo7 #row7.demonstrationLastDigit.not-divisor #bg-stroke {
+  background: red;
 }
 #expl-window-container #expl-window #demonstrationLastNDigits #row7.division-row span, #expl-window-container #expl-window #demonstrationDigitSum #row7.division-row span, #expl-window-container #expl-window #demo7 #row7.division-row span {
   margin-left: 0.3em;
@@ -1539,24 +1547,25 @@ body:before {
 #expl-window-container #expl-window #demonstrationLastNDigits #row8.demonstrationLastDigit, #expl-window-container #expl-window #demonstrationDigitSum #row8.demonstrationLastDigit, #expl-window-container #expl-window #demo7 #row8.demonstrationLastDigit {
   display: flex;
   align-items: center;
+  /*.stroke {
+      @include partial-stroke($i * $anim-dur + 1s + $color-change-dur, 51%);
+      height: 100%;
+      width: calc(100% + 0.5rem);
+      translate: -2.75rem -0.3rem;
+  }*/
 }
-#expl-window-container #expl-window #demonstrationLastNDigits #row8.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationDigitSum #row8.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demo7 #row8.demonstrationLastDigit .stroke {
-  height: 120%;
-  transform: scaleX(5) translateY(-0.3rem);
-  left: 100%;
-  clip-path: polygon(51% 0, 51% 0, 51% 100%, 51% 100%);
-  animation: 0.5s draw-stroke-partial-51 forwards 13.5s;
+#expl-window-container #expl-window #demonstrationLastNDigits #row8.demonstrationLastDigit #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row8.demonstrationLastDigit #bg-stroke, #expl-window-container #expl-window #demo7 #row8.demonstrationLastDigit #bg-stroke {
+  translate: -0.2rem -5%;
+  position: absolute;
+  opacity: 0.4;
   height: 100%;
-  width: calc(100% + 0.5rem);
-  translate: -2.75rem -0.3rem;
+  animation: 0.5s bg-stroke-animation forwards 13.5s;
 }
-@keyframes draw-stroke-partial-51 {
-  from {
-    clip-path: polygon(51% 0, 51% 0, 51% 100%, 51% 100%);
-  }
-  to {
-    clip-path: polygon(51% 0, 71% 0, 71% 100%, 51% 100%);
-  }
+#expl-window-container #expl-window #demonstrationLastNDigits #row8.demonstrationLastDigit.divisor #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row8.demonstrationLastDigit.divisor #bg-stroke, #expl-window-container #expl-window #demo7 #row8.demonstrationLastDigit.divisor #bg-stroke {
+  background: lightgreen;
+}
+#expl-window-container #expl-window #demonstrationLastNDigits #row8.demonstrationLastDigit.not-divisor #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row8.demonstrationLastDigit.not-divisor #bg-stroke, #expl-window-container #expl-window #demo7 #row8.demonstrationLastDigit.not-divisor #bg-stroke {
+  background: red;
 }
 #expl-window-container #expl-window #demonstrationLastNDigits #row8.division-row span, #expl-window-container #expl-window #demonstrationDigitSum #row8.division-row span, #expl-window-container #expl-window #demo7 #row8.division-row span {
   margin-left: 0.3em;
@@ -1652,24 +1661,25 @@ body:before {
 #expl-window-container #expl-window #demonstrationLastNDigits #row9.demonstrationLastDigit, #expl-window-container #expl-window #demonstrationDigitSum #row9.demonstrationLastDigit, #expl-window-container #expl-window #demo7 #row9.demonstrationLastDigit {
   display: flex;
   align-items: center;
+  /*.stroke {
+      @include partial-stroke($i * $anim-dur + 1s + $color-change-dur, 51%);
+      height: 100%;
+      width: calc(100% + 0.5rem);
+      translate: -2.75rem -0.3rem;
+  }*/
 }
-#expl-window-container #expl-window #demonstrationLastNDigits #row9.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationDigitSum #row9.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demo7 #row9.demonstrationLastDigit .stroke {
-  height: 120%;
-  transform: scaleX(5) translateY(-0.3rem);
-  left: 100%;
-  clip-path: polygon(51% 0, 51% 0, 51% 100%, 51% 100%);
-  animation: 0.5s draw-stroke-partial-51 forwards 15s;
+#expl-window-container #expl-window #demonstrationLastNDigits #row9.demonstrationLastDigit #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row9.demonstrationLastDigit #bg-stroke, #expl-window-container #expl-window #demo7 #row9.demonstrationLastDigit #bg-stroke {
+  translate: -0.2rem -5%;
+  position: absolute;
+  opacity: 0.4;
   height: 100%;
-  width: calc(100% + 0.5rem);
-  translate: -2.75rem -0.3rem;
+  animation: 0.5s bg-stroke-animation forwards 15s;
 }
-@keyframes draw-stroke-partial-51 {
-  from {
-    clip-path: polygon(51% 0, 51% 0, 51% 100%, 51% 100%);
-  }
-  to {
-    clip-path: polygon(51% 0, 71% 0, 71% 100%, 51% 100%);
-  }
+#expl-window-container #expl-window #demonstrationLastNDigits #row9.demonstrationLastDigit.divisor #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row9.demonstrationLastDigit.divisor #bg-stroke, #expl-window-container #expl-window #demo7 #row9.demonstrationLastDigit.divisor #bg-stroke {
+  background: lightgreen;
+}
+#expl-window-container #expl-window #demonstrationLastNDigits #row9.demonstrationLastDigit.not-divisor #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row9.demonstrationLastDigit.not-divisor #bg-stroke, #expl-window-container #expl-window #demo7 #row9.demonstrationLastDigit.not-divisor #bg-stroke {
+  background: red;
 }
 #expl-window-container #expl-window #demonstrationLastNDigits #row9.division-row span, #expl-window-container #expl-window #demonstrationDigitSum #row9.division-row span, #expl-window-container #expl-window #demo7 #row9.division-row span {
   margin-left: 0.3em;
@@ -1765,24 +1775,25 @@ body:before {
 #expl-window-container #expl-window #demonstrationLastNDigits #row10.demonstrationLastDigit, #expl-window-container #expl-window #demonstrationDigitSum #row10.demonstrationLastDigit, #expl-window-container #expl-window #demo7 #row10.demonstrationLastDigit {
   display: flex;
   align-items: center;
+  /*.stroke {
+      @include partial-stroke($i * $anim-dur + 1s + $color-change-dur, 51%);
+      height: 100%;
+      width: calc(100% + 0.5rem);
+      translate: -2.75rem -0.3rem;
+  }*/
 }
-#expl-window-container #expl-window #demonstrationLastNDigits #row10.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationDigitSum #row10.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demo7 #row10.demonstrationLastDigit .stroke {
-  height: 120%;
-  transform: scaleX(5) translateY(-0.3rem);
-  left: 100%;
-  clip-path: polygon(51% 0, 51% 0, 51% 100%, 51% 100%);
-  animation: 0.5s draw-stroke-partial-51 forwards 16.5s;
+#expl-window-container #expl-window #demonstrationLastNDigits #row10.demonstrationLastDigit #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row10.demonstrationLastDigit #bg-stroke, #expl-window-container #expl-window #demo7 #row10.demonstrationLastDigit #bg-stroke {
+  translate: -0.2rem -5%;
+  position: absolute;
+  opacity: 0.4;
   height: 100%;
-  width: calc(100% + 0.5rem);
-  translate: -2.75rem -0.3rem;
+  animation: 0.5s bg-stroke-animation forwards 16.5s;
 }
-@keyframes draw-stroke-partial-51 {
-  from {
-    clip-path: polygon(51% 0, 51% 0, 51% 100%, 51% 100%);
-  }
-  to {
-    clip-path: polygon(51% 0, 71% 0, 71% 100%, 51% 100%);
-  }
+#expl-window-container #expl-window #demonstrationLastNDigits #row10.demonstrationLastDigit.divisor #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row10.demonstrationLastDigit.divisor #bg-stroke, #expl-window-container #expl-window #demo7 #row10.demonstrationLastDigit.divisor #bg-stroke {
+  background: lightgreen;
+}
+#expl-window-container #expl-window #demonstrationLastNDigits #row10.demonstrationLastDigit.not-divisor #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row10.demonstrationLastDigit.not-divisor #bg-stroke, #expl-window-container #expl-window #demo7 #row10.demonstrationLastDigit.not-divisor #bg-stroke {
+  background: red;
 }
 #expl-window-container #expl-window #demonstrationLastNDigits #row10.division-row span, #expl-window-container #expl-window #demonstrationDigitSum #row10.division-row span, #expl-window-container #expl-window #demo7 #row10.division-row span {
   margin-left: 0.3em;
@@ -1878,24 +1889,25 @@ body:before {
 #expl-window-container #expl-window #demonstrationLastNDigits #row11.demonstrationLastDigit, #expl-window-container #expl-window #demonstrationDigitSum #row11.demonstrationLastDigit, #expl-window-container #expl-window #demo7 #row11.demonstrationLastDigit {
   display: flex;
   align-items: center;
+  /*.stroke {
+      @include partial-stroke($i * $anim-dur + 1s + $color-change-dur, 51%);
+      height: 100%;
+      width: calc(100% + 0.5rem);
+      translate: -2.75rem -0.3rem;
+  }*/
 }
-#expl-window-container #expl-window #demonstrationLastNDigits #row11.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationDigitSum #row11.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demo7 #row11.demonstrationLastDigit .stroke {
-  height: 120%;
-  transform: scaleX(5) translateY(-0.3rem);
-  left: 100%;
-  clip-path: polygon(51% 0, 51% 0, 51% 100%, 51% 100%);
-  animation: 0.5s draw-stroke-partial-51 forwards 18s;
+#expl-window-container #expl-window #demonstrationLastNDigits #row11.demonstrationLastDigit #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row11.demonstrationLastDigit #bg-stroke, #expl-window-container #expl-window #demo7 #row11.demonstrationLastDigit #bg-stroke {
+  translate: -0.2rem -5%;
+  position: absolute;
+  opacity: 0.4;
   height: 100%;
-  width: calc(100% + 0.5rem);
-  translate: -2.75rem -0.3rem;
+  animation: 0.5s bg-stroke-animation forwards 18s;
 }
-@keyframes draw-stroke-partial-51 {
-  from {
-    clip-path: polygon(51% 0, 51% 0, 51% 100%, 51% 100%);
-  }
-  to {
-    clip-path: polygon(51% 0, 71% 0, 71% 100%, 51% 100%);
-  }
+#expl-window-container #expl-window #demonstrationLastNDigits #row11.demonstrationLastDigit.divisor #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row11.demonstrationLastDigit.divisor #bg-stroke, #expl-window-container #expl-window #demo7 #row11.demonstrationLastDigit.divisor #bg-stroke {
+  background: lightgreen;
+}
+#expl-window-container #expl-window #demonstrationLastNDigits #row11.demonstrationLastDigit.not-divisor #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row11.demonstrationLastDigit.not-divisor #bg-stroke, #expl-window-container #expl-window #demo7 #row11.demonstrationLastDigit.not-divisor #bg-stroke {
+  background: red;
 }
 #expl-window-container #expl-window #demonstrationLastNDigits #row11.division-row span, #expl-window-container #expl-window #demonstrationDigitSum #row11.division-row span, #expl-window-container #expl-window #demo7 #row11.division-row span {
   margin-left: 0.3em;
@@ -1991,24 +2003,25 @@ body:before {
 #expl-window-container #expl-window #demonstrationLastNDigits #row12.demonstrationLastDigit, #expl-window-container #expl-window #demonstrationDigitSum #row12.demonstrationLastDigit, #expl-window-container #expl-window #demo7 #row12.demonstrationLastDigit {
   display: flex;
   align-items: center;
+  /*.stroke {
+      @include partial-stroke($i * $anim-dur + 1s + $color-change-dur, 51%);
+      height: 100%;
+      width: calc(100% + 0.5rem);
+      translate: -2.75rem -0.3rem;
+  }*/
 }
-#expl-window-container #expl-window #demonstrationLastNDigits #row12.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationDigitSum #row12.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demo7 #row12.demonstrationLastDigit .stroke {
-  height: 120%;
-  transform: scaleX(5) translateY(-0.3rem);
-  left: 100%;
-  clip-path: polygon(51% 0, 51% 0, 51% 100%, 51% 100%);
-  animation: 0.5s draw-stroke-partial-51 forwards 19.5s;
+#expl-window-container #expl-window #demonstrationLastNDigits #row12.demonstrationLastDigit #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row12.demonstrationLastDigit #bg-stroke, #expl-window-container #expl-window #demo7 #row12.demonstrationLastDigit #bg-stroke {
+  translate: -0.2rem -5%;
+  position: absolute;
+  opacity: 0.4;
   height: 100%;
-  width: calc(100% + 0.5rem);
-  translate: -2.75rem -0.3rem;
+  animation: 0.5s bg-stroke-animation forwards 19.5s;
 }
-@keyframes draw-stroke-partial-51 {
-  from {
-    clip-path: polygon(51% 0, 51% 0, 51% 100%, 51% 100%);
-  }
-  to {
-    clip-path: polygon(51% 0, 71% 0, 71% 100%, 51% 100%);
-  }
+#expl-window-container #expl-window #demonstrationLastNDigits #row12.demonstrationLastDigit.divisor #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row12.demonstrationLastDigit.divisor #bg-stroke, #expl-window-container #expl-window #demo7 #row12.demonstrationLastDigit.divisor #bg-stroke {
+  background: lightgreen;
+}
+#expl-window-container #expl-window #demonstrationLastNDigits #row12.demonstrationLastDigit.not-divisor #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row12.demonstrationLastDigit.not-divisor #bg-stroke, #expl-window-container #expl-window #demo7 #row12.demonstrationLastDigit.not-divisor #bg-stroke {
+  background: red;
 }
 #expl-window-container #expl-window #demonstrationLastNDigits #row12.division-row span, #expl-window-container #expl-window #demonstrationDigitSum #row12.division-row span, #expl-window-container #expl-window #demo7 #row12.division-row span {
   margin-left: 0.3em;
@@ -2104,24 +2117,25 @@ body:before {
 #expl-window-container #expl-window #demonstrationLastNDigits #row13.demonstrationLastDigit, #expl-window-container #expl-window #demonstrationDigitSum #row13.demonstrationLastDigit, #expl-window-container #expl-window #demo7 #row13.demonstrationLastDigit {
   display: flex;
   align-items: center;
+  /*.stroke {
+      @include partial-stroke($i * $anim-dur + 1s + $color-change-dur, 51%);
+      height: 100%;
+      width: calc(100% + 0.5rem);
+      translate: -2.75rem -0.3rem;
+  }*/
 }
-#expl-window-container #expl-window #demonstrationLastNDigits #row13.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationDigitSum #row13.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demo7 #row13.demonstrationLastDigit .stroke {
-  height: 120%;
-  transform: scaleX(5) translateY(-0.3rem);
-  left: 100%;
-  clip-path: polygon(51% 0, 51% 0, 51% 100%, 51% 100%);
-  animation: 0.5s draw-stroke-partial-51 forwards 21s;
+#expl-window-container #expl-window #demonstrationLastNDigits #row13.demonstrationLastDigit #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row13.demonstrationLastDigit #bg-stroke, #expl-window-container #expl-window #demo7 #row13.demonstrationLastDigit #bg-stroke {
+  translate: -0.2rem -5%;
+  position: absolute;
+  opacity: 0.4;
   height: 100%;
-  width: calc(100% + 0.5rem);
-  translate: -2.75rem -0.3rem;
+  animation: 0.5s bg-stroke-animation forwards 21s;
 }
-@keyframes draw-stroke-partial-51 {
-  from {
-    clip-path: polygon(51% 0, 51% 0, 51% 100%, 51% 100%);
-  }
-  to {
-    clip-path: polygon(51% 0, 71% 0, 71% 100%, 51% 100%);
-  }
+#expl-window-container #expl-window #demonstrationLastNDigits #row13.demonstrationLastDigit.divisor #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row13.demonstrationLastDigit.divisor #bg-stroke, #expl-window-container #expl-window #demo7 #row13.demonstrationLastDigit.divisor #bg-stroke {
+  background: lightgreen;
+}
+#expl-window-container #expl-window #demonstrationLastNDigits #row13.demonstrationLastDigit.not-divisor #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row13.demonstrationLastDigit.not-divisor #bg-stroke, #expl-window-container #expl-window #demo7 #row13.demonstrationLastDigit.not-divisor #bg-stroke {
+  background: red;
 }
 #expl-window-container #expl-window #demonstrationLastNDigits #row13.division-row span, #expl-window-container #expl-window #demonstrationDigitSum #row13.division-row span, #expl-window-container #expl-window #demo7 #row13.division-row span {
   margin-left: 0.3em;
@@ -2217,24 +2231,25 @@ body:before {
 #expl-window-container #expl-window #demonstrationLastNDigits #row14.demonstrationLastDigit, #expl-window-container #expl-window #demonstrationDigitSum #row14.demonstrationLastDigit, #expl-window-container #expl-window #demo7 #row14.demonstrationLastDigit {
   display: flex;
   align-items: center;
+  /*.stroke {
+      @include partial-stroke($i * $anim-dur + 1s + $color-change-dur, 51%);
+      height: 100%;
+      width: calc(100% + 0.5rem);
+      translate: -2.75rem -0.3rem;
+  }*/
 }
-#expl-window-container #expl-window #demonstrationLastNDigits #row14.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationDigitSum #row14.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demo7 #row14.demonstrationLastDigit .stroke {
-  height: 120%;
-  transform: scaleX(5) translateY(-0.3rem);
-  left: 100%;
-  clip-path: polygon(51% 0, 51% 0, 51% 100%, 51% 100%);
-  animation: 0.5s draw-stroke-partial-51 forwards 22.5s;
+#expl-window-container #expl-window #demonstrationLastNDigits #row14.demonstrationLastDigit #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row14.demonstrationLastDigit #bg-stroke, #expl-window-container #expl-window #demo7 #row14.demonstrationLastDigit #bg-stroke {
+  translate: -0.2rem -5%;
+  position: absolute;
+  opacity: 0.4;
   height: 100%;
-  width: calc(100% + 0.5rem);
-  translate: -2.75rem -0.3rem;
+  animation: 0.5s bg-stroke-animation forwards 22.5s;
 }
-@keyframes draw-stroke-partial-51 {
-  from {
-    clip-path: polygon(51% 0, 51% 0, 51% 100%, 51% 100%);
-  }
-  to {
-    clip-path: polygon(51% 0, 71% 0, 71% 100%, 51% 100%);
-  }
+#expl-window-container #expl-window #demonstrationLastNDigits #row14.demonstrationLastDigit.divisor #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row14.demonstrationLastDigit.divisor #bg-stroke, #expl-window-container #expl-window #demo7 #row14.demonstrationLastDigit.divisor #bg-stroke {
+  background: lightgreen;
+}
+#expl-window-container #expl-window #demonstrationLastNDigits #row14.demonstrationLastDigit.not-divisor #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row14.demonstrationLastDigit.not-divisor #bg-stroke, #expl-window-container #expl-window #demo7 #row14.demonstrationLastDigit.not-divisor #bg-stroke {
+  background: red;
 }
 #expl-window-container #expl-window #demonstrationLastNDigits #row14.division-row span, #expl-window-container #expl-window #demonstrationDigitSum #row14.division-row span, #expl-window-container #expl-window #demo7 #row14.division-row span {
   margin-left: 0.3em;
@@ -2330,24 +2345,25 @@ body:before {
 #expl-window-container #expl-window #demonstrationLastNDigits #row15.demonstrationLastDigit, #expl-window-container #expl-window #demonstrationDigitSum #row15.demonstrationLastDigit, #expl-window-container #expl-window #demo7 #row15.demonstrationLastDigit {
   display: flex;
   align-items: center;
+  /*.stroke {
+      @include partial-stroke($i * $anim-dur + 1s + $color-change-dur, 51%);
+      height: 100%;
+      width: calc(100% + 0.5rem);
+      translate: -2.75rem -0.3rem;
+  }*/
 }
-#expl-window-container #expl-window #demonstrationLastNDigits #row15.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationDigitSum #row15.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demo7 #row15.demonstrationLastDigit .stroke {
-  height: 120%;
-  transform: scaleX(5) translateY(-0.3rem);
-  left: 100%;
-  clip-path: polygon(51% 0, 51% 0, 51% 100%, 51% 100%);
-  animation: 0.5s draw-stroke-partial-51 forwards 24s;
+#expl-window-container #expl-window #demonstrationLastNDigits #row15.demonstrationLastDigit #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row15.demonstrationLastDigit #bg-stroke, #expl-window-container #expl-window #demo7 #row15.demonstrationLastDigit #bg-stroke {
+  translate: -0.2rem -5%;
+  position: absolute;
+  opacity: 0.4;
   height: 100%;
-  width: calc(100% + 0.5rem);
-  translate: -2.75rem -0.3rem;
+  animation: 0.5s bg-stroke-animation forwards 24s;
 }
-@keyframes draw-stroke-partial-51 {
-  from {
-    clip-path: polygon(51% 0, 51% 0, 51% 100%, 51% 100%);
-  }
-  to {
-    clip-path: polygon(51% 0, 71% 0, 71% 100%, 51% 100%);
-  }
+#expl-window-container #expl-window #demonstrationLastNDigits #row15.demonstrationLastDigit.divisor #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row15.demonstrationLastDigit.divisor #bg-stroke, #expl-window-container #expl-window #demo7 #row15.demonstrationLastDigit.divisor #bg-stroke {
+  background: lightgreen;
+}
+#expl-window-container #expl-window #demonstrationLastNDigits #row15.demonstrationLastDigit.not-divisor #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row15.demonstrationLastDigit.not-divisor #bg-stroke, #expl-window-container #expl-window #demo7 #row15.demonstrationLastDigit.not-divisor #bg-stroke {
+  background: red;
 }
 #expl-window-container #expl-window #demonstrationLastNDigits #row15.division-row span, #expl-window-container #expl-window #demonstrationDigitSum #row15.division-row span, #expl-window-container #expl-window #demo7 #row15.division-row span {
   margin-left: 0.3em;
@@ -2443,24 +2459,25 @@ body:before {
 #expl-window-container #expl-window #demonstrationLastNDigits #row16.demonstrationLastDigit, #expl-window-container #expl-window #demonstrationDigitSum #row16.demonstrationLastDigit, #expl-window-container #expl-window #demo7 #row16.demonstrationLastDigit {
   display: flex;
   align-items: center;
+  /*.stroke {
+      @include partial-stroke($i * $anim-dur + 1s + $color-change-dur, 51%);
+      height: 100%;
+      width: calc(100% + 0.5rem);
+      translate: -2.75rem -0.3rem;
+  }*/
 }
-#expl-window-container #expl-window #demonstrationLastNDigits #row16.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationDigitSum #row16.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demo7 #row16.demonstrationLastDigit .stroke {
-  height: 120%;
-  transform: scaleX(5) translateY(-0.3rem);
-  left: 100%;
-  clip-path: polygon(51% 0, 51% 0, 51% 100%, 51% 100%);
-  animation: 0.5s draw-stroke-partial-51 forwards 25.5s;
+#expl-window-container #expl-window #demonstrationLastNDigits #row16.demonstrationLastDigit #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row16.demonstrationLastDigit #bg-stroke, #expl-window-container #expl-window #demo7 #row16.demonstrationLastDigit #bg-stroke {
+  translate: -0.2rem -5%;
+  position: absolute;
+  opacity: 0.4;
   height: 100%;
-  width: calc(100% + 0.5rem);
-  translate: -2.75rem -0.3rem;
+  animation: 0.5s bg-stroke-animation forwards 25.5s;
 }
-@keyframes draw-stroke-partial-51 {
-  from {
-    clip-path: polygon(51% 0, 51% 0, 51% 100%, 51% 100%);
-  }
-  to {
-    clip-path: polygon(51% 0, 71% 0, 71% 100%, 51% 100%);
-  }
+#expl-window-container #expl-window #demonstrationLastNDigits #row16.demonstrationLastDigit.divisor #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row16.demonstrationLastDigit.divisor #bg-stroke, #expl-window-container #expl-window #demo7 #row16.demonstrationLastDigit.divisor #bg-stroke {
+  background: lightgreen;
+}
+#expl-window-container #expl-window #demonstrationLastNDigits #row16.demonstrationLastDigit.not-divisor #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row16.demonstrationLastDigit.not-divisor #bg-stroke, #expl-window-container #expl-window #demo7 #row16.demonstrationLastDigit.not-divisor #bg-stroke {
+  background: red;
 }
 #expl-window-container #expl-window #demonstrationLastNDigits #row16.division-row span, #expl-window-container #expl-window #demonstrationDigitSum #row16.division-row span, #expl-window-container #expl-window #demo7 #row16.division-row span {
   margin-left: 0.3em;
@@ -2556,24 +2573,25 @@ body:before {
 #expl-window-container #expl-window #demonstrationLastNDigits #row17.demonstrationLastDigit, #expl-window-container #expl-window #demonstrationDigitSum #row17.demonstrationLastDigit, #expl-window-container #expl-window #demo7 #row17.demonstrationLastDigit {
   display: flex;
   align-items: center;
+  /*.stroke {
+      @include partial-stroke($i * $anim-dur + 1s + $color-change-dur, 51%);
+      height: 100%;
+      width: calc(100% + 0.5rem);
+      translate: -2.75rem -0.3rem;
+  }*/
 }
-#expl-window-container #expl-window #demonstrationLastNDigits #row17.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationDigitSum #row17.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demo7 #row17.demonstrationLastDigit .stroke {
-  height: 120%;
-  transform: scaleX(5) translateY(-0.3rem);
-  left: 100%;
-  clip-path: polygon(51% 0, 51% 0, 51% 100%, 51% 100%);
-  animation: 0.5s draw-stroke-partial-51 forwards 27s;
+#expl-window-container #expl-window #demonstrationLastNDigits #row17.demonstrationLastDigit #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row17.demonstrationLastDigit #bg-stroke, #expl-window-container #expl-window #demo7 #row17.demonstrationLastDigit #bg-stroke {
+  translate: -0.2rem -5%;
+  position: absolute;
+  opacity: 0.4;
   height: 100%;
-  width: calc(100% + 0.5rem);
-  translate: -2.75rem -0.3rem;
+  animation: 0.5s bg-stroke-animation forwards 27s;
 }
-@keyframes draw-stroke-partial-51 {
-  from {
-    clip-path: polygon(51% 0, 51% 0, 51% 100%, 51% 100%);
-  }
-  to {
-    clip-path: polygon(51% 0, 71% 0, 71% 100%, 51% 100%);
-  }
+#expl-window-container #expl-window #demonstrationLastNDigits #row17.demonstrationLastDigit.divisor #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row17.demonstrationLastDigit.divisor #bg-stroke, #expl-window-container #expl-window #demo7 #row17.demonstrationLastDigit.divisor #bg-stroke {
+  background: lightgreen;
+}
+#expl-window-container #expl-window #demonstrationLastNDigits #row17.demonstrationLastDigit.not-divisor #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row17.demonstrationLastDigit.not-divisor #bg-stroke, #expl-window-container #expl-window #demo7 #row17.demonstrationLastDigit.not-divisor #bg-stroke {
+  background: red;
 }
 #expl-window-container #expl-window #demonstrationLastNDigits #row17.division-row span, #expl-window-container #expl-window #demonstrationDigitSum #row17.division-row span, #expl-window-container #expl-window #demo7 #row17.division-row span {
   margin-left: 0.3em;
@@ -2669,24 +2687,25 @@ body:before {
 #expl-window-container #expl-window #demonstrationLastNDigits #row18.demonstrationLastDigit, #expl-window-container #expl-window #demonstrationDigitSum #row18.demonstrationLastDigit, #expl-window-container #expl-window #demo7 #row18.demonstrationLastDigit {
   display: flex;
   align-items: center;
+  /*.stroke {
+      @include partial-stroke($i * $anim-dur + 1s + $color-change-dur, 51%);
+      height: 100%;
+      width: calc(100% + 0.5rem);
+      translate: -2.75rem -0.3rem;
+  }*/
 }
-#expl-window-container #expl-window #demonstrationLastNDigits #row18.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationDigitSum #row18.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demo7 #row18.demonstrationLastDigit .stroke {
-  height: 120%;
-  transform: scaleX(5) translateY(-0.3rem);
-  left: 100%;
-  clip-path: polygon(51% 0, 51% 0, 51% 100%, 51% 100%);
-  animation: 0.5s draw-stroke-partial-51 forwards 28.5s;
+#expl-window-container #expl-window #demonstrationLastNDigits #row18.demonstrationLastDigit #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row18.demonstrationLastDigit #bg-stroke, #expl-window-container #expl-window #demo7 #row18.demonstrationLastDigit #bg-stroke {
+  translate: -0.2rem -5%;
+  position: absolute;
+  opacity: 0.4;
   height: 100%;
-  width: calc(100% + 0.5rem);
-  translate: -2.75rem -0.3rem;
+  animation: 0.5s bg-stroke-animation forwards 28.5s;
 }
-@keyframes draw-stroke-partial-51 {
-  from {
-    clip-path: polygon(51% 0, 51% 0, 51% 100%, 51% 100%);
-  }
-  to {
-    clip-path: polygon(51% 0, 71% 0, 71% 100%, 51% 100%);
-  }
+#expl-window-container #expl-window #demonstrationLastNDigits #row18.demonstrationLastDigit.divisor #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row18.demonstrationLastDigit.divisor #bg-stroke, #expl-window-container #expl-window #demo7 #row18.demonstrationLastDigit.divisor #bg-stroke {
+  background: lightgreen;
+}
+#expl-window-container #expl-window #demonstrationLastNDigits #row18.demonstrationLastDigit.not-divisor #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row18.demonstrationLastDigit.not-divisor #bg-stroke, #expl-window-container #expl-window #demo7 #row18.demonstrationLastDigit.not-divisor #bg-stroke {
+  background: red;
 }
 #expl-window-container #expl-window #demonstrationLastNDigits #row18.division-row span, #expl-window-container #expl-window #demonstrationDigitSum #row18.division-row span, #expl-window-container #expl-window #demo7 #row18.division-row span {
   margin-left: 0.3em;
@@ -2782,24 +2801,25 @@ body:before {
 #expl-window-container #expl-window #demonstrationLastNDigits #row19.demonstrationLastDigit, #expl-window-container #expl-window #demonstrationDigitSum #row19.demonstrationLastDigit, #expl-window-container #expl-window #demo7 #row19.demonstrationLastDigit {
   display: flex;
   align-items: center;
+  /*.stroke {
+      @include partial-stroke($i * $anim-dur + 1s + $color-change-dur, 51%);
+      height: 100%;
+      width: calc(100% + 0.5rem);
+      translate: -2.75rem -0.3rem;
+  }*/
 }
-#expl-window-container #expl-window #demonstrationLastNDigits #row19.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demonstrationDigitSum #row19.demonstrationLastDigit .stroke, #expl-window-container #expl-window #demo7 #row19.demonstrationLastDigit .stroke {
-  height: 120%;
-  transform: scaleX(5) translateY(-0.3rem);
-  left: 100%;
-  clip-path: polygon(51% 0, 51% 0, 51% 100%, 51% 100%);
-  animation: 0.5s draw-stroke-partial-51 forwards 30s;
+#expl-window-container #expl-window #demonstrationLastNDigits #row19.demonstrationLastDigit #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row19.demonstrationLastDigit #bg-stroke, #expl-window-container #expl-window #demo7 #row19.demonstrationLastDigit #bg-stroke {
+  translate: -0.2rem -5%;
+  position: absolute;
+  opacity: 0.4;
   height: 100%;
-  width: calc(100% + 0.5rem);
-  translate: -2.75rem -0.3rem;
+  animation: 0.5s bg-stroke-animation forwards 30s;
 }
-@keyframes draw-stroke-partial-51 {
-  from {
-    clip-path: polygon(51% 0, 51% 0, 51% 100%, 51% 100%);
-  }
-  to {
-    clip-path: polygon(51% 0, 71% 0, 71% 100%, 51% 100%);
-  }
+#expl-window-container #expl-window #demonstrationLastNDigits #row19.demonstrationLastDigit.divisor #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row19.demonstrationLastDigit.divisor #bg-stroke, #expl-window-container #expl-window #demo7 #row19.demonstrationLastDigit.divisor #bg-stroke {
+  background: lightgreen;
+}
+#expl-window-container #expl-window #demonstrationLastNDigits #row19.demonstrationLastDigit.not-divisor #bg-stroke, #expl-window-container #expl-window #demonstrationDigitSum #row19.demonstrationLastDigit.not-divisor #bg-stroke, #expl-window-container #expl-window #demo7 #row19.demonstrationLastDigit.not-divisor #bg-stroke {
+  background: red;
 }
 #expl-window-container #expl-window #demonstrationLastNDigits #row19.division-row span, #expl-window-container #expl-window #demonstrationDigitSum #row19.division-row span, #expl-window-container #expl-window #demo7 #row19.division-row span {
   margin-left: 0.3em;
@@ -2960,6 +2980,14 @@ body:before {
   }
   to {
     color: red;
+  }
+}
+@keyframes bg-stroke-animation {
+  from {
+    width: 0;
+  }
+  to {
+    width: calc(100% + 0.4rem);
   }
 }
 

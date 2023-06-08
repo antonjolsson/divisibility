@@ -35,8 +35,9 @@ function LastNDigits(props: {dividend: number, divides: boolean, digits: number,
         : <h1 key={i} id={`row${i}`}
               className={'demonstrationLastDigit ' + (props.divides ? 'divisor' : 'not-divisor') + className}>{firstDigits}
             <div id={'stroke-container'} className={firstDigits.length > 0 ? 'multi-digit' : ''}>
-                <img className={'stroke'} src={props.divides ? 'stroke-green.svg' : 'stroke-red.svg'} alt={'stroke'}
-                     onAnimationEnd={(): void => onAnimationEnd(i, arr)}/>
+                {/*<img className={'stroke'} src={props.divides ? 'stroke-green.svg' : 'stroke-red.svg'} alt={'stroke'}
+                     onAnimationEnd={(): void => onAnimationEnd(i, arr)}/>*/}
+                <div id={'bg-stroke'}/>
                 <span id={firstDigits.length === 0 ? 'sole-digit' : ''}
                   onAnimationEnd={(): void => onAnimationEnd(i, arr)}>{lastDigit}</span>
             </div>

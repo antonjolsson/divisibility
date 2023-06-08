@@ -298,11 +298,27 @@ $open-anim-duration: 0.5s;
                         display: flex;
                         align-items: center;
 
-                        .stroke {
+                        /*.stroke {
                             @include partial-stroke($i * $anim-dur + 1s + $color-change-dur, 51%);
                             height: 100%;
                             width: calc(100% + 0.5rem);
                             translate: -2.75rem -0.3rem;
+                        }*/
+
+                        #bg-stroke {
+                            translate: -0.2rem -5%;
+                            position: absolute;
+                            opacity: 0.4;
+                            height: 100%;
+                            animation: $color-change-dur bg-stroke-animation forwards $i * $anim-dur + 1s + $color-change-dur;
+                        }
+
+                        &.divisor #bg-stroke {
+                            background: lightgreen;
+                        }
+
+                        &.not-divisor #bg-stroke {
+                            background: red;
                         }
                     }
 
@@ -451,6 +467,15 @@ $open-anim-duration: 0.5s;
 
     @keyframes color-change-red {
         @include color-change(red);
+    }
+
+    @keyframes bg-stroke-animation {
+        from {
+            width: 0;
+        }
+        to {
+            width: calc(100% + 0.4rem);
+        }
     }
 }
 
