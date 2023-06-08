@@ -172,6 +172,11 @@ $open-anim-duration: 0.5s;
 
         #demonstrationDigitSum {
             justify-content: flex-end;
+
+            #bg-stroke {
+                height: 3.5rem !important;
+                translate: 0 -40% !important;
+            }
         }
 
         #demo7 {
@@ -285,6 +290,7 @@ $open-anim-duration: 0.5s;
                     margin: 0;
                     opacity: 0;
                     animation: $anim-dur * 0.67 fade-in-slide-down forwards $i * $anim-dur;
+                    position: relative;
 
                     #stroke-container {
                         width: fit-content;
@@ -294,32 +300,25 @@ $open-anim-duration: 0.5s;
                         }
                     }
 
+                    #bg-stroke {
+                        translate: -0.2rem -5%;
+                        position: absolute;
+                        opacity: 0.4;
+                        height: 100%;
+                        animation: $color-change-dur bg-stroke-animation forwards $i * $anim-dur + 1s + $color-change-dur;
+                    }
+
+                    &.divisor #bg-stroke {
+                        background: #00ff00;
+                    }
+
+                    &.not-divisor #bg-stroke {
+                        background: red;
+                    }
+
                     &.demonstrationLastDigit {
                         display: flex;
                         align-items: center;
-
-                        /*.stroke {
-                            @include partial-stroke($i * $anim-dur + 1s + $color-change-dur, 51%);
-                            height: 100%;
-                            width: calc(100% + 0.5rem);
-                            translate: -2.75rem -0.3rem;
-                        }*/
-
-                        #bg-stroke {
-                            translate: -0.2rem -5%;
-                            position: absolute;
-                            opacity: 0.4;
-                            height: 100%;
-                            animation: $color-change-dur bg-stroke-animation forwards $i * $anim-dur + 1s + $color-change-dur;
-                        }
-
-                        &.divisor #bg-stroke {
-                            background: lightgreen;
-                        }
-
-                        &.not-divisor #bg-stroke {
-                            background: red;
-                        }
                     }
 
                     &.division-row span {
