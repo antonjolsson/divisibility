@@ -34,15 +34,22 @@ function LastNDigits(props: {dividend: number, divides: boolean, digits: number,
         </h1>
         : <h1 key={i} id={`row${i}`}
               className={'demonstrationLastDigit ' + (props.divides ? 'divisor' : 'not-divisor') + className}>{firstDigits}
-            <span id={firstDigits.length === 0 ? 'sole-digit' : ''}
+            <div id={'stroke-container'} className={firstDigits.length > 0 ? 'multi-digit' : ''}>
+                <img className={'stroke'} src={props.divides ? 'stroke-green.svg' : 'stroke-red.svg'} alt={'stroke'}
+                     onAnimationEnd={(): void => onAnimationEnd(i, arr)}/>
+                <span id={firstDigits.length === 0 ? 'sole-digit' : ''}
                   onAnimationEnd={(): void => onAnimationEnd(i, arr)}>{lastDigit}</span>
+            </div>
         </h1>)}
     </div>
 }
 
 function Demo1(props: { divides: boolean, dividend: number, className?: string }): ReactElement {
     return <h1 id={'demonstration1'} className={`${props.className ?? ''} ${props.divides ? 'divisor' : 'not-divisor'}`}>
-        <span>{props.dividend}</span>
+        <div id={'stroke-container'}>
+            <img className={'stroke'} src={'stroke-green.svg'} alt={'stroke'}/>
+            <span>{props.dividend}</span>
+        </div>
     </h1>;
 }
 
@@ -179,8 +186,8 @@ export function ExplanationWindow(props: { coords: { x: number; y: number }, rul
     return <>
         {show && <div id={'expl-window-container'} className={rootClassName} style={{left: props.coords.x, top: props.coords.y}}>
             <div id={'expl-window-bg'}></div>
+            <h2 id={'close-button'} onClick={(): void => bgClickedContext.setBgClicked(true)}>x</h2>
             <div id={'expl-window'} onClick={(e): void => stopPropagation(e)}>
-                <h2 id={'close-button'} onClick={(): void => bgClickedContext.setBgClicked(true)}>x</h2>
                 <h2 className={'headline-divisor'}><span>Divisor: </span>{`${props.rule.divisor}`}</h2>
                 <h2 className={'headline-rule'}><span>Rule: </span>{`${props.rule.name}`}</h2>
                 <div id={'explanation'} dangerouslySetInnerHTML={{__html: props.rule.explanation}}/>

@@ -1,4 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap");
+.stroke-common, .App #table .table-row .stroke, .App #credits h4 .link-container .stroke {
+  position: absolute;
+  z-index: -1;
+  opacity: 0.4;
+  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  pointer-events: none;
+  width: 100%;
+  transform: translateX(-3%);
+}
+
 html, body, #root {
   height: 100%;
   width: 100%;
@@ -190,15 +200,6 @@ body:before {
   to {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
-}
-.App .stroke-common, .App #table .table-row .stroke, .App #credits h4 .link-container .stroke {
-  position: absolute;
-  z-index: -1;
-  opacity: 0.4;
-  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-  pointer-events: none;
-  width: 100%;
-  transform: translateX(-3%);
 }
 .App #credits h4 {
   display: flex;

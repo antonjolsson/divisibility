@@ -33,7 +33,7 @@ function TableRow(props: { entries: string[], marked: boolean, markedRank: numbe
     }
 
     return <div className={'table-row'}>
-        {props.marked && <img className={`stroke ${props.marked ? '' : 'reverse-anim'}`} src={'stroke.svg'}
+        {props.marked && <img className={`stroke ${props.marked ? '' : 'reverse-anim'}`} src={'stroke-green.svg'}
                               alt={`stroke${props.entries[0]}`} id={`stroke${props.markedRank}`}></img>}
         <h2 className={'divisor'}>{props.entries[0]}</h2>
         <div className={'rule'}>
@@ -235,15 +235,14 @@ function Credits(): ReactElement {
     return <div id={'credits'}>
         <h4 id={'numberphile-link'}>{'Inspired by Numberphile video'}
             <div className={'link-container'}>
-                <img className={'stroke'} src={'stroke.svg'} alt={'stroke'}></img>
-                <a href={'https://www.youtube.com/watch?v=UDQjn_-pDSs'}>
-                    {'Why 7 is Weird'}</a>
+                <img className={'stroke'} src={'stroke-green.svg'} alt={'stroke'}></img>
+                <a href={'https://www.youtube.com/watch?v=UDQjn_-pDSs'}>Why 7 is Weird</a>
             </div>
 
     </h4>
         <h4 id={'wiki-link'}>{'More divisibility rules on'}
             <div className={'link-container'}>
-                <img className={'stroke'} src={'stroke.svg'} alt={'stroke'}></img>
+                <img className={'stroke'} src={'stroke-green.svg'} alt={'stroke'}></img>
                 <a href={'https://en.wikipedia.org/wiki/Divisibility_rule'}>Wikipedia</a>
             </div>
 

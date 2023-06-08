@@ -1,3 +1,5 @@
+@use "App.scss";
+
 $open-anim-duration: 0.5s;
 
 #expl-window-container {
@@ -61,6 +63,27 @@ $open-anim-duration: 0.5s;
         animation: $open-anim-duration * 2 fade-in-bg forwards;
     }
 
+    #close-button {
+        position: absolute;
+        font-size: 2.5rem;
+        line-height: 2rem;
+        margin: 0;
+        top: 2rem;
+        right: 2rem;
+        font-weight: 500;
+        transform: scaleY(0.8);
+        z-index: 20;
+        transition: transform 0.3s;
+
+        @include fade-in(fade-in-fg,  0, 1);
+        animation: $open-anim-duration fade-in-fg forwards;
+
+        &:hover {
+            transform: scale(1.25, 1);
+            cursor: pointer;
+        }
+    }
+
     #expl-window {
         width: 100%;
         height: 100%;
@@ -75,20 +98,20 @@ $open-anim-duration: 0.5s;
         @include fade-in(fade-in-fg,  0, 1);
         animation: $open-anim-duration fade-in-fg forwards;
 
-        #close-button {
-            position: absolute;
-            font-size: 2.5rem;
-            line-height: 2rem;
-            margin: 0;
-            top: 2rem;
-            right: 2rem;
-            font-weight: 500;
-            transform: scaleY(0.8);
-            transition: transform 0.3s;
-
-            &:hover {
-                transform: scale(1.25, 1);
-                cursor: pointer;
+        @mixin draw-stroke-partial($name, $start-percentage) {
+            @keyframes #{$name} {
+                from {
+                    $viewport-width-start: $start-percentage;
+                    $viewport-width-end: $start-percentage;
+                    clip-path: polygon($viewport-width-start 0, $viewport-width-end 0, $viewport-width-end 100%,
+                            $viewport-width-start 100%);
+                }
+                to {
+                    $viewport-width-start: $start-percentage;
+                    $viewport-width-end: $start-percentage + 20%;
+                    clip-path: polygon($viewport-width-start 0, $viewport-width-end 0, $viewport-width-end 100%,
+                            $viewport-width-start 100%);
+                }
             }
         }
 
@@ -116,14 +139,31 @@ $open-anim-duration: 0.5s;
             line-height: 0.4em;
         }
 
-        #demonstration1 {
-            &.divisor span {
-                animation: $color-change-dur color-change-lightgreen forwards 1s;
-            }
+        @mixin partial-stroke($delay, $start-percentage) {
+            @extend .stroke-common;
+            height: 120%;
+            transform: scaleX(5) translateY(-0.3rem);
+            left: 100%;
+            $viewport-width-start: $start-percentage;
+            $viewport-width-end: $start-percentage;
+            clip-path: polygon($viewport-width-start 0, $viewport-width-end 0, $viewport-width-end 100%,
+                    $viewport-width-start 100%);
+            $anim-name: draw-stroke-partial-#{str-slice(#{$start-percentage}, 0, -2)};
+            @include draw-stroke-partial($anim-name, $start-percentage);
+            animation: $color-change-dur $anim-name forwards $delay;
+        }
 
-            &.not-divisor span {
-                animation: $color-change-dur color-change-red forwards 1s;
-            }
+        #stroke-container {
+            position: relative;
+            line-height: 3.5rem;
+        }
+
+        #demonstration1 {
+            margin-top: 0.5rem;
+
+                .stroke {
+                    @include partial-stroke($open-anim-duration * 2, 20%)
+                }
         }
 
         #demonstrationDigitSum, #demo7 {
@@ -199,7 +239,6 @@ $open-anim-duration: 0.5s;
         }
 
         #demonstrationLastNDigits, #demonstrationDigitSum, #demo7 {
-            /*$anim-dur: 3s;*/
             $anim-dur: 1.5s;
             $margin-condensed: -0.2em;
             $margin-extended: 0.1em;
@@ -232,25 +271,38 @@ $open-anim-duration: 0.5s;
                 }
             }
 
+            @keyframes translate-right {
+                from {
+                    margin-left: 0;
+                }
+                to {
+                    margin-left: 0.5em;
+                }
+            }
+
             @for $i from 0 to 20 {
                 #row#{$i} {
                     margin: 0;
                     opacity: 0;
                     animation: $anim-dur * 0.67 fade-in-slide-down forwards $i * $anim-dur;
 
-                    &.demonstrationLastDigit {
-                        &.divisor span {
-                            animation: $color-change-dur * 2 color-change-lightgreen-translate forwards $i * $anim-dur + 1s;
-                            &#sole-digit {
-                                animation: $color-change-dur * 2 color-change-lightgreen forwards $i * $anim-dur + 1s;
-                            }
-                        }
+                    #stroke-container {
+                        width: fit-content;
 
-                        &.not-divisor span {
-                            animation: $color-change-dur * 2 color-change-red-translate forwards $i * $anim-dur + 1s;
-                            &#sole-digit {
-                                animation: $color-change-dur * 2 color-change-red forwards $i * $anim-dur + 1s;
-                            }
+                        &.multi-digit {
+                            animation: $color-change-dur translate-right forwards $i * $anim-dur + 1s;
+                        }
+                    }
+
+                    &.demonstrationLastDigit {
+                        display: flex;
+                        align-items: center;
+
+                        .stroke {
+                            @include partial-stroke($i * $anim-dur + 1s + $color-change-dur, 51%);
+                            height: 100%;
+                            width: calc(100% + 0.5rem);
+                            translate: -2.75rem -0.3rem;
                         }
                     }
 
@@ -306,7 +358,7 @@ $open-anim-duration: 0.5s;
                     // Right-most digit (not single-digit)
                     .digit:last-child:not(:first-child) {
                         margin-left: $margin-condensed;
-                        animation: $anim-dur * 0.17 translate-right forwards ($i + 0.67) * $anim-dur;
+                        animation: $anim-dur * 0.17 translate-right-extra forwards ($i + 0.67) * $anim-dur;
                     }
 
                     // Single-digit numbers
@@ -320,7 +372,7 @@ $open-anim-duration: 0.5s;
             }
         }
 
-        @keyframes translate-right {
+        @keyframes translate-right-extra {
             from {
                 margin-left: -15%;
             }
@@ -348,11 +400,13 @@ $open-anim-duration: 0.5s;
             }
             50% {
                 margin-top: 0.7em;
+                /*margin-top: 0.5rem;*/
                 margin-bottom: 0.1em;
                 opacity: 0;
             }
             100% {
                 margin-top: 0.7em;
+                /*margin-top: 0.5rem;*/
                 margin-bottom: 0.1em;
                 opacity: 1;
             }
