@@ -120,6 +120,7 @@ function Demo7(props: { divides: boolean, dividend: number, className?: string }
                 const id = 'row' + String(arr.length - 1 - i)
                     return (i === 0)
                         ? <h1 key={i} className={`demo-last-row ${props.divides ? 'divisor' : 'not-divisor'}`} id={id}>
+                            <div id={'bg-stroke'}/>
                             <span>{dividend}</span></h1>
                         : <h1 key={i} id={id}>
                             <span id={'left-most-digits'}>{String(dividend).slice(0, -1)}</span>

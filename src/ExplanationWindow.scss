@@ -168,15 +168,15 @@ $open-anim-duration: 0.5s;
 
         #demonstrationDigitSum, #demo7 {
             flex-direction: column-reverse;
+
+            #bg-stroke {
+                height: 3.5rem !important;
+                translate: -0.2rem -40% !important;
+            }
         }
 
         #demonstrationDigitSum {
             justify-content: flex-end;
-
-            #bg-stroke {
-                height: 3.5rem !important;
-                translate: 0 -40% !important;
-            }
         }
 
         #demo7 {
@@ -188,6 +188,10 @@ $open-anim-duration: 0.5s;
 
             &:not(&.single-row) {
                 height: 40%;
+            }
+
+            .demo-last-row {
+                margin-bottom: 0.7rem !important;
             }
         }
 
@@ -377,10 +381,10 @@ $open-anim-duration: 0.5s;
                     }
 
                     // Single-digit numbers
-                    &.divisor .digit:only-child, &.divisor.demo-last-row span {
+                    &.divisor .digit:only-child {
                         animation: $color-change-dur color-change-lightgreen forwards ($i + 0.84) * $anim-dur;
                     }
-                    &.not-divisor .digit:only-child, &.not-divisor.demo-last-row span {
+                    &.not-divisor .digit:only-child {
                         animation: $color-change-dur color-change-red forwards ($i + 0.84) * $anim-dur;
                     }
                 }
