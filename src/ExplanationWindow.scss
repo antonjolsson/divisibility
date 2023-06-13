@@ -379,14 +379,6 @@ $open-anim-duration: 0.5s;
                         margin-left: $margin-condensed;
                         animation: $anim-dur * 0.17 translate-right-extra forwards ($i + 0.67) * $anim-dur;
                     }
-
-                    // Single-digit numbers
-                    &.divisor .digit:only-child {
-                        animation: $color-change-dur color-change-lightgreen forwards ($i + 0.84) * $anim-dur;
-                    }
-                    &.not-divisor .digit:only-child {
-                        animation: $color-change-dur color-change-red forwards ($i + 0.84) * $anim-dur;
-                    }
                 }
             }
         }
@@ -430,46 +422,6 @@ $open-anim-duration: 0.5s;
                 opacity: 1;
             }
         }
-    }
-
-    @mixin color-change-translate($color, $margin-left) {
-        0% {
-            margin-left: 0;
-            color: black;
-        }
-        50% {
-            color: black;;
-            margin-left: #{$margin-left}em;
-        }
-        100% {
-            color: $color;
-            margin-left: #{$margin-left}em;
-        }
-    }
-
-    @mixin color-change($color) {
-        from {
-            color: black;
-        }
-        to {
-            color: $color;
-        }
-    }
-
-    @keyframes color-change-lightgreen-translate {
-        @include color-change-translate(lightgreen, 0.5);
-    }
-
-    @keyframes color-change-red-translate {
-        @include color-change-translate(red, 0.5);
-    }
-
-    @keyframes color-change-lightgreen {
-        @include color-change(lightgreen);
-    }
-
-    @keyframes color-change-red {
-        @include color-change(red);
     }
 
     @keyframes bg-stroke-animation {

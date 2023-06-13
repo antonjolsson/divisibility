@@ -35,9 +35,8 @@ function LastNDigits(props: {dividend: number, divides: boolean, digits: number,
         : <h1 key={i} id={`row${i}`}
               className={'demonstrationLastDigit ' + (props.divides ? 'divisor' : 'not-divisor') + className}>{firstDigits}
             <div id={'stroke-container'} className={firstDigits.length > 0 ? 'multi-digit' : ''}>
-                <div id={'bg-stroke'}/>
-                <span id={firstDigits.length === 0 ? 'sole-digit' : ''}
-                  onAnimationEnd={(): void => onAnimationEnd(i, arr)}>{lastDigit}</span>
+                <div id={'bg-stroke'} onAnimationEnd={(): void => onAnimationEnd(i, arr)}/>
+                <span id={firstDigits.length === 0 ? 'sole-digit' : ''}>{lastDigit}</span>
             </div>
         </h1>)}
     </div>
@@ -95,8 +94,8 @@ function DigitSum(props: { divides: boolean, dividend: number, alternating: bool
         {/* Need to reverse the array and ID:s to keep scrollbar scrolled to the bottom during animations */}
         {sums.reverse().map((sum, i, arr) => <h1 key={i} className={props.divides ? 'divisor' : 'not-divisor'}
                                                  id={'row' + String(arr.length - 1 - i)}>
-            {i === 0 && <div id={'bg-stroke'}/>}
-            {addOperators(getChars(sum)).map((v, j) => <span key={j} onAnimationEnd={(_): void => onAnimationEnd(i)}
+            {i === 0 && <div id={'bg-stroke'} onAnimationEnd={(_): void => onAnimationEnd(i)}/>}
+            {addOperators(getChars(sum)).map((v, j) => <span key={j}
                 className={(j % 2 === 1 ? 'operator' : 'digit') + (i === 0 ? 'only-child' : '')}>{v}</span>)}
         </h1>)}
     </div>;
