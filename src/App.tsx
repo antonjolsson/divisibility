@@ -237,6 +237,7 @@ function Credits(): ReactElement {
             <div className={'link-container'}>
                 <img className={'stroke'} src={'stroke-green.svg'} alt={'stroke'}></img>
                 <a href={'https://www.youtube.com/watch?v=UDQjn_-pDSs'}>Why 7 is Weird</a>
+                <img className={'stroke-underline'} src={'stroke-black.svg'} alt={'underline'}></img>
             </div>
 
     </h4>
@@ -244,6 +245,7 @@ function Credits(): ReactElement {
             <div className={'link-container'}>
                 <img className={'stroke'} src={'stroke-green.svg'} alt={'stroke'}></img>
                 <a href={'https://en.wikipedia.org/wiki/Divisibility_rule'}>Wikipedia</a>
+                <img className={'stroke-underline'} src={'stroke-black.svg'} alt={'underline'}></img>
             </div>
 
         </h4>
