@@ -7,7 +7,7 @@ $open-anim-duration: 0.5s;
     height: 0;
     position: fixed;
     background-color: white;
-    box-shadow: 7px 8px 20px 0 rgba(0 0 0 / 0.5);
+    box-shadow: 0 0 30px 5px rgba(0 0 0 / 0.5);
     z-index: 10;
 
     &.grow {
@@ -231,7 +231,6 @@ $open-anim-duration: 0.5s;
                 }
 
                 &:nth-of-type(1) {
-                    /*margin-top: -1em;*/
                     margin-bottom: 1em;
                 }
 
