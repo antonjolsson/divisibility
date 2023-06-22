@@ -252,6 +252,16 @@ function Credits(): ReactElement {
     </div>;
 }
 
+function Header(): ReactElement {
+    return <header>
+        <div className={'headline-container'}>
+            <h1>Divisibility</h1>
+            <img className={'stroke-underline'} src={'stroke-black.svg'} alt={'underline'}></img>
+        </div>
+        <h3>Memorable shortcuts for testing divisibility of integers</h3>
+    </header>;
+}
+
 function App(): ReactElement {
     const [dividend, setDividend] = useState(-1)
     const [bgClicked, setBgClicked] = useState(false)
@@ -263,19 +273,21 @@ function App(): ReactElement {
       <>
           <BackgroundClickedContext.Provider value={{bgClicked, setBgClicked}}>
               <ShowExplanationContext.Provider value={{showExplanation, setShowExplanation}}>
-                  <InfoButtonCoordsContext.Provider value={{infoButtonCoords: infoButtonCoordsForRule,
-                      setInfoButtonCoords: setInfoButtonCoordsForRule}}>
+                  <InfoButtonCoordsContext.Provider value={{
+                      infoButtonCoords: infoButtonCoordsForRule,
+                      setInfoButtonCoords: setInfoButtonCoordsForRule
+                  }}>
                       <ExplainedRuleContext.Provider value={{rule: ruleExplained, setRule: setRuleExplained}}>
                           <div className="App" onClick={(): void => {
                               setBgClicked(true)
                           }}>
-                              <h1>Divisibility</h1>
-                              <h3>Memorable shortcuts for testing divisibility of integers</h3>
+                              <Header />
                               <Input onChange={(n: number): void => setDividend(n)}/>
                               <Table number={dividend}/>
-                              {<ExplanationWindow show={showExplanation} coords={infoButtonCoordsForRule} rule={ruleExplained}
-                                                                     dividend={dividend}/>}
-                              <Credits />
+                              {<ExplanationWindow show={showExplanation} coords={infoButtonCoordsForRule}
+                                                  rule={ruleExplained}
+                                                  dividend={dividend}/>}
+                              <Credits/>
                           </div>
                       </ExplainedRuleContext.Provider>
                   </InfoButtonCoordsContext.Provider>
