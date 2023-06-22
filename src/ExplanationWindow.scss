@@ -505,6 +505,12 @@ $open-anim-duration: 0.5s;
                 margin-bottom: 1.5rem;
             }
 
+            #demonstrationDigitSum, #demo7 {
+                #bg-stroke {
+                    translate: -0.2rem -5% !important;
+                }
+            }
+
             #demonstrationDigitSum,  #demonstrationLastNDigits {
                 height: auto !important;
                 min-height: unset !important;
@@ -543,7 +549,7 @@ $open-anim-duration: 0.5s;
                 height: min-content !important;
 
                 .child:nth-of-type(1) {
-                    margin-bottom: unset;
+                    margin-bottom: 1rem !important;
                     margin-top: unset;
                 }
 
