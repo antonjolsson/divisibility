@@ -166,7 +166,7 @@ function getDemonstration(ruleNumber: number, dividend: number, divides: boolean
                                 divisor={ruleNumber} className={`${dividend < 10 ? 'single-row ' : ''}${className}`}/>
         case 6: case 12: return <CompositeDemo divisor={ruleNumber} dividend={dividend} divides={divides}/>
         case 7: return <Demo7 dividend={dividend} divides={divides} className={className}/>
-        case 8: return <LastNDigits dividend={dividend} divides={divides} digits={3} className={className}/>
+        case 8: return <LastNDigits dividend={dividend} divides={divides} digits={3} className={className + ' last-3-digits'}/>
         default: return <LastNDigits dividend={dividend} divides={divides} digits={1} className={`single-row ${className}`}/>
     }
 }
