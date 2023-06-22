@@ -1,11 +1,11 @@
-import React, {createContext, ReactElement, SetStateAction, useContext, useEffect, useState} from "react";
+import React, {createContext, ReactElement, SetStateAction, useContext, useEffect, useRef, useState} from "react";
 import {BackgroundClickedContext, get5XLastPlusRest, getAlternatingSum, getDigitSum, IRule} from "./App";
 import './ExplanationWindow.css'
 
-export const DemoFinishedContext = createContext({finished: false, setFinished: (v: SetStateAction<boolean>) => {}})
+export const DemosFinishedContext = createContext({finished: 0, setFinished: (v: SetStateAction<number>) => {}})
 
 function LastNDigits(props: {dividend: number, divides: boolean, digits: number, className?: string}): ReactElement {
-    const demoFinishedContext = useContext(DemoFinishedContext)
+    const demosFinishedContext = useContext(DemosFinishedContext)
     const className = props.digits > 1 ? ' multi-row' : ''
 
     const dividends = [props.dividend]
@@ -22,7 +22,7 @@ function LastNDigits(props: {dividend: number, divides: boolean, digits: number,
 
     function onAnimationEnd(i: number, arr: number[]): void {
         if (i === arr.length - 1) {
-            demoFinishedContext.setFinished(true)
+            demosFinishedContext.setFinished(demosFinishedContext.finished + 1)
         }
     }
 
@@ -52,7 +52,7 @@ function Demo1(props: { divides: boolean, dividend: number, className?: string }
 }
 
 function DigitSum(props: { divides: boolean, dividend: number, alternating: boolean, divisor: number, className?: string }): ReactElement {
-    const firstDemoFinishedContext = useContext(DemoFinishedContext)
+    const demosFinishedContext = useContext(DemosFinishedContext)
 
     // eslint-disable-next-line jsx-a11y/heading-has-content
     const sums : number[] = []
@@ -86,7 +86,7 @@ function DigitSum(props: { divides: boolean, dividend: number, alternating: bool
 
     function onAnimationEnd(i: number): void {
         if (i === 0) {
-           firstDemoFinishedContext.setFinished(true)
+           demosFinishedContext.setFinished(demosFinishedContext.finished + 1)
         }
     }
 
@@ -133,12 +133,28 @@ function Demo7(props: { divides: boolean, dividend: number, className?: string }
 }
 
 function CompositeDemo(props: { divisor: number, divides: boolean, dividend: number }): ReactElement {
-    const firstDemoFinishedContext = useContext(DemoFinishedContext)
+    const demosFinishedContext = useContext(DemosFinishedContext)
     const divisors = props.divisor === 6 ? [2, 3] : [3, 4]
+    const containerRef = useRef<HTMLDivElement>(null)
+    const scrollInterval = useRef()
 
-    return <div id={'composite-demo'}>
+    // We need to scroll programmatically here due to a bug related to CSS value justify-content: flex-end
+    useEffect(() => {
+        const container = containerRef.current
+
+        if (demosFinishedContext.finished === 1) {
+            (scrollInterval.current as unknown as NodeJS.Timer) = setInterval(() => {
+                container?.scroll({left: 0, top: container.scrollHeight})
+            }, 10)
+        }
+        if (demosFinishedContext.finished === 2) {
+            clearInterval(scrollInterval.current)
+        }
+    }, [demosFinishedContext.finished])
+
+    return <div id={'composite-demo'} ref={containerRef}>
         {getDemonstration(divisors[0], props.dividend, props.divides, 'child')}
-        {firstDemoFinishedContext.finished && getDemonstration(divisors[1], props.dividend, props.divides, 'child')}
+        {demosFinishedContext.finished > 0 && getDemonstration(divisors[1], props.dividend, props.divides, 'child')}
     </div>;
 }
 
@@ -159,14 +175,12 @@ export function ExplanationWindow(props: { coords: { x: number; y: number }, rul
     show: boolean }): ReactElement {
     const [show, setShow] = useState(false)
     const [rootClassName, setRootClassName] = useState('')
-    const [firstDemoFinished, setFirstDemoFinished] =  useState(false)
+    const [demosFinished, setDemosFinished] =  useState(0)
     const bgClickedContext = useContext(BackgroundClickedContext)
 
     useEffect(() => {
-        if (firstDemoFinished) {
-            console.log('firstDemoFinished')
-        }
-    }, [firstDemoFinished])
+        /*console.log(demosFinished)*/
+    }, [demosFinished])
 
     useEffect(() => {
         if (props.show) {
@@ -175,7 +189,7 @@ export function ExplanationWindow(props: { coords: { x: number; y: number }, rul
         } else {
             setRootClassName('fade-out')
             setTimeout(() => setShow(false), 500)
-            setFirstDemoFinished(false)
+            setDemosFinished(0)
         }
     }, [props.show])
 
@@ -191,9 +205,9 @@ export function ExplanationWindow(props: { coords: { x: number; y: number }, rul
                 <h2 className={'headline-divisor'}><span>Divisor: </span>{`${props.rule.divisor}`}</h2>
                 <h2 className={'headline-rule'}><span>Rule: </span>{`${props.rule.name}`}</h2>
                 <div id={'explanation'} dangerouslySetInnerHTML={{__html: props.rule.explanation}}/>
-                <DemoFinishedContext.Provider value={{finished: firstDemoFinished, setFinished: setFirstDemoFinished}}>
+                <DemosFinishedContext.Provider value={{finished: demosFinished, setFinished: setDemosFinished}}>
                 {getDemonstration(props.rule.divisor, props.dividend, props.rule.divides)}
-                </DemoFinishedContext.Provider>
+                </DemosFinishedContext.Provider>
             </div>
         </div>}
     </>
