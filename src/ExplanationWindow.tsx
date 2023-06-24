@@ -132,7 +132,7 @@ function Demo7(props: { divides: boolean, dividend: number, className?: string }
     </div>
 }
 
-function CompositeDemo(props: { divisor: number, divides: boolean, dividend: number }): ReactElement {
+function CompositeDemo(props: { divisor: number, divides: boolean[], dividend: number }): ReactElement {
     const demosFinishedContext = useContext(DemosFinishedContext)
     const divisors = props.divisor === 6 ? [2, 3] : [3, 4]
     const containerRef = useRef<HTMLDivElement>(null)
@@ -153,21 +153,21 @@ function CompositeDemo(props: { divisor: number, divides: boolean, dividend: num
     }, [demosFinishedContext.finished])
 
     return <div id={'composite-demo'} ref={containerRef}>
-        {getDemonstration(divisors[0], props.dividend, props.divides, 'child')}
-        {demosFinishedContext.finished > 0 && getDemonstration(divisors[1], props.dividend, props.divides, 'child')}
+        {getDemonstration(divisors[0], props.dividend, [props.divides[0]], 'child')}
+        {demosFinishedContext.finished > 0 && getDemonstration(divisors[1], props.dividend, [props.divides[1]], 'child')}
     </div>;
 }
 
-function getDemonstration(ruleNumber: number, dividend: number, divides: boolean, className?: string): ReactElement {
+function getDemonstration(ruleNumber: number, dividend: number, divides: boolean[], className?: string): ReactElement {
     switch (ruleNumber) {
-        case 1: return <Demo1 dividend={dividend} divides={divides} className={className}/>
-        case 4: return <LastNDigits dividend={dividend} divides={divides} digits={2} className={className}/>
-        case 3: case 9: case 11: return <DigitSum dividend={dividend} divides={divides} alternating={ruleNumber === 11}
+        case 1: return <Demo1 dividend={dividend} divides={divides[0]} className={className}/>
+        case 4: return <LastNDigits dividend={dividend} divides={divides[0]} digits={2} className={className}/>
+        case 3: case 9: case 11: return <DigitSum dividend={dividend} divides={divides[0]} alternating={ruleNumber === 11}
                                 divisor={ruleNumber} className={`${dividend < 10 ? 'single-row ' : ''}${className}`}/>
         case 6: case 12: return <CompositeDemo divisor={ruleNumber} dividend={dividend} divides={divides}/>
-        case 7: return <Demo7 dividend={dividend} divides={divides} className={className}/>
-        case 8: return <LastNDigits dividend={dividend} divides={divides} digits={3} className={className + ' last-3-digits'}/>
-        default: return <LastNDigits dividend={dividend} divides={divides} digits={1} className={`single-row ${className}`}/>
+        case 7: return <Demo7 dividend={dividend} divides={divides[0]} className={className}/>
+        case 8: return <LastNDigits dividend={dividend} divides={divides[0]} digits={3} className={className + ' last-3-digits'}/>
+        default: return <LastNDigits dividend={dividend} divides={divides[0]} digits={1} className={`single-row ${className}`}/>
     }
 }
 
@@ -177,10 +177,6 @@ export function ExplanationWindow(props: { coords: { x: number; y: number }, rul
     const [rootClassName, setRootClassName] = useState('')
     const [demosFinished, setDemosFinished] =  useState(0)
     const bgClickedContext = useContext(BackgroundClickedContext)
-
-    useEffect(() => {
-        /*console.log(demosFinished)*/
-    }, [demosFinished])
 
     useEffect(() => {
         if (props.show) {
@@ -198,7 +194,8 @@ export function ExplanationWindow(props: { coords: { x: number; y: number }, rul
     }
 
     return <>
-        {show && <div id={'expl-window-container'} className={rootClassName} style={{left: props.coords.x, top: props.coords.y}}>
+        {show && <div id={'expl-window-container'} className={rootClassName}
+                      style={{left: props.coords.x, top: props.coords.y}}>
             <div id={'expl-window-bg'}></div>
             <h2 id={'close-button'} onClick={(): void => bgClickedContext.setBgClicked(true)}>x</h2>
             <div id={'expl-window'} onClick={(e): void => stopPropagation(e)}>
