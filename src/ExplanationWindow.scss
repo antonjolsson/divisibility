@@ -167,8 +167,6 @@ $open-anim-duration: 0.5s;
         }
 
         #demonstrationDigitSum, #demo7 {
-            flex-direction: column-reverse;
-
             #bg-stroke {
                 height: 3.5rem !important;
                 translate: -0.2rem -40% !important;
@@ -176,11 +174,13 @@ $open-anim-duration: 0.5s;
         }
 
         #demonstrationDigitSum {
-            justify-content: flex-end;
+            justify-content: flex-start;
+            flex-direction: column;
         }
 
         #demo7 {
             justify-content: flex-start;
+            flex-direction: column-reverse;
 
             h1 {
                 font-size: 2.5em;
@@ -217,7 +217,7 @@ $open-anim-duration: 0.5s;
         #composite-demo {
             flex-direction: column;
             overflow: auto;
-            height: 40%;
+            /*height: 40%;*/
 
             h1 {
                 font-size: 2.5em;
@@ -253,8 +253,12 @@ $open-anim-duration: 0.5s;
             align-items: center;
         }
 
+        #demonstration1, #demo7, #composite-demo {
+            height: 40%;
+        }
+
         #demonstrationLastNDigits, #demonstrationDigitSum {
-            &:not(&.single-row):not(&.child) {
+            &:not(&.child) {
                 height: 40%;
             }
         }
@@ -387,7 +391,7 @@ $open-anim-duration: 0.5s;
                     }
 
                     // Right-most digit (not single-digit)
-                    .digit:last-child:not(:first-child) {
+                    .digit:last-child:not(:first-child):not(.only-child) {
                         margin-left: $margin-condensed;
                         animation: $anim-dur * 0.17 translate-right-extra forwards ($i + 0.67) * $anim-dur;
                     }

@@ -53,6 +53,8 @@ function Demo1(props: { divides: boolean, dividend: number, className?: string }
 
 function DigitSum(props: { divides: boolean, dividend: number, alternating: boolean, divisor: number, className?: string }): ReactElement {
     const demosFinishedContext = useContext(DemosFinishedContext)
+    const containerRef = useRef<HTMLDivElement>(null)
+    const scrollInterval = useRef()
 
     // eslint-disable-next-line jsx-a11y/heading-has-content
     const sums : number[] = []
@@ -84,19 +86,30 @@ function DigitSum(props: { divides: boolean, dividend: number, alternating: bool
         return (sum < 9 || sum <= props.divisor) ? [string] : string.split('')
     }
 
-    function onAnimationEnd(i: number): void {
-        if (i === 0) {
+    function onAnimationEnd(i: number, lines: number): void {
+        if (i === lines - 1) {
            demosFinishedContext.setFinished(demosFinishedContext.finished + 1)
         }
+        clearInterval(scrollInterval.current)
     }
 
-    return <div id={'demonstrationDigitSum'} className={props.className ?? ''}>
-        {/* Need to reverse the array and ID:s to keep scrollbar scrolled to the bottom during animations */}
-        {sums.reverse().map((sum, i, arr) => <h1 key={i} className={props.divides ? 'divisor' : 'not-divisor'}
-                                                 id={'row' + String(arr.length - 1 - i)}>
-            {i === 0 && <div id={'bg-stroke'} onAnimationEnd={(_): void => onAnimationEnd(i)}/>}
+    useEffect(() => {
+        if (!props.className?.includes('child') && !scrollInterval.current) {
+            (scrollInterval.current as unknown as NodeJS.Timer) = setInterval(() => {
+                const container = containerRef.current
+                if (container) {
+                    container.scroll(0, container.scrollHeight)
+                }
+            }, 10)
+        }
+    }, [])
+
+    return <div id={'demonstrationDigitSum'} className={props.className ?? ''} ref={containerRef}>
+        {sums.map((sum, i, arr) => <h1 key={i} className={props.divides ? 'divisor' : 'not-divisor'}
+                                                 id={'row' + String(i)}>
+            {i === arr.length - 1 && <div id={'bg-stroke'} onAnimationEnd={(_): void => onAnimationEnd(i, arr.length)}/>}
             {addOperators(getChars(sum)).map((v, j) => <span key={j}
-                className={(j % 2 === 1 ? 'operator' : 'digit') + (i === 0 ? 'only-child' : '')}>{v}</span>)}
+                className={(j % 2 === 1 ? 'operator' : 'digit') + (i === arr.length - 1 ? ' only-child' : '')}>{v}</span>)}
         </h1>)}
     </div>;
 }
