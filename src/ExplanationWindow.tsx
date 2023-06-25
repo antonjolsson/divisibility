@@ -51,6 +51,15 @@ function Demo1(props: { divides: boolean, dividend: number, className?: string }
     </h1>;
 }
 
+function getScrollInterval(containerRef?: React.RefObject<HTMLDivElement>): NodeJS.Timer {
+    return setInterval(() => {
+        const container = containerRef?.current
+        if (container) {
+            container.scroll(0, container.scrollHeight)
+        }
+    }, 10);
+}
+
 function DigitSum(props: { divides: boolean, dividend: number, alternating: boolean, divisor: number, className?: string }): ReactElement {
     const demosFinishedContext = useContext(DemosFinishedContext)
     const containerRef = useRef<HTMLDivElement>(null)
@@ -95,14 +104,9 @@ function DigitSum(props: { divides: boolean, dividend: number, alternating: bool
 
     useEffect(() => {
         if (!props.className?.includes('child') && !scrollInterval.current) {
-            (scrollInterval.current as unknown as NodeJS.Timer) = setInterval(() => {
-                const container = containerRef.current
-                if (container) {
-                    container.scroll(0, container.scrollHeight)
-                }
-            }, 10)
+            (scrollInterval.current as unknown as NodeJS.Timer) = getScrollInterval(containerRef)
         }
-    }, [])
+    }, [props.className])
 
     return <div id={'demonstrationDigitSum'} className={props.className ?? ''} ref={containerRef}>
         {sums.map((sum, i, arr) => <h1 key={i} className={props.divides ? 'divisor' : 'not-divisor'}
@@ -115,6 +119,9 @@ function DigitSum(props: { divides: boolean, dividend: number, alternating: bool
 }
 
 function Demo7(props: { divides: boolean, dividend: number, className?: string }): ReactElement {
+    const containerRef = useRef<HTMLDivElement>(null)
+    const scrollInterval = useRef()
+
     let dividend = props.dividend
     const dividends = [dividend]
     while (dividend > 98) {
@@ -122,23 +129,28 @@ function Demo7(props: { divides: boolean, dividend: number, className?: string }
         dividends.push(dividend)
     }
 
-    return <div id={'demo7'}
+    useEffect(() => {
+        if (!scrollInterval.current) {
+            (scrollInterval.current as unknown as NodeJS.Timer) = getScrollInterval(containerRef)
+        }
+    }, [props.className])
+
+    return <div id={'demo7'} ref={containerRef}
         className={[dividends.length < 4 ? 'single-row' : '', props.className ?? '']
         .filter(str => str !== '')
         .join(' ')}>
         {dividends
-            .reverse()
             .map((dividend, i, arr) => {
-                const id = 'row' + String(arr.length - 1 - i)
-                    return (i === 0)
+                const id = 'row' + String(i)
+                    return (i === arr.length - 1)
                         ? <h1 key={i} className={`demo-last-row ${props.divides ? 'divisor' : 'not-divisor'}`} id={id}>
-                            <div id={'bg-stroke'}/>
+                            <div id={'bg-stroke'} onAnimationEnd={(): void => clearInterval(scrollInterval.current)}/>
                             <span>{dividend}</span></h1>
                         : <h1 key={i} id={id}>
                             <span id={'left-most-digits'}>{String(dividend).slice(0, -1)}</span>
                             <span id={'hidden-equation-left-part'}> + 5 x </span>
                             <span id={'right-most-digit'}>{String(dividend).at(-1)}</span>
-                            <span id={'hidden-equation-right-part'}>= {arr[i -  1]}</span>
+                            <span id={'hidden-equation-right-part'}>= {arr[i + 1]}</span>
                         </h1>
                 }
             )}
@@ -153,12 +165,8 @@ function CompositeDemo(props: { divisor: number, divides: boolean[], dividend: n
 
     // We need to scroll programmatically here due to a bug related to CSS value justify-content: flex-end
     useEffect(() => {
-        const container = containerRef.current
-
         if (demosFinishedContext.finished === 1) {
-            (scrollInterval.current as unknown as NodeJS.Timer) = setInterval(() => {
-                container?.scroll({left: 0, top: container.scrollHeight})
-            }, 10)
+            (scrollInterval.current as unknown as NodeJS.Timer) = getScrollInterval(containerRef)
         }
         if (demosFinishedContext.finished === 2) {
             clearInterval(scrollInterval.current)

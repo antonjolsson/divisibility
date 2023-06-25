@@ -2,7 +2,7 @@ import React, {createContext, ReactElement, SetStateAction, useContext, useEffec
 import './App.css';
 import {ExplanationWindow} from "./ExplanationWindow";
 
-const DEFAULT_DIVIDEND = 0 // 999999
+const DEFAULT_DIVIDEND = 676 // 999999
 
 export const BackgroundClickedContext = createContext({bgClicked: false, setBgClicked: (v: SetStateAction<boolean>) => {}})
 const ShowExplanationContext = createContext({showExplanation: false, setShowExplanation: (v: SetStateAction<boolean>) => {}})

@@ -181,7 +181,7 @@ $open-anim-duration: 0.5s;
 
         #demo7 {
             justify-content: flex-start;
-            flex-direction: column-reverse;
+            flex-direction: column;
 
             h1 {
                 font-size: 2.5em;
@@ -359,8 +359,8 @@ $open-anim-duration: 0.5s;
 
                     #right-most-digit {
                         margin-left: -1.0em;
-                        margin-right: $margin-extra-condensed;
-                        @include translate-left-right(translate-left-right-large, -1.0em, $margin-extra-extended);
+                        margin-right: 0.5em;
+                        @include translate-left-right(translate-left-right-large, 0.5em, $margin-extra-extended);
                         animation: $anim-dur * 0.17 translate-left-right-large forwards ($i + 0.67) * $anim-dur;
                     }
 
@@ -552,6 +552,7 @@ $open-anim-duration: 0.5s;
                 h1 {
                     line-height: 3rem;
                     font-size: 2.2rem;
+                    line-break: auto !important;
                 }
             }
 
