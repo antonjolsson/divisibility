@@ -26,14 +26,14 @@ function LastNDigits(props: {dividend: number, divides: boolean, digits: number,
         }
     }
 
-    return <div id={'demonstrationLastNDigits'} className={props.className ?? ''}>
+    return <div id={'demonstration-last-n-digits'} className={props.className ?? ''}>
     {dividends.map((v, i, arr) => i < arr.length - 1
         ? <h1 key={i} id={`row${i}`} className={'division-row' + className}>{v}
             <span>/ 2 = </span>
             <span>{arr[i + 1]}</span>
         </h1>
         : <h1 key={i} id={`row${i}`}
-              className={'demonstrationLastDigit ' + (props.divides ? 'divisor' : 'not-divisor') + className}>{firstDigits}
+              className={'demonstration-last-digit ' + (props.divides ? 'divisor' : 'not-divisor') + className}>{firstDigits}
             <div id={'stroke-container'} className={firstDigits.length > 0 ? 'multi-digit' : ''}>
                 <div id={'bg-stroke'} onAnimationEnd={(): void => onAnimationEnd(i, arr)}/>
                 <span id={firstDigits.length === 0 ? 'sole-digit' : ''}>{lastDigit}</span>
@@ -108,7 +108,7 @@ function DigitSum(props: { divides: boolean, dividend: number, alternating: bool
         }
     }, [props.className])
 
-    return <div id={'demonstrationDigitSum'} className={props.className ?? ''} ref={containerRef}>
+    return <div id={'demonstration-digit-sum'} className={props.className ?? ''} ref={containerRef}>
         {sums.map((sum, i, arr) => <h1 key={i} className={props.divides ? 'divisor' : 'not-divisor'}
                                                  id={'row' + String(i)}>
             {i === arr.length - 1 && <div id={'bg-stroke'} onAnimationEnd={(_): void => onAnimationEnd(i, arr.length)}/>}

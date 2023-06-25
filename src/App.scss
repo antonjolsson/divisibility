@@ -1,3 +1,4 @@
+// noinspection Stylelint
 @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
 
 $stroke-anim-duration: 0.15s;
@@ -16,7 +17,7 @@ html, body, #root {
     width: 100%;
 }
 
-body:before {
+body::before {
     background-image: url('../public/bg.jpg');
     background-size: cover;
     content: ' ';
@@ -27,8 +28,8 @@ body:before {
     opacity: 0.3;
 }
 
-.App {
-    font-family: 'Kalam', Verdana, sans-serif;
+.app {
+    font-family: Kalam, Verdana, sans-serif;
     text-transform: uppercase;
     height: 100%;
     width: 100%;
@@ -41,6 +42,25 @@ body:before {
         font-size: 3rem;
         margin-bottom: 0;
         line-height: 1rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+        font-weight: 700;
+
+        &.divisor {
+            flex: 1;
+        }
+
+        &.divisible {
+            flex: 0.7 0.7
+        }
+    }
+
+    h3, label {
+        font-size: 0.9rem;
+        font-weight: 300;
+        text-align: center;
     }
 
     header {
@@ -56,7 +76,9 @@ body:before {
             flex-direction: column;
 
             .stroke-underline {
+                // noinspection Stylelint
                 @extend .stroke-common;
+
                 left: 100%;
                 opacity: 1;
                 translate: -100% 300%;
@@ -94,40 +116,16 @@ body:before {
         }
     }
 
-    h2 {
-        font-size: 1.1rem;
-
-        &.divisor {
-            flex: 1;
-        }
-
-        &.divisible {
-            flex: 0.7 0.7
-        }
-    }
-
-    h2 {
-        font-size: 1.1rem;
-        font-weight: 700;
-    }
-
-    label {
-        margin-top: 0;
-    }
-
-    h3, label {
-        font-size: 0.9rem;
-        font-weight: 300;
-        text-align: center;
-    }
-
     @keyframes draw-stroke {
         from {
             $viewport-width: 0;
+
             clip-path: polygon(0 0, $viewport-width 0, $viewport-width 100%, 0 100%);
         }
+
         to {
             $viewport-width: 100%;
+
             clip-path: polygon(0 0, $viewport-width 0, $viewport-width 100%, 0 100%);
         }
     }
@@ -142,13 +140,16 @@ body:before {
                 position: relative;
 
                 .stroke {
+                    // noinspection Stylelint
                     @extend .stroke-common;
+
+                    $viewport-width-start: 20%;
+                    $viewport-width-end: 20%;
+
                     height: 110%;
                     transition: all $stroke-anim-duration;
                     transform: scaleX(5);
                     left: 100%;
-                    $viewport-width-start: 20%;
-                    $viewport-width-end: 20%;
                     clip-path: polygon($viewport-width-start 0, $viewport-width-end 0, $viewport-width-end 100%,
                             $viewport-width-start 100%);
                 }
@@ -157,13 +158,16 @@ body:before {
                     .stroke {
                         $viewport-width-start: 20%;
                         $viewport-width-end: 40%;
+
                         clip-path: polygon($viewport-width-start 0, $viewport-width-end 0, $viewport-width-end 100%,
                                 $viewport-width-start 100%);
                     }
                 }
 
                 .stroke-underline {
+                    // noinspection Stylelint
                     @extend .stroke-common;
+
                     left: 100%;
                     opacity: 1;
                     translate: -100% 0;
@@ -203,11 +207,11 @@ body:before {
         justify-content: center;
 
         input {
-            font-family: 'Kalam', Verdana, sans-serif;
+            font-family: Kalam, Verdana, sans-serif;
             font-size: 2.5rem;
             font-weight: 700;
             width: 9rem;
-            background-color: rgba(0, 0, 0, 0);
+            background-color: rgb(0 0 0 / 0%);
             border: none;
             text-align: center;
             outline: none;
@@ -221,11 +225,12 @@ body:before {
         margin-top: 0;
 
         .table-row {
+            $anim-delay: 0s;
+
             display: flex;
             flex-direction: row;
             height: 2.1rem;
             align-items: center;
-            $anim-delay: 0s;
             position: relative;
 
             &:not(:first-of-type) h2 {
@@ -234,17 +239,21 @@ body:before {
 
             @for $i from 0 to 13 {
                 .stroke {
+                    // noinspection Stylelint
+                    @extend .stroke-common;
+
+                    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+
                     &#stroke#{$i} {
                         $anim-delay: #{$i * 0.2}s;
+
                         animation: $stroke-anim-duration draw-stroke forwards $anim-delay;
                     }
-
-                    @extend .stroke-common;
-                    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
 
                     &.reverse-anim {
                         &#stroke#{$i} {
                             $anim-delay: #{$i * 0.2}s;
+
                             animation: $stroke-anim-duration draw-stroke-reversed forwards $anim-delay;
                         }
                     }
@@ -254,10 +263,13 @@ body:before {
             @keyframes draw-stroke-reversed {
                 from {
                     $viewport-width: 100%;
+
                     clip-path: polygon(0 0, $viewport-width 0, $viewport-width 100%, 0 100%);
                 }
+
                 to {
                     $viewport-width: 0;
+
                     clip-path: polygon(0 0, $viewport-width 0, $viewport-width 100%, 0 100%);
                 }
             }
@@ -265,11 +277,11 @@ body:before {
     }
 }
 
-@media (max-width: 650px), (max-height: 650px) {
+@media (width <= 650px), (height <= 650px) {
     html {
         font-size: 14px;
 
-        .App {
+        .app {
             padding-top: 5%;
             overflow: auto;
             height: min-content;
@@ -342,6 +354,7 @@ body:before {
                 margin-bottom: 0.5rem;
                 padding: 0 1.3rem;
 
+                // noinspection Stylelint
                 .stroke {
                     width: 0 !important;
                 }

@@ -1,3 +1,5 @@
+/* stylelint-disable scss/at-extend-no-missing-placeholder */
+
 @use "App.scss";
 
 $open-anim-duration: 0.5s;
@@ -19,6 +21,7 @@ $open-anim-duration: 0.5s;
             from {
                 opacity: $from
             }
+
             to {
                 opacity: $to
             }
@@ -31,6 +34,7 @@ $open-anim-duration: 0.5s;
             top: 50%;
             opacity: 1
         }
+
         to {
             left: 50%;
             top: 50%;
@@ -76,6 +80,7 @@ $open-anim-duration: 0.5s;
         transition: transform 0.3s;
 
         @include fade-in(fade-in-fg,  0, 1);
+
         animation: $open-anim-duration fade-in-fg forwards;
 
         &:hover {
@@ -85,6 +90,8 @@ $open-anim-duration: 0.5s;
     }
 
     #expl-window {
+        $color-change-dur: 0.5s;
+
         width: 100%;
         height: 100%;
         position: absolute;
@@ -93,9 +100,9 @@ $open-anim-duration: 0.5s;
         align-items: center;
         flex-direction: column;
         opacity: 0;
-        $color-change-dur: 0.5s;
 
         @include fade-in(fade-in-fg,  0, 1);
+
         animation: $open-anim-duration fade-in-fg forwards;
 
         @mixin draw-stroke-partial($name, $start-percentage) {
@@ -103,12 +110,15 @@ $open-anim-duration: 0.5s;
                 from {
                     $viewport-width-start: $start-percentage;
                     $viewport-width-end: $start-percentage;
+
                     clip-path: polygon($viewport-width-start 0, $viewport-width-end 0, $viewport-width-end 100%,
                             $viewport-width-start 100%);
                 }
+
                 to {
                     $viewport-width-start: $start-percentage;
                     $viewport-width-end: $start-percentage + 20%;
+
                     clip-path: polygon($viewport-width-start 0, $viewport-width-end 0, $viewport-width-end 100%,
                             $viewport-width-start 100%);
                 }
@@ -141,15 +151,19 @@ $open-anim-duration: 0.5s;
 
         @mixin partial-stroke($delay, $start-percentage) {
             @extend .stroke-common;
+
+            $viewport-width-start: $start-percentage;
+            $viewport-width-end: $start-percentage;
+            $anim-name: draw-stroke-partial-#{str-slice(#{$start-percentage}, 0, -2)};
+
             height: 120%;
             transform: scaleX(5) translateY(-0.3rem);
             left: 100%;
-            $viewport-width-start: $start-percentage;
-            $viewport-width-end: $start-percentage;
             clip-path: polygon($viewport-width-start 0, $viewport-width-end 0, $viewport-width-end 100%,
                     $viewport-width-start 100%);
-            $anim-name: draw-stroke-partial-#{str-slice(#{$start-percentage}, 0, -2)};
+
             @include draw-stroke-partial($anim-name, $start-percentage);
+
             animation: $color-change-dur $anim-name forwards $delay;
         }
 
@@ -162,19 +176,20 @@ $open-anim-duration: 0.5s;
             &h1 {
                 margin-top: 0.7em;
             }
+
             .stroke {
                 @include partial-stroke($open-anim-duration * 2, 20%)
             }
         }
 
-        #demonstrationDigitSum, #demo7 {
+        #demonstration-digit-sum, #demo7 {
             #bg-stroke {
                 height: 3.5rem !important;
                 translate: -0.2rem -40% !important;
             }
         }
 
-        #demonstrationDigitSum {
+        #demonstration-digit-sum {
             justify-content: flex-start;
             flex-direction: column;
         }
@@ -196,7 +211,7 @@ $open-anim-duration: 0.5s;
             }
         }
 
-        #demonstrationLastNDigits {
+        #demonstration-last-n-digits {
             flex-direction: column;
             justify-content: flex-start;
 
@@ -208,7 +223,7 @@ $open-anim-duration: 0.5s;
                 h1 {
                     font-size: 2.5em;
 
-                    &.demonstrationLastDigit {
+                    &.demonstration-last-digit {
                         margin-top: 0.6rem !important;
                     }
                 }
@@ -219,6 +234,7 @@ $open-anim-duration: 0.5s;
             flex-direction: column;
             overflow: auto;
 
+            // noinspection Stylelint
             h1 {
                 font-size: 2.5em;
             }
@@ -228,42 +244,45 @@ $open-anim-duration: 0.5s;
             }
 
             .child {
-                &#demonstrationLastNDigits {
+                &:nth-of-type(1) {
+                    margin-bottom: 1em;
+                }
+
+                &#demonstration-last-n-digits {
                     justify-content: initial;
                     overflow: initial;
                 }
 
-                &:not(&#demonstrationLastNDigits) {
+                &:not(&#demonstration-last-n-digits) {
                     justify-content: initial;
                     overflow: initial;
                     margin-bottom: 3rem;
-                }
-
-                &:nth-of-type(1) {
-                    margin-bottom: 1em;
                 }
 
                 width: 100%;
             }
         }
 
-        #demonstrationLastNDigits, #demonstrationDigitSum, #demo7, #composite-demo {
+        // noinspection Stylelint
+        #demonstration-last-n-digits, #demonstration-digit-sum, #demo7, #composite-demo {
             width: 85%;
             display: flex;
             align-items: center;
         }
 
+        // noinspection Stylelint
         #demonstration1, #demo7, #composite-demo {
             height: 40%;
         }
 
-        #demonstrationLastNDigits, #demonstrationDigitSum {
+        #demonstration-last-n-digits, #demonstration-digit-sum {
             &:not(&.child) {
                 height: 40%;
             }
         }
 
-        #demonstrationLastNDigits, #demonstrationDigitSum, #demo7 {
+        // noinspection Stylelint
+        #demonstration-last-n-digits, #demonstration-digit-sum, #demo7 {
             $anim-dur: 1.5s;
             $margin-condensed: -0.2em;
             $margin-extended: 0.1em;
@@ -277,6 +296,7 @@ $open-anim-duration: 0.5s;
                     from {
                         margin-right: $from;
                     }
+
                     to {
                         margin-right: $to;
                     }
@@ -289,6 +309,7 @@ $open-anim-duration: 0.5s;
                         margin-right: $from;
                         margin-left: $from;
                     }
+
                     to {
                         margin-left: $to;
                         margin-right: $to;
@@ -300,6 +321,7 @@ $open-anim-duration: 0.5s;
                 from {
                     margin-left: 0;
                 }
+
                 to {
                     margin-left: 0.5em;
                 }
@@ -329,14 +351,14 @@ $open-anim-duration: 0.5s;
                     }
 
                     &.divisor #bg-stroke {
-                        background: #00ff00;
+                        background: #0f0;
                     }
 
                     &.not-divisor #bg-stroke {
                         background: red;
                     }
 
-                    &.demonstrationLastDigit {
+                    &.demonstration-last-digit {
                         display: flex;
                         align-items: center;
                     }
@@ -352,15 +374,17 @@ $open-anim-duration: 0.5s;
                     }
 
                     #left-most-digits {
-                        margin-right: -1.4em;
                         @include translate-left(translate-left-large, -1.4em, 0.3em);
+
+                        margin-right: -1.4em;
                         animation: $anim-dur * 0.17 translate-left-large forwards ($i + 0.67) * $anim-dur;
                     }
 
                     #right-most-digit {
+                        @include translate-left-right(translate-left-right-large, 0.5em, $margin-extra-extended);
+
                         margin-left: -1.0em;
                         margin-right: 0.5em;
-                        @include translate-left-right(translate-left-right-large, 0.5em, $margin-extra-extended);
                         animation: $anim-dur * 0.17 translate-left-right-large forwards ($i + 0.67) * $anim-dur;
                     }
 
@@ -375,23 +399,23 @@ $open-anim-duration: 0.5s;
                     // Left-most digit (not single-digit number)
                     .digit:first-child:not(:last-child) {
                         @include translate-left(translate-left-small, $margin-condensed, $margin-extended);
-                        animation: $anim-dur * 0.17 translate-left-small forwards ($i + 0.67) * $anim-dur;
-                    }
 
-                    .digit:first-child:not(:last-child) {
+                        animation: $anim-dur * 0.17 translate-left-small forwards ($i + 0.67) * $anim-dur;
                         margin-right: $margin-condensed;
                     }
 
                     // Mid-digit
-                    .digit:not(:last-child):not(:first-child) {
+                    .digit:not(:last-child, :first-child) {
                         margin-left: $margin-condensed;
                         margin-right: $margin-condensed;
+
                         @include translate-left-right(translate-left-right-small, $margin-condensed, $margin-extended);
+
                         animation: $anim-dur * 0.17 translate-left-right-small forwards ($i + 0.67) * $anim-dur;
                     }
 
                     // Right-most digit (not single-digit)
-                    .digit:last-child:not(:first-child):not(.only-child) {
+                    .digit:last-child:not(:first-child, .only-child) {
                         margin-left: $margin-condensed;
                         animation: $anim-dur * 0.17 translate-right-extra forwards ($i + 0.67) * $anim-dur;
                     }
@@ -403,6 +427,7 @@ $open-anim-duration: 0.5s;
             from {
                 margin-left: -15%;
             }
+
             to {
                 margin-left: 10%;
             }
@@ -412,9 +437,11 @@ $open-anim-duration: 0.5s;
             0% {
                 opacity: 0;
             }
+
             50% {
                 opacity: 0;
             }
+
             100% {
                 opacity: 1;
             }
@@ -425,11 +452,13 @@ $open-anim-duration: 0.5s;
                 margin: 0;
                 opacity: 0;
             }
+
             50% {
                 margin-top: 0.7em;
                 margin-bottom: 0.1em;
                 opacity: 0;
             }
+
             100% {
                 margin-top: 0.7em;
                 margin-bottom: 0.1em;
@@ -442,6 +471,7 @@ $open-anim-duration: 0.5s;
         from {
             width: 0;
         }
+
         to {
             width: calc(100% + 0.4rem);
         }
@@ -453,6 +483,7 @@ $open-anim-duration: 0.5s;
         width: 0;
         height: 0;
     }
+
     to {
         width: 40em;
         height: 28em;
@@ -466,12 +497,13 @@ $open-anim-duration: 0.5s;
     from {
         left: 100%;
     }
+
     to {
         left: 0;
     }
 }
 
-@media (max-width: 650px), (max-height: 650px) {
+@media (width <= 650px), (height <= 650px) {
     #expl-window-container {
         width: 100%;
         height: 100%;
@@ -515,33 +547,37 @@ $open-anim-duration: 0.5s;
                 margin-bottom: 1.5rem;
             }
 
-            #demonstrationDigitSum, #demo7 {
+            #demonstration-digit-sum, #demo7 {
                 #bg-stroke {
                     translate: -0.2rem -5% !important;
                 }
             }
 
-            #demonstrationDigitSum,  #demonstrationLastNDigits {
+            #demonstration-digit-sum,  #demonstration-last-n-digits {
                 height: auto !important;
                 min-height: unset !important;
             }
 
-            #demonstrationLastNDigits, #demonstration1,  #composite-demo {
+            #demonstration-last-n-digits, #demonstration1,  #composite-demo {
                 margin-top: 1rem;
             }
 
-            #demonstrationLastNDigits {
-                overflow: hidden;
+            #demonstration1 {
+                height: unset;
+            }
 
-                &:not(.child) {
-                    h1 {
-                        line-height: 3rem;
-                    }
-                }
+            #demonstration-last-n-digits {
+                overflow: hidden;
 
                 h1 {
                     &.multi-row {
                         font-size: 2.3rem;
+                    }
+                }
+
+                &:not(.child) {
+                    h1 {
+                        line-height: 3rem;
                     }
                 }
             }
@@ -549,6 +585,7 @@ $open-anim-duration: 0.5s;
             #demo7 {
                 height: unset !important;
 
+                // noinspection Stylelint
                 h1 {
                     line-height: 3rem;
                     font-size: 2.2rem;
@@ -569,6 +606,7 @@ $open-anim-duration: 0.5s;
                 }
             }
 
+            // noinspection Stylelint
             .divisor, .not-divisor, .division-row, #demo7 h1 {
                 line-height: 3.5rem;
                 margin-top: 0;
@@ -582,9 +620,11 @@ $open-anim-duration: 0.5s;
             margin: 0;
             opacity: 0;
         }
+
         50% {
             opacity: 0;
         }
+
         100% {
             opacity: 1;
         }

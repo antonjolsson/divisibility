@@ -283,7 +283,7 @@ function App(): ReactElement {
                       setInfoButtonCoords: setInfoButtonCoordsForRule
                   }}>
                       <ExplainedRuleContext.Provider value={{rule: ruleExplained, setRule: setRuleExplained}}>
-                          <div className="App" onClick={(): void => {
+                          <div className="app" onClick={(): void => {
                               setBgClicked(true)
                           }}>
                               <Header />
