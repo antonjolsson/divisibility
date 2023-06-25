@@ -165,9 +165,10 @@ function CompositeDemo(props: { divisor: number, divides: boolean[], dividend: n
 
     // We need to scroll programmatically here due to a bug related to CSS value justify-content: flex-end
     useEffect(() => {
-        if (demosFinishedContext.finished === 1) {
+        if (!scrollInterval.current) {
             (scrollInterval.current as unknown as NodeJS.Timer) = getScrollInterval(containerRef)
         }
+
         if (demosFinishedContext.finished === 2) {
             clearInterval(scrollInterval.current)
         }
