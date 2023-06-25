@@ -159,11 +159,12 @@ $open-anim-duration: 0.5s;
         }
 
         #demonstration1 {
-            margin-top: 0.5rem;
-
-                .stroke {
-                    @include partial-stroke($open-anim-duration * 2, 20%)
-                }
+            &h1 {
+                margin-top: 0.7em;
+            }
+            .stroke {
+                @include partial-stroke($open-anim-duration * 2, 20%)
+            }
         }
 
         #demonstrationDigitSum, #demo7 {
@@ -217,7 +218,6 @@ $open-anim-duration: 0.5s;
         #composite-demo {
             flex-direction: column;
             overflow: auto;
-            /*height: 40%;*/
 
             h1 {
                 font-size: 2.5em;
