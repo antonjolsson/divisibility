@@ -156,9 +156,10 @@ $open-anim-duration: 0.5s;
             $viewport-width-end: $start-percentage;
             $anim-name: draw-stroke-partial-#{str-slice(#{$start-percentage}, 0, -2)};
 
-            height: 120%;
-            transform: scaleX(5) translateY(-0.3rem);
+            height: 3.5rem;
+            transform: scaleX(5);
             left: 100%;
+            translate: 0 calc(0.7em - 100%);
             clip-path: polygon($viewport-width-start 0, $viewport-width-end 0, $viewport-width-end 100%,
                     $viewport-width-start 100%);
 
@@ -169,12 +170,22 @@ $open-anim-duration: 0.5s;
 
         #stroke-container {
             position: relative;
-            line-height: 3.5rem;
         }
 
         #demonstration1 {
-            &h1 {
+            margin-block-start: 0;
+
+            #stroke-container {
                 margin-top: 0.7em;
+                line-height: 0.4em;
+
+                span {
+                    line-height: 0.4em;
+                }
+            }
+
+            &h1 {
+                line-height: 0.4em;
             }
 
             .stroke {
@@ -182,7 +193,7 @@ $open-anim-duration: 0.5s;
             }
         }
 
-        #demonstration-digit-sum, #demo7 {
+        #demonstration-digit-sum, #demonstration-last-n-digits, #demo7 {
             #bg-stroke {
                 height: 3.5rem !important;
                 translate: -0.2rem -40% !important;
@@ -222,10 +233,10 @@ $open-anim-duration: 0.5s;
             &.last-3-digits {
                 h1 {
                     font-size: 2.5em;
+                }
 
-                    &.demonstration-last-digit {
-                        margin-top: 0.6rem !important;
-                    }
+                #bg-stroke {
+                    height: 3rem !important;
                 }
             }
         }
@@ -245,7 +256,7 @@ $open-anim-duration: 0.5s;
 
             .child {
                 &:nth-of-type(1) {
-                    margin-bottom: 1em;
+                    margin-bottom: 2em;
                 }
 
                 &#demonstration-last-n-digits {
@@ -558,7 +569,7 @@ $open-anim-duration: 0.5s;
                 min-height: unset !important;
             }
 
-            #demonstration-last-n-digits, #demonstration1,  #composite-demo {
+            #demonstration-last-n-digits, #composite-demo {
                 margin-top: 1rem;
             }
 
