@@ -1,0 +1,92 @@
+@use 'App';
+
+.app {
+    #credits {
+        h4 {
+            display: flex;
+            justify-content: center;
+
+            .link-container {
+                margin-left: 0.3rem;
+                position: relative;
+
+                .stroke {
+                    // noinspection Stylelint
+                    @extend .stroke-common;
+
+                    $viewport-width-start: 20%;
+                    $viewport-width-end: 20%;
+
+                    height: 110%;
+                    transition: all App.$stroke-anim-duration;
+                    transform: scaleX(5);
+                    left: 100%;
+                    clip-path: polygon($viewport-width-start 0, $viewport-width-end 0, $viewport-width-end 100%,
+                            $viewport-width-start 100%);
+                }
+
+                &:hover {
+                    .stroke {
+                        $viewport-width-start: 20%;
+                        $viewport-width-end: 40%;
+
+                        clip-path: polygon($viewport-width-start 0, $viewport-width-end 0, $viewport-width-end 100%,
+                                $viewport-width-start 100%);
+                    }
+                }
+
+                .stroke-underline {
+                    // noinspection Stylelint
+                    @extend .stroke-common;
+
+                    left: 100%;
+                    opacity: 1;
+                    translate: -100% 0;
+                    bottom: 20%;
+                    height: 6%;
+                    position: absolute;
+                }
+            }
+
+            &#numberphile-link {
+                margin-top: 1rem;
+            }
+
+            &#numberphile-link, &#wiki-link {
+                margin-bottom: 0;
+            }
+
+            &#wiki-link, &#github-link {
+                margin-top: 0;
+            }
+
+            font-size: 0.7rem;
+            font-weight: 300;
+            text-align: center;
+
+            a {
+                text-decoration: none;
+                color: black;
+            }
+        }
+    }
+}
+
+@media (width <= 650px), (height <= 650px) {
+    .app {
+        #credits {
+            margin-bottom: 0.5rem;
+            padding: 0 1.3rem;
+
+            // noinspection Stylelint
+            .stroke {
+                width: 0 !important;
+            }
+
+            h4 {
+                font-size: 0.9rem;
+            }
+        }
+    }
+}
+

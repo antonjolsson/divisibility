@@ -1,0 +1,33 @@
+label {
+    margin-bottom: 0;
+    line-height: 0.5rem;
+    margin-top: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    input {
+        font-family: Kalam, Verdana, sans-serif;
+        font-size: 2.5rem;
+        font-weight: 700;
+        width: 9rem;
+        background-color: rgb(0 0 0 / 0%);
+        border: none;
+        text-align: center;
+        outline: none;
+        margin-right: -15px; // Adjust for increase/decrease arrows to make number centered
+    }
+}
+
+@media (width <= 650px), (height <= 650px) {
+    .app > label {
+        font-size: 1.1rem;
+        line-height: 0;
+
+        input {
+            margin-right: 0;
+            padding: 0;
+        }
+    }
+}

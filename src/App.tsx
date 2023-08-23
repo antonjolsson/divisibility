@@ -1,8 +1,20 @@
 import React, {createContext, ReactElement, SetStateAction, useContext, useEffect, useRef, useState} from 'react';
 import './App.css';
 import {ExplanationWindow} from "./ExplanationWindow";
+import {Credits} from "./Credits";
+import {
+    divisibleBy11,
+    divisibleBy4,
+    divisibleBy7,
+    getDigitSum,
+    getNLastDigits,
+    IRule,
+    isEvenLongVersion
+} from "./Logic";
+import {Header} from "./Header";
+import {Input} from "./Input";
 
-const DEFAULT_DIVIDEND = 676 // 999999
+export const DEFAULT_DIVIDEND = 676 // 999999
 
 export const BackgroundClickedContext = createContext({bgClicked: false, setBgClicked: (v: SetStateAction<boolean>) => {}})
 const ShowExplanationContext = createContext({showExplanation: false, setShowExplanation: (v: SetStateAction<boolean>) => {}})
@@ -44,73 +56,6 @@ function TableRow(props: { entries: string[], marked: boolean, markedRank: numbe
         </div>
         <h2 className={'divisible'}>{props.entries[3]}</h2>
     </div>;
-}
-
-export function getDigitSum(number: number): number {
-    return String(number)
-        .split('')
-        .map(s => parseInt(s))
-        .reduce((p, c) => p + c)
-}
-
-function isEvenLongVersion(n: number): boolean {
-    const str = String(n)
-    return [0, 2, 4, 6, 8].includes(parseInt(str[str.length - 1]));
-}
-
-function getNLastDigits(number: number, numOfDigits: number): number {
-    return parseInt(String(number)
-        .split('')
-        .slice(-numOfDigits)
-        .join(''))
-}
-
-function getNumberAsDigits(number: number): number[] {
-    const str = String(number)
-    return str.split('').map(s => parseInt(s));
-}
-
-export function getAlternatingSum(dividend: number,
-                           continueCondition: (number: number, tries: number) => boolean): number {
-    let tries = 0
-    while (continueCondition(dividend, tries++)) {
-        dividend = getNumberAsDigits(dividend)
-            .reduce((acc, curr, i) => {
-                if (i === 0) return acc
-                if (i % 2 === 0) return acc + curr
-                return acc - curr
-            }) // Alternating sum!
-    }
-    return dividend;
-}
-
-function divisibleBy11(dividend: number): boolean {
-    dividend = getAlternatingSum(dividend, (number: number, tries: number) => number > 11 && tries < 100);
-    return [0, 11].includes(dividend);
-}
-
-function divisibleBy4(number: number): boolean {
-    return isEvenLongVersion(getNLastDigits(number, 2) / 2);
-}
-
-export function get5XLastPlusRest(number: number): number {
-    const last = getNLastDigits(number, 1)
-    const rest = Math.trunc(number / 10)
-    return 5 * last + rest;
-}
-
-function divisibleBy7(number: number): boolean {
-    do {
-        number = get5XLastPlusRest(number);
-    } while (number > 98)
-    return number % 7 === 0
-}
-
-export interface IRule {
-    divisor: number,
-    name: string,
-    explanation: string
-    divides: boolean[]
 }
 
 function Table(props: {number: number}): ReactElement {
@@ -208,64 +153,6 @@ function Table(props: {number: number}): ReactElement {
                                      ...rules[ruleIndex].divides].map(v => String(v))}/>
         })}
     </div>;
-}
-
-function Input(props: {onChange: (n: number) => void}): ReactElement {
-    const maxValue = 999999
-    const minValue = 0
-    const inputRef = useRef<HTMLInputElement>(null)
-    useEffect(() => {
-        if (inputRef.current) {
-            props.onChange(parseInt(inputRef.current.value))
-        }
-    }, [])
-
-    function onChange(e: React.ChangeEvent<HTMLInputElement>): void {
-        const value = parseInt(e.target.value)
-        if (value > maxValue) {
-            e.target.value = String(maxValue)
-        } else if (value < minValue) {
-            e.target.value = String(minValue)
-        }
-        props.onChange(value);
-    }
-
-    return <><label>Number to test
-            <input ref={inputRef} type={'number'} defaultValue={DEFAULT_DIVIDEND} maxLength={6} max={maxValue} min={minValue}
-                   onChange={(e): void => onChange(e)}/>
-        </label></>
-}
-
-function CreditsLink(props: {url: string, title: string}): ReactElement {
-    return <div className={"link-container"}>
-        <img className={"stroke"} src={"stroke-green.svg"} alt={"stroke"}></img>
-        <a href={props.url}>{props.title}</a>
-        <img className={"stroke-underline"} src={"stroke-black.svg"} alt={"underline"}></img>
-    </div>;
-}
-
-function Credits(): ReactElement {
-    return <div id={'credits'}>
-        <h4 id={'numberphile-link'}>{'Inspired by Numberphile video'}
-            <CreditsLink url={"https://www.youtube.com/watch?v=UDQjn_-pDSs"} title={'Why 7 is Weird'}/>
-        </h4>
-        <h4 id={'wiki-link'}>{'More divisibility rules on'}
-            <CreditsLink url={'https://en.wikipedia.org/wiki/Divisibility_rule'} title={'Wikipedia'}/>
-        </h4>
-        <h4 id={'github-link'}>{'Source code on'}
-            <CreditsLink url={'https://github.com/antonjolsson/divisibility'} title={'GitHub'}/>
-        </h4>
-    </div>;
-}
-
-function Header(): ReactElement {
-    return <header>
-        <div className={'headline-container'}>
-            <h1>Divisibility</h1>
-            <img className={'stroke-underline'} src={'stroke-black.svg'} alt={'underline'}></img>
-        </div>
-        <h3>Memorable shortcuts for testing divisibility of integers</h3>
-    </header>;
 }
 
 function App(): ReactElement {

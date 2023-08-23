@@ -63,38 +63,6 @@ body::before {
         text-align: center;
     }
 
-    header {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        margin-top: 0.5rem;
-
-        .headline-container {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-
-            .stroke-underline {
-                // noinspection Stylelint
-                @extend .stroke-common;
-
-                left: 100%;
-                opacity: 1;
-                translate: -100% 300%;
-                bottom: 0;
-                height: 10%;
-                position: absolute;
-                transform: translateX(0);
-            }
-        }
-
-        h3 {
-            margin-top: 1.5rem;
-            margin-bottom: 0.4rem;
-        }
-    }
-
     .rule {
         flex: 2;
         display: flex;
@@ -127,98 +95,6 @@ body::before {
             $viewport-width: 100%;
 
             clip-path: polygon(0 0, $viewport-width 0, $viewport-width 100%, 0 100%);
-        }
-    }
-
-    #credits {
-        h4 {
-            display: flex;
-            justify-content: center;
-
-            .link-container {
-                margin-left: 0.3rem;
-                position: relative;
-
-                .stroke {
-                    // noinspection Stylelint
-                    @extend .stroke-common;
-
-                    $viewport-width-start: 20%;
-                    $viewport-width-end: 20%;
-
-                    height: 110%;
-                    transition: all $stroke-anim-duration;
-                    transform: scaleX(5);
-                    left: 100%;
-                    clip-path: polygon($viewport-width-start 0, $viewport-width-end 0, $viewport-width-end 100%,
-                            $viewport-width-start 100%);
-                }
-
-                &:hover {
-                    .stroke {
-                        $viewport-width-start: 20%;
-                        $viewport-width-end: 40%;
-
-                        clip-path: polygon($viewport-width-start 0, $viewport-width-end 0, $viewport-width-end 100%,
-                                $viewport-width-start 100%);
-                    }
-                }
-
-                .stroke-underline {
-                    // noinspection Stylelint
-                    @extend .stroke-common;
-
-                    left: 100%;
-                    opacity: 1;
-                    translate: -100% 0;
-                    bottom: 20%;
-                    height: 6%;
-                    position: absolute;
-                }
-            }
-
-            &#numberphile-link {
-                margin-top: 1rem;
-            }
-
-            &#numberphile-link, &#wiki-link {
-                margin-bottom: 0;
-            }
-
-            &#wiki-link, &#github-link {
-                margin-top: 0;
-            }
-
-            font-size: 0.7rem;
-            font-weight: 300;
-            text-align: center;
-
-            a {
-                text-decoration: none;
-                color: black;
-            }
-        }
-    }
-
-    label {
-        margin-bottom: 0;
-        line-height: 0.5rem;
-        margin-top: 0.8rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        input {
-            font-family: Kalam, Verdana, sans-serif;
-            font-size: 2.5rem;
-            font-weight: 700;
-            width: 9rem;
-            background-color: rgb(0 0 0 / 0%);
-            border: none;
-            text-align: center;
-            outline: none;
-            margin-right: -15px; // Adjust for increase/decrease arrows to make number centered
         }
     }
 
@@ -289,30 +165,6 @@ body::before {
             overflow: auto;
             height: min-content;
 
-            header {
-                h1 {
-                    margin-top: 3.0rem;
-                }
-
-                h3 {
-                    margin-top: 2rem;
-                    margin-bottom: 1rem;
-                    line-height: 1.3em;
-                    font-size: 1.1rem;
-                    width: 90%;
-                }
-            }
-
-            > label {
-                font-size: 1.1rem;
-                line-height: 0;
-
-                input {
-                    margin-right: 0;
-                    padding: 0;
-                }
-            }
-
             #table .table-row {
                 height: unset;
                 align-items: flex-start;
@@ -351,20 +203,6 @@ body::before {
                     flex-basis: 30%;
                 }
 
-            }
-
-            #credits {
-                margin-bottom: 0.5rem;
-                padding: 0 1.3rem;
-
-                // noinspection Stylelint
-                .stroke {
-                    width: 0 !important;
-                }
-
-                h4 {
-                    font-size: 0.9rem;
-                }
             }
         }
     }

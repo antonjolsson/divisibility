@@ -1,6 +1,8 @@
 import React, {createContext, ReactElement, SetStateAction, useContext, useEffect, useRef, useState} from "react";
-import {BackgroundClickedContext, get5XLastPlusRest, getAlternatingSum, getDigitSum, IRule} from "./App";
+import {BackgroundClickedContext} from "./App";
+import {IRule} from "./Logic";
 import './ExplanationWindow.css'
+import {get5XLastPlusRest, getAlternatingSum, getDigitSum} from "./Logic";
 
 export const DemosFinishedContext = createContext({finished: 0, setFinished: (v: SetStateAction<number>) => {}})
 
