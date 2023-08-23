@@ -179,10 +179,13 @@ body::before {
 
             &#numberphile-link {
                 margin-top: 1rem;
+            }
+
+            &#numberphile-link, &#wiki-link {
                 margin-bottom: 0;
             }
 
-            &#wiki-link {
+            &#wiki-link, &#github-link {
                 margin-top: 0;
             }
 

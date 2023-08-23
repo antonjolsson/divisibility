@@ -236,23 +236,24 @@ function Input(props: {onChange: (n: number) => void}): ReactElement {
         </label></>
 }
 
+function CreditsLink(props: {url: string, title: string}): ReactElement {
+    return <div className={"link-container"}>
+        <img className={"stroke"} src={"stroke-green.svg"} alt={"stroke"}></img>
+        <a href={props.url}>{props.title}</a>
+        <img className={"stroke-underline"} src={"stroke-black.svg"} alt={"underline"}></img>
+    </div>;
+}
+
 function Credits(): ReactElement {
     return <div id={'credits'}>
         <h4 id={'numberphile-link'}>{'Inspired by Numberphile video'}
-            <div className={'link-container'}>
-                <img className={'stroke'} src={'stroke-green.svg'} alt={'stroke'}></img>
-                <a href={'https://www.youtube.com/watch?v=UDQjn_-pDSs'}>Why 7 is Weird</a>
-                <img className={'stroke-underline'} src={'stroke-black.svg'} alt={'underline'}></img>
-            </div>
-
-    </h4>
+            <CreditsLink url={"https://www.youtube.com/watch?v=UDQjn_-pDSs"} title={'Why 7 is Weird'}/>
+        </h4>
         <h4 id={'wiki-link'}>{'More divisibility rules on'}
-            <div className={'link-container'}>
-                <img className={'stroke'} src={'stroke-green.svg'} alt={'stroke'}></img>
-                <a href={'https://en.wikipedia.org/wiki/Divisibility_rule'}>Wikipedia</a>
-                <img className={'stroke-underline'} src={'stroke-black.svg'} alt={'underline'}></img>
-            </div>
-
+            <CreditsLink url={'https://en.wikipedia.org/wiki/Divisibility_rule'} title={'Wikipedia'}/>
+        </h4>
+        <h4 id={'github-link'}>{'Source code on'}
+            <CreditsLink url={'https://github.com/antonjolsson/divisibility'} title={'GitHub'}/>
         </h4>
     </div>;
 }
