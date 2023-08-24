@@ -57,7 +57,7 @@ export function Table(props: { number: number }): ReactElement {
     useEffect(() => {
         setIsDivisibleByOne(false)
         setTimeout(() => setIsDivisibleByOne(true), 5)
-        setMarkedEntries(rules.filter(e => e.divisor === 1 || e.divides))
+        setMarkedEntries(rules.filter(e => e.divisor === 1 || e.divides.every(b => b)))
     }, [props.number])
 
     const rules: IRule[] = [

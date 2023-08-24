@@ -7,7 +7,7 @@ import {Header} from "./Header";
 import {Input} from "./Input";
 import {Table} from "./Table";
 
-export const DEFAULT_DIVIDEND = 676 // 999999
+export const DEFAULT_DIVIDEND = 11 // 676
 
 export const BackgroundClickedContext = createContext({bgClicked: false, setBgClicked: (v: SetStateAction<boolean>) => {}})
 export const ShowExplanationContext = createContext({showExplanation: false, setShowExplanation: (v: SetStateAction<boolean>) => {}})
