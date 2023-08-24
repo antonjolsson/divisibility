@@ -97,63 +97,6 @@ body::before {
             clip-path: polygon(0 0, $viewport-width 0, $viewport-width 100%, 0 100%);
         }
     }
-
-    #table {
-        width: 80%;
-        max-width: 40rem;
-        margin-top: 0;
-
-        .table-row {
-            $anim-delay: 0s;
-
-            display: flex;
-            flex-direction: row;
-            height: 2.1rem;
-            align-items: center;
-            position: relative;
-
-            &:not(:first-of-type) h2 {
-                font-weight: 500;
-            }
-
-            @for $i from 0 to 13 {
-                .stroke {
-                    // noinspection Stylelint
-                    @extend .stroke-common;
-
-                    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-
-                    &#stroke#{$i} {
-                        $anim-delay: #{$i * 0.2}s;
-
-                        animation: $stroke-anim-duration draw-stroke forwards $anim-delay;
-                    }
-
-                    &.reverse-anim {
-                        &#stroke#{$i} {
-                            $anim-delay: #{$i * 0.2}s;
-
-                            animation: $stroke-anim-duration draw-stroke-reversed forwards $anim-delay;
-                        }
-                    }
-                }
-            }
-
-            @keyframes draw-stroke-reversed {
-                from {
-                    $viewport-width: 100%;
-
-                    clip-path: polygon(0 0, $viewport-width 0, $viewport-width 100%, 0 100%);
-                }
-
-                to {
-                    $viewport-width: 0;
-
-                    clip-path: polygon(0 0, $viewport-width 0, $viewport-width 100%, 0 100%);
-                }
-            }
-        }
-    }
 }
 
 @media (width <= 650px), (height <= 650px) {
@@ -164,46 +107,6 @@ body::before {
             padding-top: 5%;
             overflow: auto;
             height: min-content;
-
-            #table .table-row {
-                height: unset;
-                align-items: flex-start;
-
-                .stroke {
-                    height: 100%;
-                    width: 110%;
-                }
-
-                h2 {
-                    line-height: 1.3rem;
-                    margin: 0.5rem 0;
-                    font-size: 1.2rem;
-                }
-
-                .divisor, .rule, .divisible {
-                    flex-shrink: 0;
-                }
-
-                .divisor {
-                    flex-basis: 24%;
-                }
-
-                .rule {
-                    flex-basis: 46%;
-                    padding-right: 1.0rem;
-                    align-items: flex-start;
-
-                    img {
-                        margin-top: 0.6rem;
-                        height: 1.0rem;
-                    }
-                }
-
-                .divisible {
-                    flex-basis: 30%;
-                }
-
-            }
         }
     }
 }

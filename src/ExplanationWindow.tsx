@@ -6,6 +6,7 @@ import {get5XLastPlusRest, getAlternatingSum, getDigitSum} from "./Logic";
 
 export const DemosFinishedContext = createContext({finished: 0, setFinished: (v: SetStateAction<number>) => {}})
 
+// Demonstrates rules for 2, 4, 8, 10
 function LastNDigits(props: {dividend: number, divides: boolean, digits: number, className?: string}): ReactElement {
     const demosFinishedContext = useContext(DemosFinishedContext)
     const className = props.digits > 1 ? ' multi-row' : ''
@@ -44,6 +45,7 @@ function LastNDigits(props: {dividend: number, divides: boolean, digits: number,
     </div>
 }
 
+// Rule for 1
 function Demo1(props: { divides: boolean, dividend: number, className?: string }): ReactElement {
     return <h1 id={'demonstration1'} className={`${props.className ?? ''} ${props.divides ? 'divisor' : 'not-divisor'}`}>
         <div id={'stroke-container'}>
@@ -62,6 +64,7 @@ function getScrollInterval(containerRef?: React.RefObject<HTMLDivElement>): Node
     }, 10);
 }
 
+// Rules for 3, 9, 11
 function DigitSum(props: { divides: boolean, dividend: number, alternating: boolean, divisor: number, className?: string }): ReactElement {
     const demosFinishedContext = useContext(DemosFinishedContext)
     const containerRef = useRef<HTMLDivElement>(null)
@@ -120,6 +123,7 @@ function DigitSum(props: { divides: boolean, dividend: number, alternating: bool
     </div>;
 }
 
+// Rule for 7
 function Demo7(props: { divides: boolean, dividend: number, className?: string }): ReactElement {
     const containerRef = useRef<HTMLDivElement>(null)
     const scrollInterval = useRef()
@@ -159,6 +163,7 @@ function Demo7(props: { divides: boolean, dividend: number, className?: string }
     </div>
 }
 
+// Rule for 6, 12
 function CompositeDemo(props: { divisor: number, divides: boolean[], dividend: number }): ReactElement {
     const demosFinishedContext = useContext(DemosFinishedContext)
     const divisors = props.divisor === 6 ? [2, 3] : [3, 4]
