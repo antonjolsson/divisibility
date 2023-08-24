@@ -1,5 +1,5 @@
 import React, {ReactElement} from "react";
-import './Credits.css'
+import './Credits.scss'
 
 function CreditsLink(props: { url: string, title: string }): ReactElement {
     return <div className={"link-container"}>

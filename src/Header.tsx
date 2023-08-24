@@ -1,5 +1,5 @@
 import React, {ReactElement} from "react";
-import './Header.css'
+import './Header.scss'
 
 export function Header(): ReactElement {
     return <header>

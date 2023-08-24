@@ -9,7 +9,7 @@ import {
     isEvenLongVersion
 } from "./Logic";
 import {BackgroundClickedContext, ExplainedRuleContext, InfoButtonCoordsContext, ShowExplanationContext} from "./App";
-import './Table.css'
+import './Table.scss'
 
 function TableRow(props: { entries: string[], marked: boolean, markedRank: number }): ReactElement {
     const infoButtonRef = useRef<HTMLImageElement>(null)

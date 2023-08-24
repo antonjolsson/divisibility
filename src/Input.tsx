@@ -1,6 +1,6 @@
 import React, {ReactElement, useEffect, useRef} from "react";
 import {DEFAULT_DIVIDEND} from "./App";
-import './Input.css'
+import './Input.scss'
 
 export function Input(props: { onChange: (n: number) => void }): ReactElement {
     const maxValue = 999999

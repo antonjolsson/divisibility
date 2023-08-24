@@ -1,5 +1,5 @@
 import React, {createContext, ReactElement, SetStateAction, useState} from 'react';
-import './App.css';
+import './App.scss';
 import {ExplanationWindow} from "./ExplanationWindow";
 import {Credits} from "./Credits";
 import {IRule} from "./Logic";
