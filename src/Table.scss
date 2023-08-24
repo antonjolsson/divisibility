@@ -4,6 +4,7 @@
     width: 80%;
     max-width: 40rem;
     margin-top: 0;
+    $table-stroke-duration: App.$stroke-anim-duration * 2;
 
     .table-row {
         $anim-delay: 0s;
@@ -28,14 +29,14 @@
                 &#stroke#{$i} {
                     $anim-delay: #{$i * 0.2}s;
 
-                    animation: App.$stroke-anim-duration draw-stroke forwards $anim-delay;
+                    animation: $table-stroke-duration draw-stroke forwards $anim-delay;
                 }
 
                 &.reverse-anim {
                     &#stroke#{$i} {
                         $anim-delay: #{$i * 0.2}s;
 
-                        animation: App.$stroke-anim-duration draw-stroke-reversed forwards $anim-delay;
+                        animation: $table-stroke-duration draw-stroke-reversed forwards $anim-delay;
                     }
                 }
             }
