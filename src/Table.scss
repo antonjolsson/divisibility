@@ -59,6 +59,10 @@
 }
 
 @media (width <= 650px), (height <= 650px) {
+    #table {
+        width: 80%;
+    }
+
     #table .table-row {
         height: unset;
         align-items: flex-start;
@@ -72,6 +76,8 @@
             line-height: 1.3rem;
             margin: 0.5rem 0;
             font-size: 1.2rem;
+            max-width: 10rem;
+            padding-right: 1rem;
         }
 
         .divisor, .rule, .divisible {
@@ -79,22 +85,23 @@
         }
 
         .divisor {
-            flex-basis: 24%;
+            flex: 2.4;
         }
 
         .rule {
-            flex-basis: 46%;
-            padding-right: 1.0rem;
+            flex: 5;
             align-items: flex-start;
 
             img {
                 margin-top: 0.6rem;
                 height: 1.0rem;
+                margin-left: auto;
+                margin-right: 0.7rem;
             }
         }
 
         .divisible {
-            flex-basis: 30%;
+            flex: 2.5;
         }
     }
 }
