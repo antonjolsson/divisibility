@@ -103,6 +103,10 @@ body::before {
     html {
         font-size: 14px;
 
+        #root {
+            overflow: hidden;
+        }
+
         .app {
             padding-top: 5%;
             overflow: auto;

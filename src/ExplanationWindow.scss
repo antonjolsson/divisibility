@@ -174,7 +174,8 @@ $open-anim-duration: 0.5s;
 
         #demonstration1 {
             margin-block-start: 0;
-            overflow: hidden;
+
+            // overflow: hidden;
 
             #stroke-container {
                 margin-top: 0.7em;
@@ -182,6 +183,7 @@ $open-anim-duration: 0.5s;
 
                 span {
                     line-height: 0.4em;
+                    padding: 0 0.2rem;
                 }
             }
 

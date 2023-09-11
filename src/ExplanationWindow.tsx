@@ -4,12 +4,12 @@ import {IRule} from "./Logic";
 import './ExplanationWindow.scss'
 import {get5XLastPlusRest, getAlternatingSum, getDigitSum} from "./Logic";
 
-// TODO: Everything - stroke x padding
 // TODO: Last N Digits (mobile) - Height/position of SVG stroke
 // TODO: Last Two Digits - doesn't work with odd numbers (doesn't show fraction)
 // TODO: Last Two Digits, Last Three Digits - space after equal sign
 // TODO: 5 x Last + Rest - animation speed
 // TODO: 5 x Last + Rest - stroke height
+// TODO: First two credits on same row
 
 export const DemosFinishedContext = createContext({finished: 0, setFinished: (v: SetStateAction<number>) => {}})
 
