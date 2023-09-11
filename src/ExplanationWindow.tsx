@@ -47,12 +47,16 @@ function LastNDigits(props: {dividend: number, divides: boolean, digits: number,
 
 // Rule for 1
 function Demo1(props: { divides: boolean, dividend: number, className?: string }): ReactElement {
-    return <h1 id={'demonstration1'} className={`${props.className ?? ''} ${props.divides ? 'divisor' : 'not-divisor'}`}>
-        <div id={'stroke-container'}>
-            <img className={'stroke'} src={'stroke-green.svg'} alt={'stroke'}/>
-            <span>{props.dividend}</span>
-        </div>
-    </h1>;
+    return <div id={'demonstration1'}>
+                <h1 id='row0' className={`${props.className ?? ''} ${props.divides ? 'divisor' : 'not-divisor'}`}>
+                    <div id={'stroke-container'}>
+                        {props.dividend < 10000 // Only use SVG for long strokes
+                            ? <div id={'bg-stroke'}/>
+                            : <img className={'stroke'} src={'stroke-green.svg'} alt={'stroke'}/>}
+                        <span>{props.dividend}</span>
+                    </div>
+                </h1>
+    </div>;
 }
 
 function getScrollInterval(containerRef?: React.RefObject<HTMLDivElement>): NodeJS.Timer {

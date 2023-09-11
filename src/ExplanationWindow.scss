@@ -189,11 +189,13 @@ $open-anim-duration: 0.5s;
             }
 
             .stroke {
-                @include partial-stroke($open-anim-duration * 2, 20%)
+                @include partial-stroke($open-anim-duration * 2, 20%);
+                translate: 0 calc(1.0em - 100%);
+                height: 5.2rem;
             }
         }
 
-        #demonstration-digit-sum, #demonstration-last-n-digits, #demo7 {
+        #demonstration-digit-sum, #demonstration-last-n-digits, #demo7, #demonstration1 {
             #bg-stroke {
                 height: 3.5rem !important;
                 translate: -0.2rem -40% !important;
@@ -293,7 +295,7 @@ $open-anim-duration: 0.5s;
         }
 
         // noinspection Stylelint
-        #demonstration-last-n-digits, #demonstration-digit-sum, #demo7 {
+        #demonstration-last-n-digits, #demonstration-digit-sum, #demo7, #demonstration1 {
             $anim-dur: 1.5s;
             $margin-condensed: -0.2em;
             $margin-extended: 0.1em;
@@ -575,6 +577,14 @@ $open-anim-duration: 0.5s;
 
             #demonstration1 {
                 height: unset;
+
+                #stroke-container {
+                    height: 4rem;
+
+                    #bg-stroke {
+                        height: 100%;
+                    }
+                }
             }
 
             #demonstration-last-n-digits {

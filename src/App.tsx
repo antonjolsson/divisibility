@@ -7,7 +7,13 @@ import {Header} from "./Header";
 import {Input} from "./Input";
 import {Table} from "./Table";
 
-export const DEFAULT_DIVIDEND = 11 // 676
+// TODO: Everything (mobile) - scrollbar on stroke
+// TODO: Last N Digits (mobile) - Height/position of SVG stroke
+// TODO: Last Two Digits - doesn't work with odd numbers (doesn't show fraction)
+// TODO: Last Two Digits, Last Three Digits - space after equal sign
+// TODO: 5 x Last + Rest - stroke height
+
+export const DEFAULT_DIVIDEND = 67677 // 676
 
 export const BackgroundClickedContext = createContext({bgClicked: false, setBgClicked: (v: SetStateAction<boolean>) => {}})
 export const ShowExplanationContext = createContext({showExplanation: false, setShowExplanation: (v: SetStateAction<boolean>) => {}})
