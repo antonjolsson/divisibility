@@ -394,6 +394,7 @@ $open-anim-duration: 0.5s;
                         &:first-of-type {
                             margin-left: 0.3em;
                         }
+
                         animation: $anim-dur * 0.17 * 3 reveal-operators forwards ($i + 0.83) * $anim-dur * 0.5;
                     }
 
@@ -576,12 +577,6 @@ $open-anim-duration: 0.5s;
                 margin-bottom: 1.5rem;
             }
 
-            #demo7, #demonstration-last-n-digits {
-                #bg-stroke {
-                    translate: -0.2rem -5% !important;
-                }
-            }
-
             #demonstration-digit-sum,  #demonstration-last-n-digits {
                 height: auto !important;
                 min-height: unset !important;
@@ -591,7 +586,7 @@ $open-anim-duration: 0.5s;
                 margin-top: 1rem;
             }
 
-            #demo7 h1, #composite-demo .child {
+            #demo7, #composite-demo {
                 #bg-stroke {
                     height: 2.7rem !important;
                 }
@@ -609,6 +604,11 @@ $open-anim-duration: 0.5s;
                 }
 
                 h1 {
+                    // noinspection Stylelint
+                    #bg-stroke {
+                        translate: -0.2rem -5% !important;
+                    }
+
                     &.multi-row {
                         font-size: 2.3rem;
 
@@ -671,6 +671,10 @@ $open-anim-duration: 0.5s;
                     line-height: 3rem;
                     font-size: 2.2rem;
                     line-break: auto !important;
+
+                    #bg-stroke {
+                        translate: -0.2rem 1% !important;
+                    }
                 }
             }
 
