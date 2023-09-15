@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/divisibility/static/css/main.374ecc30.css",
+    "main.js": "/divisibility/static/js/main.dd60d1e8.js",
+    "static/js/787.bc2641bd.chunk.js": "/divisibility/static/js/787.bc2641bd.chunk.js",
+    "static/media/bg.jpg": "/divisibility/static/media/bg.fd80e42996590aeb0c06.jpg",
+    "index.html": "/divisibility/index.html",
+    "main.374ecc30.css.map": "/divisibility/static/css/main.374ecc30.css.map",
+    "main.dd60d1e8.js.map": "/divisibility/static/js/main.dd60d1e8.js.map",
+    "787.bc2641bd.chunk.js.map": "/divisibility/static/js/787.bc2641bd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.374ecc30.css",
+    "static/js/main.dd60d1e8.js"
+  ]
+}
