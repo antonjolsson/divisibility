@@ -406,7 +406,7 @@ $open-anim-duration: 0.5s;
                         @include translate-left(translate-left-large, -1.4em, 0.3em);
 
                         margin-right: -1.4em;
-                        animation: $anim-dur * 0.17 translate-left-large forwards ($i + 0.67) * $anim-dur;
+                        animation: $anim-dur * 0.2 translate-left-large forwards ($i + 0.67) * $anim-dur;
                     }
 
                     #right-most-digit {
@@ -414,7 +414,7 @@ $open-anim-duration: 0.5s;
 
                         margin-left: -1.0em;
                         margin-right: 0.5em;
-                        animation: $anim-dur * 0.17 translate-left-right-large forwards ($i + 0.67) * $anim-dur;
+                        animation: $anim-dur * 0.2 translate-left-right-large forwards ($i + 0.67) * $anim-dur;
                     }
 
                     .operator, #hidden-equation-left-part, #hidden-equation-right-part {
