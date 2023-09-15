@@ -17,6 +17,10 @@ html, body, #root {
     width: 100%;
 }
 
+#root.overflow-hidden {
+    overflow: hidden;
+}
+
 body::before {
     background-image: url('../public/bg.jpg');
     background-size: cover;
@@ -103,9 +107,9 @@ body::before {
     html {
         font-size: 14px;
 
-        #root {
+        /* #root {
             overflow: hidden;
-        }
+        } */
 
         .app {
             padding-top: 5%;

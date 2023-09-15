@@ -1,4 +1,4 @@
-import React, {createContext, ReactElement, SetStateAction, useState} from 'react';
+import React, {createContext, ReactElement, SetStateAction, useEffect, useState} from 'react';
 import './App.scss';
 import {ExplanationWindow} from "./ExplanationWindow";
 import {Credits} from "./Credits";
@@ -15,12 +15,18 @@ export const InfoButtonCoordsContext = createContext({infoButtonCoords: {x: -1, 
         setInfoButtonCoords: (v: SetStateAction<{x: number, y: number}>) => {}})
 export const ExplainedRuleContext = createContext({rule: {divisor: -1, name: '', divides: [false]}, setRule: (v: SetStateAction<IRule>) => {}})
 
-function App(): ReactElement {
+function App(props: {root?: HTMLElement}): ReactElement {
     const [dividend, setDividend] = useState(-1)
     const [bgClicked, setBgClicked] = useState(false)
     const [showExplanation, setShowExplanation] = useState(false)
     const [infoButtonCoordsForRule, setInfoButtonCoordsForRule] = useState({x: -1, y: -1})
     const [ruleExplained, setRuleExplained] = useState({divisor: -1, name: '', explanation: '', divides: [false]})
+
+    useEffect(() => {
+        if (props.root) {
+            props.root.className = showExplanation ? 'overflow-hidden' : ''
+        }},
+        [props.root, showExplanation])
 
   return (
       <>
