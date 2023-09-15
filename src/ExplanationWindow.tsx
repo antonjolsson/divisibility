@@ -4,7 +4,6 @@ import {IRule} from "./Logic";
 import './ExplanationWindow.scss'
 import {get5XLastPlusRest, getAlternatingSum, getDigitSum} from "./Logic";
 
-// TODO: Last Two Digits - doesn't work with odd numbers (doesn't show fraction)
 // TODO: Last Two Digits, Last Three Digits - space after equal sign
 // TODO: 5 x Last + Rest - animation speed
 // TODO: First two credits on same row
@@ -198,14 +197,30 @@ function CompositeDemo(props: { divisor: number, divides: boolean[], dividend: n
 }
 
 function getDemonstration(ruleNumber: number, dividend: number, divides: boolean[], className?: string): ReactElement {
+    function getNumDigits4And8(): number {
+        if (ruleNumber === 4) {
+            // If odd number, don't demonstrate by dividing
+            return dividend % 2 === 0 ? 2 : 1
+        } // ruleNumber = 8, same check before each division
+        if (dividend % 2 === 1) {
+            return 1
+        }
+        if ((dividend / 2) % 2 === 0) {
+            return 3
+        }
+        return 2
+    }
+
     switch (ruleNumber) {
         case 1: return <Demo1 dividend={dividend} divides={divides[0]} className={className}/>
-        case 4: return <LastNDigits dividend={dividend} divides={divides[0]} digits={2} className={className}/>
+        case 4: return <LastNDigits dividend={dividend} divides={divides[0]} digits={getNumDigits4And8()}
+                                    className={className}/>
         case 3: case 9: case 11: return <DigitSum dividend={dividend} divides={divides[0]} alternating={ruleNumber === 11}
                                 divisor={ruleNumber} className={`${dividend < 10 ? 'single-row ' : ''}${className}`}/>
         case 6: case 12: return <CompositeDemo divisor={ruleNumber} dividend={dividend} divides={divides}/>
         case 7: return <Demo7 dividend={dividend} divides={divides[0]} className={className}/>
-        case 8: return <LastNDigits dividend={dividend} divides={divides[0]} digits={3} className={className + ' last-3-digits'}/>
+        case 8: return <LastNDigits dividend={dividend} divides={divides[0]}
+                                    digits={getNumDigits4And8()} className={className + ' last-3-digits'}/>
         default: return <LastNDigits dividend={dividend} divides={divides[0]} digits={1} className={`single-row ${className}`}/>
     }
 }
