@@ -391,7 +391,9 @@ $open-anim-duration: 0.5s;
                     }
 
                     &.division-row span {
-                        margin-left: 0.3em;
+                        &:first-of-type {
+                            margin-left: 0.3em;
+                        }
                         animation: $anim-dur * 0.17 * 3 reveal-operators forwards ($i + 0.83) * $anim-dur * 0.5;
                     }
 

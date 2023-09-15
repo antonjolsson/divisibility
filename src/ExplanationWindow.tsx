@@ -4,7 +4,6 @@ import {IRule} from "./Logic";
 import './ExplanationWindow.scss'
 import {get5XLastPlusRest, getAlternatingSum, getDigitSum} from "./Logic";
 
-// TODO: Last Two Digits, Last Three Digits - space after equal sign
 // TODO: 5 x Last + Rest - animation speed
 // TODO: First two credits on same row
 // TODO: Digit Sum, Alternating Sum (mobile): starts scrolled down
