@@ -6,19 +6,24 @@ export function Input(props: { onChange: (n: number) => void }): ReactElement {
     const maxValue = 999999
     const minValue = 0
     const inputRef = useRef<HTMLInputElement>(null)
+    const currentNumberRef = useRef(-1)
+
     useEffect(() => {
         if (inputRef.current) {
-            props.onChange(parseInt(inputRef.current.value))
+            currentNumberRef.current = parseInt(inputRef.current.value)
+            props.onChange(currentNumberRef.current)
         }
     }, [])
 
     function onChange(e: React.ChangeEvent<HTMLInputElement>): void {
-        const value = parseInt(e.target.value)
+        let value = parseInt(e.target.value)
         if (value > maxValue) {
-            e.target.value = String(maxValue)
+            value = currentNumberRef.current
         } else if (value < minValue) {
-            e.target.value = String(minValue)
+            value = minValue
         }
+        currentNumberRef.current = value
+        e.target.value = String(value)
         props.onChange(value);
     }
 

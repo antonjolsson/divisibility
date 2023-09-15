@@ -4,9 +4,8 @@ import {IRule} from "./Logic";
 import './ExplanationWindow.scss'
 import {get5XLastPlusRest, getAlternatingSum, getDigitSum} from "./Logic";
 
-// TODO: 5 x Last + Rest - animation speed
-// TODO: First two credits on same row
 // TODO: Digit Sum, Alternating Sum (mobile): starts scrolled down
+// TODO: Increasing num of digits to > 6 set dividend to 999999, nothing should happen
 
 export const DemosFinishedContext = createContext({finished: 0, setFinished: (v: SetStateAction<number>) => {}})
 
