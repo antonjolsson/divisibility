@@ -577,9 +577,10 @@ $open-anim-duration: 0.5s;
                 margin-bottom: 1.5rem;
             }
 
-            #demonstration-digit-sum,  #demonstration-last-n-digits {
-                height: auto !important;
+            #demonstration-digit-sum {
+                height: unset !important;
                 min-height: unset !important;
+                overflow: unset;
             }
 
             #demonstration-last-n-digits, #composite-demo {
@@ -599,6 +600,9 @@ $open-anim-duration: 0.5s;
             }
 
             #demonstration-last-n-digits {
+                height: auto !important;
+                min-height: unset !important;
+
                 &.single-row {
                     overflow: visible;
                 }

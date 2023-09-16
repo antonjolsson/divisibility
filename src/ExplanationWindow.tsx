@@ -4,9 +4,6 @@ import {IRule} from "./Logic";
 import './ExplanationWindow.scss'
 import {get5XLastPlusRest, getAlternatingSum, getDigitSum} from "./Logic";
 
-// TODO: Digit Sum, Alternating Sum (mobile): starts scrolled down
-// TODO: Increasing num of digits to > 6 set dividend to 999999, nothing should happen
-
 export const DemosFinishedContext = createContext({finished: 0, setFinished: (v: SetStateAction<number>) => {}})
 
 // Demonstrates rules for 2, 4, 8, 10
@@ -72,7 +69,8 @@ function getScrollInterval(containerRef?: React.RefObject<HTMLDivElement>): Node
 }
 
 // Rules for 3, 9, 11
-function DigitSum(props: { divides: boolean, dividend: number, alternating: boolean, divisor: number, className?: string }): ReactElement {
+function DigitSum(props: { divides: boolean, dividend: number, alternating: boolean, divisor: number,
+    className?: string }): ReactElement {
     const demosFinishedContext = useContext(DemosFinishedContext)
     const containerRef = useRef<HTMLDivElement>(null)
     const scrollInterval = useRef()
@@ -88,6 +86,12 @@ function DigitSum(props: { divides: boolean, dividend: number, alternating: bool
         sums.push(sum)
         dividend = sum
     }
+
+    /*useEffect(() => {
+        if (containerRef.current) {
+            containerRef.current.scroll(0, 0)
+        }
+    }, [containerRef]);*/
 
     function getOperator(i: number, digits: string[]): string {
         if (i < digits.length - 1) {
