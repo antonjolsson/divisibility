@@ -1,5 +1,5 @@
 label {
-    margin-bottom: 0;
+    margin-bottom: 0.2rem;
     line-height: 0.5rem;
     margin-top: 0.8rem;
     display: flex;
@@ -7,16 +7,67 @@ label {
     align-items: center;
     justify-content: center;
 
-    input {
-        font-family: Kalam, Verdana, sans-serif;
-        font-size: 2.5rem;
-        font-weight: 700;
-        width: 9rem;
-        background-color: rgb(0 0 0 / 0%);
-        border: none;
-        text-align: center;
-        outline: none;
-        margin-right: -15px; // Adjust for increase/decrease arrows to make number centered
+    .input-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+
+        input {
+            font-family: Kalam, Verdana, sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            width: 9rem;
+            background-color: rgb(0 0 0 / 0%);
+            border: none;
+            text-align: center;
+            outline: none;
+            margin-right: -15px; // Adjust for increase/decrease arrows to make number centered
+        }
+
+        .input-arrows {
+            display: flex;
+            flex-direction: column;
+            scale: 1.2 1;
+            box-shadow: 0 0 2px 0 rgb(0 0 0 / 0.7);
+            border-radius: 20%;
+            opacity: 0;
+            transition: opacity 0.3s;
+
+            &:hover {
+                opacity: 1;
+            }
+
+            .input-arrow-up, .input-arrow-down {
+                user-select: none;
+                font-family: inherit;
+                font-size: 1.3rem;
+                width: 1.2rem;
+                height: 1.3rem;
+                background: white;
+                border-radius: 0 0 20% 20%;
+                border-color: transparent;
+                line-height: 1.5rem;
+                transition: background 0.3s;
+
+                &:hover {
+                    background: #d2d2d2;
+                }
+            }
+
+            .input-arrow-up {
+                rotate: 180deg;
+            }
+        }
+    }
+
+    // noinspection ALL
+    input[type="number"] {
+        &::-webkit-inner-spin-button {
+            appearance: none;
+        }
+
+        appearance: textfield;
     }
 }
 
@@ -28,6 +79,10 @@ label {
         input {
             margin-right: 0;
             padding: 0;
+        }
+
+        .input-container .input-arrows {
+            display: none;
         }
     }
 }
