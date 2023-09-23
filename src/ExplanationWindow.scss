@@ -28,6 +28,18 @@ $open-anim-duration: 0.5s;
         }
     }
 
+    @mixin expand($name, $from, $to) {
+        @keyframes #{$name} {
+            from {
+                scale: $from;
+            }
+
+            to {
+                scale: $to;
+            }
+        }
+    }
+
     @keyframes fade-out {
         from {
             left: 50%;
@@ -55,16 +67,17 @@ $open-anim-duration: 0.5s;
         position: absolute;
         background-image: url("../public/bg.jpg");
         background-size: 79em;
-        opacity: 0;
+        opacity: 0.3;
         width: 100%;
         height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
+        scale: 0;
 
-        @include fade-in(fade-in-bg, 0,  0.3);
+        @include expand(expand-bg, 0, 1);
 
-        animation: $open-anim-duration * 2 fade-in-bg forwards;
+        animation: $open-anim-duration expand-bg forwards;
     }
 
     #close-button {
@@ -78,10 +91,11 @@ $open-anim-duration: 0.5s;
         transform: scaleY(0.8);
         z-index: 20;
         transition: transform 0.3s;
+        scale: 0;
 
-        @include fade-in(fade-in-fg,  0, 1);
+        @include expand(expand-fg,  0, 1);
 
-        animation: $open-anim-duration fade-in-fg forwards;
+        animation: $open-anim-duration expand-fg forwards;
 
         &:hover {
             transform: scale(1.25, 1);
@@ -99,11 +113,11 @@ $open-anim-duration: 0.5s;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        opacity: 0;
+        scale: 0;
 
-        @include fade-in(fade-in-fg,  0, 1);
+        @include expand(expand-fg, 0, 1);
 
-        animation: $open-anim-duration fade-in-fg forwards;
+        animation: $open-anim-duration expand-fg forwards /*$open-anim-duration*/;
 
         @mixin draw-stroke-partial($name, $start-percentage) {
             @keyframes #{$name} {
@@ -556,11 +570,13 @@ $open-anim-duration: 0.5s;
             opacity: 0.3;
             animation: none;
             background-size: cover;
+            scale: 1;
         }
 
         #expl-window {
             animation: none;
             opacity: 1;
+            scale: 1;
 
             .headline-divisor, .headline-rule {
                 padding: 0 1rem;
