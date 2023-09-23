@@ -5,8 +5,8 @@ import './Input.scss'
 function InputArrows(props: { onClick: (increment?: boolean) => void }): ReactElement {
     const upArrowDown = useRef<boolean>(false)
     const downArrowDown = useRef<boolean>(false)
-    const interval = useRef<NodeJS.Timer | null>()
-    const timeout = useRef<NodeJS.Timer | null>()
+    const incrementInterval = useRef<NodeJS.Timer | null>()
+    const startIncrementTimeout = useRef<NodeJS.Timer | null>()
 
     function onMouseDown(arrowDown: React.MutableRefObject<boolean>): void {
         if (arrowDown.current) {
@@ -15,16 +15,16 @@ function InputArrows(props: { onClick: (increment?: boolean) => void }): ReactEl
 
         arrowDown.current = true
 
-        timeout.current = setTimeout(() => {
-            interval.current = setInterval(() => {
+        startIncrementTimeout.current = setTimeout(() => {
+            incrementInterval.current = setInterval(() => {
                 props.onClick(upArrowDown.current)
             }, 100)
         }, 200)
         document.addEventListener('mouseup', () => {
             upArrowDown.current = false
             downArrowDown.current = false
-            clearInterval(interval.current!)
-            clearTimeout(timeout.current!)
+            clearInterval(incrementInterval.current!)
+            clearTimeout(startIncrementTimeout.current!)
         }, {once: true})
     }
 
@@ -35,11 +35,16 @@ function InputArrows(props: { onClick: (increment?: boolean) => void }): ReactEl
         }
     }
 
+    function onClick(event: React.MouseEvent<HTMLDivElement>, increment?: boolean): void {
+        event.preventDefault()
+        props.onClick(increment);
+    }
+
     return <div className={'input-arrows'}>
-        <div className={'input-arrow-up'} onClick={(): void => props.onClick(true)}
+        <div className={'input-arrow-up'} onClick={(e): void => onClick(e, true)}
              onMouseOver={(): void => onMouseOver(downArrowDown, upArrowDown)}
              onMouseDown={(): void => onMouseDown(upArrowDown)}>▾</div>
-        <div className={'input-arrow-down'} onClick={(): void => props.onClick()}
+        <div className={'input-arrow-down'} onClick={(e): void => onClick(e)}
              onMouseOver={(): void => onMouseOver(upArrowDown, downArrowDown)}
              onMouseDown={(): void => onMouseDown(downArrowDown)}>▾</div>
     </div>;
