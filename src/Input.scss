@@ -8,6 +8,7 @@ label {
     justify-content: center;
 
     .input-container {
+        position: relative;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -22,10 +23,12 @@ label {
             border: none;
             text-align: center;
             outline: none;
-            margin-right: -15px; // Adjust for increase/decrease arrows to make number centered
         }
 
         .input-arrows {
+            position: absolute;
+            right: 0;
+            translate: 100% -5%;
             display: flex;
             flex-direction: column;
             scale: 1.2 1;
